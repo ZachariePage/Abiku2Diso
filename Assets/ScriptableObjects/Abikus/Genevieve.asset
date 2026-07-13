@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0152a19860b6e44babe6d9a8513d9d2, type: 3}
+  m_Name: Genevieve
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 8183166823213532567, guid: c505b8fe8d1ea844cbc3e2945f545514, type: 3}
+  baseHealth: 20
+  baseDamage: 10
+  startingActions:
+  - {fileID: 11400000, guid: ddb22e354cb4d2141996c8c415609f7f, type: 2}
+  moveRange: 4
+  allowedDirections: 49

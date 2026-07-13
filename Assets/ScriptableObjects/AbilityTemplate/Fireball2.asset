@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34a73c0b898edac45865a5a040fb2c36, type: 3}
+  m_Name: Fireball2
+  m_EditorClassIdentifier: 
+  targetingStrategy: {fileID: 11400000, guid: 19357a42da59e584e964a3a77ce4f0a8, type: 2}
+  targetTypeStrategy: {fileID: 11400000, guid: 24b0128309144d2488a26c88430f074c, type: 2}
+  element: {fileID: 11400000, guid: c934ada44d0e2e741963a65f2a841a28, type: 2}
+  range: 5
+  numberOfTargets: 1

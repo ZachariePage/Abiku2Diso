@@ -1,0 +1,3939 @@
+fileFormatVersion: 2
+guid: 2d3b911307affdd4eb2e99de03f6d656
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6663419032188106219
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_0
+  - first:
+      213: -3155026040839899225
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_1
+  - first:
+      213: 718922977712176523
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_2
+  - first:
+      213: -6016019988433754020
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_3
+  - first:
+      213: -4340363122476875780
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_4
+  - first:
+      213: 8551955509635151219
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_5
+  - first:
+      213: 5892270191429428199
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_6
+  - first:
+      213: -5119964321504484620
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_7
+  - first:
+      213: 6381247350021846081
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_8
+  - first:
+      213: 154092380038135111
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_9
+  - first:
+      213: -159541589666591288
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_10
+  - first:
+      213: 8384419130074134487
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_11
+  - first:
+      213: -8224974986585798248
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_12
+  - first:
+      213: 3415823463900391420
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_13
+  - first:
+      213: 3403196303048834669
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_14
+  - first:
+      213: 8666706065848984311
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_15
+  - first:
+      213: 6236779565216285653
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_16
+  - first:
+      213: -724691748646994553
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_17
+  - first:
+      213: -3104120037091594523
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_18
+  - first:
+      213: -3032548347548502873
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_19
+  - first:
+      213: -5834914214481777289
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_20
+  - first:
+      213: -4609834532393222075
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_21
+  - first:
+      213: -7637873541262255576
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_22
+  - first:
+      213: -5982480183459437586
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_23
+  - first:
+      213: -6232704331759994011
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_24
+  - first:
+      213: 3826963543508706162
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_25
+  - first:
+      213: -1184949333380517336
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_26
+  - first:
+      213: 8379923865577941066
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_27
+  - first:
+      213: 2209315963065408241
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_28
+  - first:
+      213: -3560455220935675037
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_29
+  - first:
+      213: -1540959549625102107
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_30
+  - first:
+      213: 8525386353148799348
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_31
+  - first:
+      213: -5538928715720241204
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_32
+  - first:
+      213: 1619668545553057978
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_33
+  - first:
+      213: 5629098795779832106
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_34
+  - first:
+      213: -262785853299520267
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_35
+  - first:
+      213: 6291497064484471544
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_36
+  - first:
+      213: 7420309275455186577
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_37
+  - first:
+      213: 1337622804108546248
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_38
+  - first:
+      213: -5124232999810861465
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_39
+  - first:
+      213: -8901642893521891354
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_40
+  - first:
+      213: -5443951094172719373
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_41
+  - first:
+      213: 4679695987264465619
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_42
+  - first:
+      213: -5293237607203307513
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_43
+  - first:
+      213: -2087325849358612345
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_44
+  - first:
+      213: -7753229537465500926
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_45
+  - first:
+      213: 6523608463072429728
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_46
+  - first:
+      213: -9216479532150499819
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_47
+  - first:
+      213: 1558428924154528317
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_48
+  - first:
+      213: -5176751958065063398
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_49
+  - first:
+      213: -4210162655130143878
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_50
+  - first:
+      213: -620051609722302573
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_51
+  - first:
+      213: 3603172371323947651
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_52
+  - first:
+      213: -6272781012286643614
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_53
+  - first:
+      213: 347512677768409510
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_54
+  - first:
+      213: 3413945776174681858
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_55
+  - first:
+      213: 4044626425079584175
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_56
+  - first:
+      213: -1690103723115876905
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_57
+  - first:
+      213: -3990038517756760663
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_58
+  - first:
+      213: 8755860335890904734
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_59
+  - first:
+      213: 1020829349800517474
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_60
+  - first:
+      213: 7152063463665676636
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_61
+  - first:
+      213: -703930386271963541
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_62
+  - first:
+      213: -7959553500385404388
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_63
+  - first:
+      213: 7406026018467533753
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_64
+  - first:
+      213: -2836444359867475009
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_65
+  - first:
+      213: -4179332573280845745
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_66
+  - first:
+      213: -6014593351125114633
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_67
+  - first:
+      213: 6633431782091911198
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_68
+  - first:
+      213: -5089470223674296846
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_69
+  - first:
+      213: 8988193455594690566
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_70
+  - first:
+      213: -4161214875011021261
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_71
+  - first:
+      213: -7136491772820271966
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_72
+  - first:
+      213: -6224080062925640916
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_73
+  - first:
+      213: 6485799639370040304
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_74
+  - first:
+      213: 7944850544333166116
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_75
+  - first:
+      213: 7257404196668580084
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_76
+  - first:
+      213: 4045573169235766625
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_77
+  - first:
+      213: -6029478620456445573
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_78
+  - first:
+      213: -6724193248040471231
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_79
+  - first:
+      213: 9127593992644472056
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_80
+  - first:
+      213: -995267977029546869
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_81
+  - first:
+      213: 2349090009758877917
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_82
+  - first:
+      213: -5515161140496869877
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_83
+  - first:
+      213: -7607084186044182184
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_84
+  - first:
+      213: 1131188410057952203
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_85
+  - first:
+      213: 938213084259717540
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_86
+  - first:
+      213: -5237009416148321272
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_87
+  - first:
+      213: -5254429695743549764
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_88
+  - first:
+      213: -5806466258667088822
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_89
+  - first:
+      213: -7407022270027841347
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_90
+  - first:
+      213: 2148063131444077093
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_91
+  - first:
+      213: 8864768639652165100
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_92
+  - first:
+      213: -5242907510424513671
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_93
+  - first:
+      213: -3827507337863099507
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_94
+  - first:
+      213: -8001441004058109384
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_95
+  - first:
+      213: -7759577121836882748
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_96
+  - first:
+      213: -1910403008666885086
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_97
+  - first:
+      213: -5034956177767185074
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_98
+  - first:
+      213: 6931894343694415680
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_99
+  - first:
+      213: -1117746241022925250
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_100
+  - first:
+      213: -228462299933774045
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_101
+  - first:
+      213: 1056005480644838185
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_102
+  - first:
+      213: 8010138680600908379
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_103
+  - first:
+      213: -9115590388543865672
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_104
+  - first:
+      213: -5595792596845190222
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_105
+  - first:
+      213: 4146066109755550120
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_106
+  - first:
+      213: -8840495608265714900
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_107
+  - first:
+      213: -2244240902170129339
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_108
+  - first:
+      213: -3995311829177605018
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_109
+  - first:
+      213: -7785577805916729677
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_110
+  - first:
+      213: 2853329145974478075
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_111
+  - first:
+      213: -82951425969751362
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_112
+  - first:
+      213: -4424420382428875716
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_113
+  - first:
+      213: 4031255884688812047
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_114
+  - first:
+      213: 6916707242114350964
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_115
+  - first:
+      213: 8763826521183313901
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_116
+  - first:
+      213: -3563926263699196481
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_117
+  - first:
+      213: 2910614711013765106
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_118
+  - first:
+      213: -5561104043563769696
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_119
+  - first:
+      213: -156115570602854438
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_120
+  - first:
+      213: -1625804959871174529
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_121
+  - first:
+      213: 2793720502646427493
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_122
+  - first:
+      213: -6113009286509354580
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_123
+  - first:
+      213: -8083262676495387401
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_124
+  - first:
+      213: 4136443272408443161
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_125
+  - first:
+      213: -8574756995664910354
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_126
+  - first:
+      213: -1700686574725629428
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_127
+  - first:
+      213: 5280544061956652663
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_128
+  - first:
+      213: -504807483122548061
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_129
+  - first:
+      213: 7918312426918303857
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_130
+  - first:
+      213: -915708641277701311
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_131
+  - first:
+      213: 1149380023330059935
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_132
+  - first:
+      213: 4286591058705043724
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_133
+  - first:
+      213: 5143543833948581148
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_134
+  - first:
+      213: 2061668890245382934
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_135
+  - first:
+      213: 6751505479260911547
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_136
+  - first:
+      213: 5995818188300605793
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_137
+  - first:
+      213: -4419252619003847983
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_138
+  - first:
+      213: 7308055577999628629
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_139
+  - first:
+      213: 2060521922768151499
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_140
+  - first:
+      213: 6347309008535244014
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_141
+  - first:
+      213: 5246884183663211989
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_142
+  - first:
+      213: 5190189141867436666
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_143
+  - first:
+      213: 2509616714786981322
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_144
+  - first:
+      213: 3585296393250348771
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_145
+  - first:
+      213: 2260707121979092024
+    second: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_146
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 2000
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 2246
+        width: 248
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be536233e48397c50800000000000000
+      internalID: 6663419032188106219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_1
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 2365
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a771aa28881734d0800000000000000
+      internalID: -3155026040839899225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_2
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 2390
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8d7663a3a02af900800000000000000
+      internalID: 718922977712176523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_3
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 2246
+        width: 248
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c58a1cbd1bdc28ca0800000000000000
+      internalID: -6016019988433754020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_4
+      rect:
+        serializedVersion: 2
+        x: 1061
+        y: 2365
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cff7f808cbee3c3c0800000000000000
+      internalID: -4340363122476875780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_5
+      rect:
+        serializedVersion: 2
+        x: 1085
+        y: 2390
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3757fbec936aea670800000000000000
+      internalID: 8551955509635151219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_6
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 2246
+        width: 248
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e326c0458c85c150800000000000000
+      internalID: 5892270191429428199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_7
+      rect:
+        serializedVersion: 2
+        x: 1662
+        y: 2365
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f22d0a839b32f8b0800000000000000
+      internalID: -5119964321504484620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_8
+      rect:
+        serializedVersion: 2
+        x: 1686
+        y: 2390
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14474f1d7aebe8850800000000000000
+      internalID: 6381247350021846081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_9
+      rect:
+        serializedVersion: 2
+        x: 1809
+        y: 2246
+        width: 248
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74d74c60432732200800000000000000
+      internalID: 154092380038135111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_10
+      rect:
+        serializedVersion: 2
+        x: 2263
+        y: 2365
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cd850df4c139cdf0800000000000000
+      internalID: -159541589666591288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_11
+      rect:
+        serializedVersion: 2
+        x: 2287
+        y: 2390
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d7fe08b6c07b5470800000000000000
+      internalID: 8384419130074134487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_12
+      rect:
+        serializedVersion: 2
+        x: 2410
+        y: 2397
+        width: 90
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8998416d3d40bdd80800000000000000
+      internalID: -8224974986585798248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_13
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 2308
+        width: 52
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf72a35b751776f20800000000000000
+      internalID: 3415823463900391420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_14
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 2345
+        width: 23
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6ef528b1059a3f20800000000000000
+      internalID: 3403196303048834669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_15
+      rect:
+        serializedVersion: 2
+        x: 1005
+        y: 2308
+        width: 52
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f2e6abaf33564870800000000000000
+      internalID: 8666706065848984311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_16
+      rect:
+        serializedVersion: 2
+        x: 1047
+        y: 2345
+        width: 23
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d3c12f78fd7d8650800000000000000
+      internalID: 6236779565216285653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_17
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 2308
+        width: 52
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78d3d36b1b061f5f0800000000000000
+      internalID: -724691748646994553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_18
+      rect:
+        serializedVersion: 2
+        x: 1648
+        y: 2345
+        width: 23
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5eeabf8c543fbe4d0800000000000000
+      internalID: -3104120037091594523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_19
+      rect:
+        serializedVersion: 2
+        x: 2207
+        y: 2308
+        width: 52
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a47c2458593ae5d0800000000000000
+      internalID: -3032548347548502873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_20
+      rect:
+        serializedVersion: 2
+        x: 2249
+        y: 2345
+        width: 23
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77dafe6cf68360fa0800000000000000
+      internalID: -5834914214481777289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_21
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 2247
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5408f5faae39600c0800000000000000
+      internalID: -4609834532393222075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_22
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 2278
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82a55bd3b72d00690800000000000000
+      internalID: -7637873541262255576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_23
+      rect:
+        serializedVersion: 2
+        x: 949
+        y: 2247
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee3261d38f5f9fca0800000000000000
+      internalID: -5982480183459437586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_24
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 2278
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56b386bbe6cf089a0800000000000000
+      internalID: -6232704331759994011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_25
+      rect:
+        serializedVersion: 2
+        x: 1550
+        y: 2247
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 273e433111b1c1530800000000000000
+      internalID: 3826963543508706162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_26
+      rect:
+        serializedVersion: 2
+        x: 1581
+        y: 2278
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 822b4030cd63e8fe0800000000000000
+      internalID: -1184949333380517336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_27
+      rect:
+        serializedVersion: 2
+        x: 2151
+        y: 2247
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4867946b587b4470800000000000000
+      internalID: 8379923865577941066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_28
+      rect:
+        serializedVersion: 2
+        x: 2182
+        y: 2278
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fa1d17b92119ae10800000000000000
+      internalID: 2209315963065408241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_29
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 2162
+        width: 75
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 363b17537d8b69ec0800000000000000
+      internalID: -3560455220935675037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_30
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 1914
+        width: 255
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e0995734796d9ae0800000000000000
+      internalID: -1540959549625102107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_31
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 2162
+        width: 75
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 479a56008b1405670800000000000000
+      internalID: 8525386353148799348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_32
+      rect:
+        serializedVersion: 2
+        x: 933
+        y: 1914
+        width: 255
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccfc847fda5c123b0800000000000000
+      internalID: -5538928715720241204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_33
+      rect:
+        serializedVersion: 2
+        x: 1464
+        y: 2162
+        width: 75
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab84097f5f73a7610800000000000000
+      internalID: 1619668545553057978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_34
+      rect:
+        serializedVersion: 2
+        x: 1534
+        y: 1914
+        width: 255
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a293900d7839e1e40800000000000000
+      internalID: 5629098795779832106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_35
+      rect:
+        serializedVersion: 2
+        x: 2065
+        y: 2162
+        width: 75
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fc8512a8a56a5cf0800000000000000
+      internalID: -262785853299520267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_36
+      rect:
+        serializedVersion: 2
+        x: 2135
+        y: 1914
+        width: 255
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f282021f33ef4750800000000000000
+      internalID: 6291497064484471544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_37
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 2086
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 196ea07b8fb3af660800000000000000
+      internalID: 7420309275455186577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_38
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 2110
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c01a527ad0309210800000000000000
+      internalID: 1337622804108546248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_39
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 2086
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76670fb6c3113e8b0800000000000000
+      internalID: -5124232999810861465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_40
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 2110
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ef4f3683f2077480800000000000000
+      internalID: -8901642893521891354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_41
+      rect:
+        serializedVersion: 2
+        x: 1383
+        y: 2086
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f66c39b2533374b0800000000000000
+      internalID: -5443951094172719373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_42
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 2110
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3da28b1d4be91f040800000000000000
+      internalID: 4679695987264465619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_43
+      rect:
+        serializedVersion: 2
+        x: 1984
+        y: 2086
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70088e6e074aa86b0800000000000000
+      internalID: -5293237607203307513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_44
+      rect:
+        serializedVersion: 2
+        x: 2009
+        y: 2110
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7884d7af2345803e0800000000000000
+      internalID: -2087325849358612345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_45
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 2028
+        width: 53
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20b7d4560def66490800000000000000
+      internalID: -7753229537465500926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_46
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 2065
+        width: 23
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a60a276553888a50800000000000000
+      internalID: 6523608463072429728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_47
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 2028
+        width: 53
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 516d28e42bc781080800000000000000
+      internalID: -9216479532150499819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_48
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 2065
+        width: 23
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d32ccef79d6a0a510800000000000000
+      internalID: 1558428924154528317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_49
+      rect:
+        serializedVersion: 2
+        x: 1326
+        y: 2028
+        width: 53
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1a5931958b7828b0800000000000000
+      internalID: -5176751958065063398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_50
+      rect:
+        serializedVersion: 2
+        x: 1369
+        y: 2065
+        width: 23
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a733a5e1f5f7295c0800000000000000
+      internalID: -4210162655130143878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_51
+      rect:
+        serializedVersion: 2
+        x: 1927
+        y: 2028
+        width: 53
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39fc71c98522567f0800000000000000
+      internalID: -620051609722302573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_52
+      rect:
+        serializedVersion: 2
+        x: 1970
+        y: 2065
+        width: 23
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38a04496e2a010230800000000000000
+      internalID: 3603172371323947651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_53
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 1968
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 262e6d867ea92f8a0800000000000000
+      internalID: -6272781012286643614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_54
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 1998
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a1b45170fc92d400800000000000000
+      internalID: 347512677768409510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_55
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 1968
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20f46577895c06f20800000000000000
+      internalID: 3413945776174681858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_56
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 1998
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa5d604ed46612830800000000000000
+      internalID: 4044626425079584175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_57
+      rect:
+        serializedVersion: 2
+        x: 1271
+        y: 1968
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ddec1e4e9b8b88e0800000000000000
+      internalID: -1690103723115876905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_58
+      rect:
+        serializedVersion: 2
+        x: 1301
+        y: 1998
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ad6bf4bb1980a8c0800000000000000
+      internalID: -3990038517756760663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_59
+      rect:
+        serializedVersion: 2
+        x: 1872
+        y: 1968
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e96b5bfb590138970800000000000000
+      internalID: 8755860335890904734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_60
+      rect:
+        serializedVersion: 2
+        x: 1902
+        y: 1998
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26f172392e6ba2e00800000000000000
+      internalID: 1020829349800517474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_61
+      rect:
+        serializedVersion: 2
+        x: 2473
+        y: 1969
+        width: 27
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c51b7d2b3db314360800000000000000
+      internalID: 7152063463665676636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_62
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 1645
+        width: 248
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b66f7a31b032b36f0800000000000000
+      internalID: -703930386271963541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_63
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 443
+        width: 1808
+        height: 1474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1a9fce434cf98190800000000000000
+      internalID: -7959553500385404388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_64
+      rect:
+        serializedVersion: 2
+        x: 2263
+        y: 1764
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b3de0ccc6d77c660800000000000000
+      internalID: 7406026018467533753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_65
+      rect:
+        serializedVersion: 2
+        x: 2288
+        y: 1789
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbb50f002ece2a8d0800000000000000
+      internalID: -2836444359867475009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_66
+      rect:
+        serializedVersion: 2
+        x: 2410
+        y: 1796
+        width: 90
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f40406bea270006c0800000000000000
+      internalID: -4179332573280845745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_67
+      rect:
+        serializedVersion: 2
+        x: 2206
+        y: 1706
+        width: 53
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f0e2cdb63fd78ca0800000000000000
+      internalID: -6014593351125114633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_68
+      rect:
+        serializedVersion: 2
+        x: 2249
+        y: 1744
+        width: 23
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e10ff557f0fae0c50800000000000000
+      internalID: 6633431782091911198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_69
+      rect:
+        serializedVersion: 2
+        x: 2151
+        y: 1646
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f537f6fbc19e59b0800000000000000
+      internalID: -5089470223674296846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_70
+      rect:
+        serializedVersion: 2
+        x: 2182
+        y: 1677
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 608563d835a7cbc70800000000000000
+      internalID: 8988193455594690566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_71
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 1561
+        width: 75
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33685e44e156046c0800000000000000
+      internalID: -4161214875011021261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_72
+      rect:
+        serializedVersion: 2
+        x: 2135
+        y: 1313
+        width: 255
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2accc8a1b8616fc90800000000000000
+      internalID: -7136491772820271966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_73
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 1485
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2be9bbc820af99a0800000000000000
+      internalID: -6224080062925640916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_74
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 1509
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f30205a860320a50800000000000000
+      internalID: 6485799639370040304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_75
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 1427
+        width: 53
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4261c88f977c14e60800000000000000
+      internalID: 7944850544333166116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_76
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 1464
+        width: 23
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f02cdd5aaa77b460800000000000000
+      internalID: 7257404196668580084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_77
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 1367
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16d2621fc53c42830800000000000000
+      internalID: 4045573169235766625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_78
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 1397
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7991e6e32df25ca0800000000000000
+      internalID: -6029478620456445573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_79
+      rect:
+        serializedVersion: 2
+        x: 2473
+        y: 1368
+        width: 27
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 145b7710edddea2a0800000000000000
+      internalID: -6724193248040471231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_80
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 1044
+        width: 248
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fc2091506abbae70800000000000000
+      internalID: 9127593992644472056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_81
+      rect:
+        serializedVersion: 2
+        x: 2263
+        y: 1163
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8c05dc4c091032f0800000000000000
+      internalID: -995267977029546869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_82
+      rect:
+        serializedVersion: 2
+        x: 2287
+        y: 1188
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd8c819fae4a99020800000000000000
+      internalID: 2349090009758877917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_83
+      rect:
+        serializedVersion: 2
+        x: 2410
+        y: 1195
+        width: 90
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0655adc9263673b0800000000000000
+      internalID: -5515161140496869877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_84
+      rect:
+        serializedVersion: 2
+        x: 2207
+        y: 1106
+        width: 52
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8515852ac353e6690800000000000000
+      internalID: -7607084186044182184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_85
+      rect:
+        serializedVersion: 2
+        x: 2249
+        y: 1143
+        width: 23
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcb0b8b9dd9c2bf00800000000000000
+      internalID: 1131188410057952203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_86
+      rect:
+        serializedVersion: 2
+        x: 2151
+        y: 1045
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a19cea44d3350d00800000000000000
+      internalID: 938213084259717540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_87
+      rect:
+        serializedVersion: 2
+        x: 2182
+        y: 1076
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80c7a11dea76257b0800000000000000
+      internalID: -5237009416148321272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_88
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 960
+        width: 75
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbe11f7e7048417b0800000000000000
+      internalID: -5254429695743549764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_89
+      rect:
+        serializedVersion: 2
+        x: 2135
+        y: 712
+        width: 255
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a445bd3a3b94b6fa0800000000000000
+      internalID: -5806466258667088822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_90
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 884
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db0459f4d78f43990800000000000000
+      internalID: -7407022270027841347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_91
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 908
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52266d089047fcd10800000000000000
+      internalID: 2148063131444077093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_92
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 826
+        width: 53
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce57d763c1cf50b70800000000000000
+      internalID: 8864768639652165100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_93
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 863
+        width: 23
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9735beab5637d37b0800000000000000
+      internalID: -5242907510424513671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_94
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 766
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8b087fea56f1eac0800000000000000
+      internalID: -3827507337863099507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_95
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 796
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83a1fdddccb25f090800000000000000
+      internalID: -8001441004058109384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_96
+      rect:
+        serializedVersion: 2
+        x: 2473
+        y: 767
+        width: 27
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c42aad38b1705490800000000000000
+      internalID: -7759577121836882748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_97
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 443
+        width: 248
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 224a29ad592ec75e0800000000000000
+      internalID: -1910403008666885086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_98
+      rect:
+        serializedVersion: 2
+        x: 2263
+        y: 562
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e45478c580e302ab0800000000000000
+      internalID: -5034956177767185074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_99
+      rect:
+        serializedVersion: 2
+        x: 2288
+        y: 587
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 047f178cd29033060800000000000000
+      internalID: 6931894343694415680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_100
+      rect:
+        serializedVersion: 2
+        x: 2410
+        y: 594
+        width: 90
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e36ecc247b7fc70f0800000000000000
+      internalID: -1117746241022925250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_101
+      rect:
+        serializedVersion: 2
+        x: 2206
+        y: 504
+        width: 53
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32fe0e7afb654dcf0800000000000000
+      internalID: -228462299933774045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_102
+      rect:
+        serializedVersion: 2
+        x: 2249
+        y: 542
+        width: 23
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92383b2c36fa7ae00800000000000000
+      internalID: 1056005480644838185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_103
+      rect:
+        serializedVersion: 2
+        x: 2151
+        y: 444
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5255d2c0bab92f60800000000000000
+      internalID: 8010138680600908379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_104
+      rect:
+        serializedVersion: 2
+        x: 2182
+        y: 475
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bcb0ec86daee7180800000000000000
+      internalID: -9115590388543865672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_105
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 359
+        width: 75
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b3284ce740c752b0800000000000000
+      internalID: -5595792596845190222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_106
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 111
+        width: 255
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a9e347f829c98930800000000000000
+      internalID: 4146066109755550120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_107
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 359
+        width: 75
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c23dbee4510405580800000000000000
+      internalID: -8840495608265714900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_108
+      rect:
+        serializedVersion: 2
+        x: 933
+        y: 111
+        width: 255
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54c4fbb3acadad0e0800000000000000
+      internalID: -2244240902170129339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_109
+      rect:
+        serializedVersion: 2
+        x: 1464
+        y: 359
+        width: 75
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 664e3f63f0dcd88c0800000000000000
+      internalID: -3995311829177605018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_110
+      rect:
+        serializedVersion: 2
+        x: 1534
+        y: 111
+        width: 255
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3be0b2b3c3214f390800000000000000
+      internalID: -7785577805916729677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_111
+      rect:
+        serializedVersion: 2
+        x: 2065
+        y: 359
+        width: 75
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf4d31d9dbf099720800000000000000
+      internalID: 2853329145974478075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_112
+      rect:
+        serializedVersion: 2
+        x: 2135
+        y: 111
+        width: 255
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebaf5791e1c49def0800000000000000
+      internalID: -82951425969751362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_113
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 283
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3434509a1d4992c0800000000000000
+      internalID: -4424420382428875716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_114
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 307
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f08649d5ed5e1f730800000000000000
+      internalID: 4031255884688812047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_115
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 283
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47ff89527941dff50800000000000000
+      internalID: 6916707242114350964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_116
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 307
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: def574cc9cd5f9970800000000000000
+      internalID: 8763826521183313901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_117
+      rect:
+        serializedVersion: 2
+        x: 1383
+        y: 283
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb5368612f36a8ec0800000000000000
+      internalID: -3563926263699196481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_118
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 307
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ff600898a4946820800000000000000
+      internalID: 2910614711013765106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_119
+      rect:
+        serializedVersion: 2
+        x: 1984
+        y: 283
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a0a46c165df2d2b0800000000000000
+      internalID: -5561104043563769696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_120
+      rect:
+        serializedVersion: 2
+        x: 2009
+        y: 307
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad73f4637bd55ddf0800000000000000
+      internalID: -156115570602854438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_121
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 225
+        width: 53
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f787fccb00bff69e0800000000000000
+      internalID: -1625804959871174529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_122
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 262
+        width: 23
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56f47f1def945c620800000000000000
+      internalID: 2793720502646427493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_123
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 225
+        width: 53
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca122f8217a3a2ba0800000000000000
+      internalID: -6113009286509354580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_124
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 262
+        width: 23
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f4b1553c6b72df80800000000000000
+      internalID: -8083262676495387401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_125
+      rect:
+        serializedVersion: 2
+        x: 1326
+        y: 225
+        width: 53
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 919a57d8d39976930800000000000000
+      internalID: 4136443272408443161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_126
+      rect:
+        serializedVersion: 2
+        x: 1369
+        y: 262
+        width: 23
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee7e81681f7500980800000000000000
+      internalID: -8574756995664910354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_127
+      rect:
+        serializedVersion: 2
+        x: 1927
+        y: 225
+        width: 53
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0af3372292f568e0800000000000000
+      internalID: -1700686574725629428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_128
+      rect:
+        serializedVersion: 2
+        x: 1970
+        y: 262
+        width: 23
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77e79b9c8d2484940800000000000000
+      internalID: 5280544061956652663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_129
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 165
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a28588c4409ef8f0800000000000000
+      internalID: -504807483122548061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_130
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 195
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 178d603033f73ed60800000000000000
+      internalID: 7918312426918303857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_131
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 165
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14313e6a7dfba43f0800000000000000
+      internalID: -915708641277701311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_132
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 195
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f96b482aa0b63ff00800000000000000
+      internalID: 1149380023330059935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_133
+      rect:
+        serializedVersion: 2
+        x: 1271
+        y: 165
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c01da774bd70d7b30800000000000000
+      internalID: 4286591058705043724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_134
+      rect:
+        serializedVersion: 2
+        x: 1301
+        y: 195
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1de7258dd9816740800000000000000
+      internalID: 5143543833948581148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_135
+      rect:
+        serializedVersion: 2
+        x: 1872
+        y: 165
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 613cc87bee48c9c10800000000000000
+      internalID: 2061668890245382934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_136
+      rect:
+        serializedVersion: 2
+        x: 1902
+        y: 195
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb7337e567a22bd50800000000000000
+      internalID: 6751505479260911547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_137
+      rect:
+        serializedVersion: 2
+        x: 2473
+        y: 166
+        width: 27
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 169db7300ec653350800000000000000
+      internalID: 5995818188300605793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_138
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 0
+        width: 96
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1da9f8f3829aba2c0800000000000000
+      internalID: -4419252619003847983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_139
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 0
+        width: 36
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 559da7514dd6b6560800000000000000
+      internalID: 7308055577999628629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_140
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 0
+        width: 96
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc3208a85c1789c10800000000000000
+      internalID: 2060521922768151499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_141
+      rect:
+        serializedVersion: 2
+        x: 1085
+        y: 0
+        width: 36
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eec416de9eb261850800000000000000
+      internalID: 6347309008535244014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_142
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 0
+        width: 96
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d57cd8ad5da0d840800000000000000
+      internalID: 5246884183663211989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_143
+      rect:
+        serializedVersion: 2
+        x: 1686
+        y: 0
+        width: 36
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7a19169681470840800000000000000
+      internalID: 5190189141867436666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_144
+      rect:
+        serializedVersion: 2
+        x: 1809
+        y: 0
+        width: 96
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac5c2470b13f3d220800000000000000
+      internalID: 2509616714786981322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_145
+      rect:
+        serializedVersion: 2
+        x: 2287
+        y: 0
+        width: 36
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ee1d2ee21881c130800000000000000
+      internalID: 3585296393250348771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_146
+      rect:
+        serializedVersion: 2
+        x: 2410
+        y: 0
+        width: 90
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83c62c25625af5f10800000000000000
+      internalID: 2260707121979092024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_0: 6663419032188106219
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_1: -3155026040839899225
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_10: -159541589666591288
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_100: -1117746241022925250
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_101: -228462299933774045
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_102: 1056005480644838185
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_103: 8010138680600908379
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_104: -9115590388543865672
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_105: -5595792596845190222
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_106: 4146066109755550120
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_107: -8840495608265714900
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_108: -2244240902170129339
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_109: -3995311829177605018
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_11: 8384419130074134487
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_110: -7785577805916729677
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_111: 2853329145974478075
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_112: -82951425969751362
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_113: -4424420382428875716
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_114: 4031255884688812047
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_115: 6916707242114350964
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_116: 8763826521183313901
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_117: -3563926263699196481
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_118: 2910614711013765106
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_119: -5561104043563769696
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_12: -8224974986585798248
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_120: -156115570602854438
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_121: -1625804959871174529
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_122: 2793720502646427493
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_123: -6113009286509354580
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_124: -8083262676495387401
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_125: 4136443272408443161
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_126: -8574756995664910354
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_127: -1700686574725629428
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_128: 5280544061956652663
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_129: -504807483122548061
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_13: 3415823463900391420
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_130: 7918312426918303857
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_131: -915708641277701311
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_132: 1149380023330059935
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_133: 4286591058705043724
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_134: 5143543833948581148
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_135: 2061668890245382934
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_136: 6751505479260911547
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_137: 5995818188300605793
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_138: -4419252619003847983
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_139: 7308055577999628629
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_14: 3403196303048834669
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_140: 2060521922768151499
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_141: 6347309008535244014
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_142: 5246884183663211989
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_143: 5190189141867436666
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_144: 2509616714786981322
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_145: 3585296393250348771
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_146: 2260707121979092024
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_15: 8666706065848984311
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_16: 6236779565216285653
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_17: -724691748646994553
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_18: -3104120037091594523
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_19: -3032548347548502873
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_2: 718922977712176523
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_20: -5834914214481777289
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_21: -4609834532393222075
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_22: -7637873541262255576
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_23: -5982480183459437586
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_24: -6232704331759994011
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_25: 3826963543508706162
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_26: -1184949333380517336
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_27: 8379923865577941066
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_28: 2209315963065408241
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_29: -3560455220935675037
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_3: -6016019988433754020
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_30: -1540959549625102107
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_31: 8525386353148799348
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_32: -5538928715720241204
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_33: 1619668545553057978
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_34: 5629098795779832106
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_35: -262785853299520267
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_36: 6291497064484471544
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_37: 7420309275455186577
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_38: 1337622804108546248
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_39: -5124232999810861465
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_4: -4340363122476875780
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_40: -8901642893521891354
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_41: -5443951094172719373
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_42: 4679695987264465619
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_43: -5293237607203307513
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_44: -2087325849358612345
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_45: -7753229537465500926
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_46: 6523608463072429728
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_47: -9216479532150499819
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_48: 1558428924154528317
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_49: -5176751958065063398
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_5: 8551955509635151219
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_50: -4210162655130143878
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_51: -620051609722302573
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_52: 3603172371323947651
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_53: -6272781012286643614
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_54: 347512677768409510
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_55: 3413945776174681858
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_56: 4044626425079584175
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_57: -1690103723115876905
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_58: -3990038517756760663
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_59: 8755860335890904734
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_6: 5892270191429428199
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_60: 1020829349800517474
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_61: 7152063463665676636
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_62: -703930386271963541
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_63: -7959553500385404388
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_64: 7406026018467533753
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_65: -2836444359867475009
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_66: -4179332573280845745
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_67: -6014593351125114633
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_68: 6633431782091911198
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_69: -5089470223674296846
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_7: -5119964321504484620
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_70: 8988193455594690566
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_71: -4161214875011021261
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_72: -7136491772820271966
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_73: -6224080062925640916
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_74: 6485799639370040304
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_75: 7944850544333166116
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_76: 7257404196668580084
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_77: 4045573169235766625
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_78: -6029478620456445573
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_79: -6724193248040471231
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_8: 6381247350021846081
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_80: 9127593992644472056
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_81: -995267977029546869
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_82: 2349090009758877917
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_83: -5515161140496869877
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_84: -7607084186044182184
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_85: 1131188410057952203
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_86: 938213084259717540
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_87: -5237009416148321272
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_88: -5254429695743549764
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_89: -5806466258667088822
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_9: 154092380038135111
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_90: -7407022270027841347
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_91: 2148063131444077093
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_92: 8864768639652165100
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_93: -5242907510424513671
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_94: -3827507337863099507
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_95: -8001441004058109384
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_96: -7759577121836882748
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_97: -1910403008666885086
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_98: -5034956177767185074
+      pngtree-waiting-for-your-call-cat-meme-sticker-transparent-vector-cute-illustration-png-image_20900302_99: 6931894343694415680
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
