@@ -81,8 +81,5 @@ public class FireState : State
     {
         base.PhysicUpdate();
     }
-    public override StateScriptableObject GetConfig()
-    {
-        return config;
-    }
+    
 }

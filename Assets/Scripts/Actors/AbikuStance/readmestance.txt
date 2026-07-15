@@ -1,0 +1,1 @@
+i know this is code duplication but for now it will stay as is since i was confirmed we will NEVER have more then these 3 stance

@@ -1,21 +1,17 @@
 using System.Collections.Generic;
-using NUnit.Framework;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-public class AbikuBattleMenu : MonoBehaviour
+public class EgungunBattleMenu : MonoBehaviour
 {
     public GameObject Panel;
-    
     public GameObject buttonPrefab;
-    private List<AbilityButton> buttons = new List<AbilityButton>();
-    
     //horrible disgusting afront to god code that hopefully will be changed later
     private GameObject moveButton;
     private GameObject changeAbikuButton;
-
-    public AbikuTrio owningTrio;
     
+    public Egungun egungun;
+    public AbikuTrio owningTrio;
+    private List<AbilityButton> buttons = new List<AbilityButton>();
     void Start()
     {
         owningTrio.onSelection += OpenUI;
@@ -53,7 +49,7 @@ public class AbikuBattleMenu : MonoBehaviour
 
     public void onChangeAbikuButtonClicked()
     {
-        // ChangeAbikuAction changeAbikuAction = owningTrio.GetCurrentAbiku().GetChangeAction();
-        // BattleLoop.Instance.SetPendingAction(changeAbikuAction);
+
     }
+
 }

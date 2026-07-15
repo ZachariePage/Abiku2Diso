@@ -13,7 +13,7 @@ public class State
 
     public virtual void EnterState()
     {
-        StateScriptableObject config = stateMachine.CurrentEnemyState.GetConfig();
+        
     }
 
     public virtual void StartTurn()
@@ -40,8 +40,5 @@ public class State
     }
     
 
-    public virtual StateScriptableObject GetConfig()
-    {
-        return null;
-    }
+    
 }

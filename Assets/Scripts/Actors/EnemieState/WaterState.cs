@@ -72,8 +72,5 @@ public class WaterState : State
     {
         base.PhysicUpdate();
     }
-    public override StateScriptableObject GetConfig()
-    {
-        return config;
-    }
+    
 }

@@ -148,12 +148,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trioDefinition: {fileID: 11400000, guid: 5dc39460724082043aa6e6335f9cbe2d, type: 2}
-  _currentAbiku:
-    abikuDefinition: {fileID: 0}
-    health: 0
-    damage: 0
-    owningTrio: {fileID: 0}
-    abilityActions: []
-  abikuses: []
+  egungun:
+    definition: {fileID: 11400000, guid: a2e6648b558eb604792c9cac211f4a1f, type: 2}
+  trioActions: []
   onHitCues:
   - {fileID: 11400000, guid: 524799e56acac1f4da811fd42f0b22c2, type: 2}

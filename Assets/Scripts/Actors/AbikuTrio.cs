@@ -10,10 +10,14 @@ public class AbikuTrio : GridActor,  IDamageable
     // [SerializeField] private List<Abiku> abikuses = new List<Abiku>();
     // private int currentAbikuIndex = -1;
     
-    [Header("Actions")]
-    [SerializeField] private List<AbilityAction> trioActions;
-    private MoveAbikuAction moveAction;
-    private ChangeAbikuAction changeAction;
+    [Header("egungun")]
+    [SerializeField] private Egungun egungun;
+    
+    [Header("stance")]
+    public StateMachine StanceStateMachine;
+    
+    private List<AbikuStance> stances = new List<AbikuStance>();
+    private int currentStateIndex = 0;
     
     [Header("GameCues")]
     public GameCue[] onHitCues;
@@ -25,8 +29,16 @@ public class AbikuTrio : GridActor,  IDamageable
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        moveAction = new MoveAbikuAction(this);
-        changeAction = new ChangeAbikuAction(this);
+        if (egungun == null)
+        {
+            Debug.LogError("NEW ERROR: egungun is null");
+        }
+        StanceStateMachine =  new StateMachine();
+
+        foreach (var stance in trioDefinition.startingStances)
+        {
+            stances.Add(stance.CreateAbikuStanceState(this, StanceStateMachine));
+        }
     }
 
     // Update is called once per frame
@@ -37,29 +49,11 @@ public class AbikuTrio : GridActor,  IDamageable
     
     public override void Initialize()
     {
-        foreach (var action in trioDefinition.startingActions)
+        if (trioDefinition == null)
         {
-            AddAbility(action.CreateAction(this));
+            Debug.LogError("TrioDefinition is null");
+            return;
         }
-        // if (trioDefinition == null)
-        // {
-        //     Debug.LogError("TrioDefinition is null");
-        //     return;
-        // }
-        //
-        // if (abikuses.Count == 0)
-        // {
-        //     foreach (Abiku abiku in trioDefinition.startingAbiku)
-        //     {
-        //         AbikuDefinition def = abiku.GetAbikuDefinition();
-        //         Abiku newAbiku = new Abiku(def, def.baseHealth, def.baseDamage, this);
-        //         newAbiku.Initialize();
-        //         abikuses.Add(newAbiku);
-        //     }
-        // }
-        //
-        // _currentAbiku =  abikuses[0];
-        // currentAbikuIndex = 0;
     }
     
     public void MoveToCell(GridCell cell)
@@ -123,33 +117,12 @@ public class AbikuTrio : GridActor,  IDamageable
     {
         this.trioDefinition = newDefinition;
     }
-    
-    public void AddAbility(AbilityAction abilityAction)
-    {
-        trioActions.Add(abilityAction);
-        onAbilityModify?.Invoke();
-    }
 
-    public void RemoveAbility(AbilityAction abilityAction)
+    public Egungun GetEgungun()
     {
-        trioActions.Remove(abilityAction);
-        onAbilityModify?.Invoke();
+        return egungun;
     }
     
-    public MoveAbikuAction GetMoveAction()
-    {
-        return moveAction;
-    }
-
-    public ChangeAbikuAction GetChangeAction()
-    {
-        return changeAction;
-    }
-
-    public IEnumerable<AbilityAction> GetAbilityActions()
-    {
-        return trioActions;
-    }
 
     public DamageInfo TakeDamage(GridActor source, AbilityAction abilityUsed, float damage, ElementSO element)
     {
@@ -160,5 +133,10 @@ public class AbikuTrio : GridActor,  IDamageable
         }
         
         return new DamageInfo(source, this, abilityUsed, damage, element, null, false);
+    }
+
+    public void DEBUGPRINTALLSTANCESABILITIES()
+    {
+        
     }
 }

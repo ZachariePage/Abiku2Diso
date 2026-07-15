@@ -1,13 +1,12 @@
 using UnityEngine;
-
-[CreateAssetMenu(menuName = "State/firestateSO")]
-public class FireStateSO : StanceStateScriptableObject
+[CreateAssetMenu(menuName = "State/Enemy/waterStateSO")]
+public class WaterStanceSO : StanceStateScriptableObject
 {
     public AbilityTemplateSO action;
     public ElementSO element;
     public override State CreateState(GridActor actor, StateMachine stateMachine)
     {
-        return new FireState(actor, stateMachine, this);
+        return new WaterState(actor, stateMachine, this);
     }
 
     public override AbilityTemplateSO GetAction()
@@ -15,3 +14,4 @@ public class FireStateSO : StanceStateScriptableObject
         return action;
     }
 }
+

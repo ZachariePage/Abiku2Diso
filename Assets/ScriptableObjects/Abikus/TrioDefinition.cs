@@ -1,10 +1,11 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Unit/Trio")]
 public class TrioDefinition : ScriptableObject
 {
     public GameObject prefab;
-    public AbilityTemplateSO[] startingActions;
+    [SerializeField] public List<AbikuStanceScriptableObject> startingStances = new List<AbikuStanceScriptableObject>();
 
     public int HP;
     public int moveRange;
@@ -12,5 +13,4 @@ public class TrioDefinition : ScriptableObject
     public int defence;
     
     public MovementDirections moveDirection;
-    //public Abiku[] startingAbiku = new Abiku[3];
 }
