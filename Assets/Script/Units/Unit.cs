@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour
 {
-    public StateMachine StateMachine;
+    public IStateMachine StateMachine;
 
     public StanceStateScriptableObject ExempleState;
 
@@ -10,7 +10,7 @@ public class Unit : MonoBehaviour
     [SerializeField] private StanceStateScriptableObject wanderConfig;
     void Start()
     {
-        StateMachine =  new StateMachine();
+        
         
     }
 

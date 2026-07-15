@@ -1,26 +1,28 @@
 using UnityEngine;
 
-public class StateMachine
+public interface IStateMachine
 {
-     public State CurrentEnemyState;
-    
-     public void Init(State startingState)
-     {
-         CurrentEnemyState = startingState;
-         startingState.EnterState();
-     }
-    
-     public void ChangeState(State newState)
-     {
-         //DebugPrintStateName("entering");
-         CurrentEnemyState.ExitState();
-         CurrentEnemyState = newState;
-         CurrentEnemyState.EnterState();
-         //DebugPrintStateName("exiting");
-     }
-    
-     private void DebugPrintStateName(string message)
-     {
-         Debug.Log($"{message} {CurrentEnemyState}");
-     }
+    void ChangeState(State newState);
+}
+
+public class StateMachine<TState> : IStateMachine where TState : State
+{
+    public TState CurrentState { get; private set; }
+
+    public void Init(TState startingState)
+    {
+        CurrentState = startingState;
+        startingState.EnterState();
+    }
+
+    public void ChangeState(TState newState)
+    {
+        CurrentState.ExitState();
+        CurrentState = newState;
+        CurrentState.EnterState();
+    }
+    void IStateMachine.ChangeState(State newState)
+    {
+        ChangeState((TState)newState);
+    }
 }

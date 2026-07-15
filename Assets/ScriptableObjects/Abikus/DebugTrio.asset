@@ -13,11 +13,10 @@ MonoBehaviour:
   m_Name: DebugTrio
   m_EditorClassIdentifier: 
   prefab: {fileID: 657769555342276678, guid: 3bdd32c0145ddd44f86d11d8bb40e3b6, type: 3}
-  startingActions:
-  - {fileID: 11400000, guid: a2a70a0d61635c745bc6e2712babfefd, type: 2}
-  - {fileID: 11400000, guid: ddb22e354cb4d2141996c8c415609f7f, type: 2}
-  - {fileID: 11400000, guid: e627850097292114a8b3a4da9ddb7a68, type: 2}
-  - {fileID: 11400000, guid: e806ad999a33a9f40a760e10c8c7c46f, type: 2}
+  startingStances:
+  - {fileID: 11400000, guid: 210dff87776a332428aa99b165e5f245, type: 2}
+  - {fileID: 11400000, guid: d50494916c47390429ef3a2f2c41d93b, type: 2}
+  - {fileID: 11400000, guid: 90f3efaab2d17aa41be39958e1ad62e0, type: 2}
   HP: 10
   moveRange: 5
   defence: 5

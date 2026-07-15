@@ -4,7 +4,7 @@ public class WaterStanceSO : StanceStateScriptableObject
 {
     public AbilityTemplateSO action;
     public ElementSO element;
-    public override State CreateState(GridActor actor, StateMachine stateMachine)
+    public override State CreateState(GridActor actor, IStateMachine stateMachine)
     {
         return new WaterState(actor, stateMachine, this);
     }

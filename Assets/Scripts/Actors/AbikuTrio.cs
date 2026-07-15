@@ -14,7 +14,7 @@ public class AbikuTrio : GridActor,  IDamageable
     [SerializeField] private Egungun egungun;
     
     [Header("stance")]
-    public StateMachine StanceStateMachine;
+    public StateMachine<AbikuStance> StanceStateMachine;
     
     private List<AbikuStance> stances = new List<AbikuStance>();
     private int currentStateIndex = 0;
@@ -33,12 +33,14 @@ public class AbikuTrio : GridActor,  IDamageable
         {
             Debug.LogError("NEW ERROR: egungun is null");
         }
-        StanceStateMachine =  new StateMachine();
+        StanceStateMachine =  new StateMachine<AbikuStance>();
 
         foreach (var stance in trioDefinition.startingStances)
         {
             stances.Add(stance.CreateAbikuStanceState(this, StanceStateMachine));
         }
+        
+        StanceStateMachine.Init(stances[0]);
     }
 
     // Update is called once per frame
@@ -69,6 +71,12 @@ public class AbikuTrio : GridActor,  IDamageable
         //
         // currentAbikuIndex = currentAbikuIndex % abikuses.Count;
         // _currentAbiku =  abikuses[currentAbikuIndex];
+    }
+
+    public void ChangeStance()
+    {
+        currentStateIndex++;
+        StanceStateMachine.ChangeState(stances[currentStateIndex]);
     }
     
     //interface
@@ -137,6 +145,12 @@ public class AbikuTrio : GridActor,  IDamageable
 
     public void DEBUGPRINTALLSTANCESABILITIES()
     {
-        
+        foreach (var stance in stances)
+        {
+            foreach (var ability in stance.GetAbilities())
+            {
+                Debug.Log(ability);
+            }
+        }
     }
 }

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2335a2fe1476f694bbba9bb75e4aa09e, type: 3}
   m_Name: AbikuWaterStance
   m_EditorClassIdentifier: 
-  element: {fileID: 0}
+  element: {fileID: 11400000, guid: 1e1623ebc7accd843898798877e1b378, type: 2}

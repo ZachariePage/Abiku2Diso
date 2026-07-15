@@ -5,7 +5,7 @@ public class AbikuWoodStance : AbikuStance
     private AbikuWoodStanceSO config;
 
 
-    public AbikuWoodStance(GridActor unit, StateMachine stateMachine, AbikuWoodStanceSO config) : base(unit, stateMachine)
+    public AbikuWoodStance(GridActor unit, IStateMachine stateMachine, AbikuWoodStanceSO config) : base(unit, stateMachine)
     {
         this.config = config;
     }

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 210150b472421914d903c9b01ae1e323, type: 3}
   m_Name: AbikuWoodStance
   m_EditorClassIdentifier: 
-  element: {fileID: 0}
+  element: {fileID: 11400000, guid: e0484cdc6e965724a84d904177103564, type: 2}

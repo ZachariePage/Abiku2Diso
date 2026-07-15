@@ -7,7 +7,7 @@ public class AbikuFireStance : AbikuStance
     private List<AbilityAction> actions = new List<AbilityAction>();
 
 
-    public AbikuFireStance(GridActor unit, StateMachine stateMachine, AbikuFireStanceSO config) : base(unit, stateMachine)
+    public AbikuFireStance(GridActor unit, IStateMachine stateMachine, AbikuFireStanceSO config) : base(unit, stateMachine)
     {
         this.config = config;
     }

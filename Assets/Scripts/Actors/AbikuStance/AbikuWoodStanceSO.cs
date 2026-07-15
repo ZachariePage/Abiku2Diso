@@ -6,12 +6,12 @@ using UnityEngine;
 public class AbikuWoodStanceSO : AbikuStanceScriptableObject
 {
     public ElementSO element;
-    public override State CreateState(GridActor actor, StateMachine stateMachine)
+    public override State CreateState(GridActor actor, IStateMachine stateMachine)
     {
         return null;
     }
 
-    public override AbikuStance CreateAbikuStanceState(GridActor actor, StateMachine stateMachine)
+    public override AbikuStance CreateAbikuStanceState(GridActor actor, IStateMachine stateMachine)
     {
         return new AbikuWoodStance(actor, stateMachine, this);
     }

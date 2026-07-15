@@ -19,23 +19,43 @@ public class AbikuStanceAbilityGroup
 }
 public abstract class AbikuStance : State
 {
-    protected List<AbilityAction> actions;
+    protected List<BattleAction> actions =  new List<BattleAction>();
     protected abstract AbikuStanceType GetStanceType();
+    private AbikuTrio abiku;
+    
+    private MoveAbikuAction moveAbiku;
+    private ChangeAbikuAction changeAbiku;
 
-    protected AbikuStance(GridActor unit, StateMachine stateMachine) : base(unit, stateMachine)
+    protected AbikuStance(GridActor unit, IStateMachine stateMachine) : base(unit, stateMachine)
     {
         if (unit is AbikuTrio trio)
         {
-            Egungun egungun = trio.GetEgungun();
-            foreach (var ability in egungun.GetAbilitiesForStance(GetStanceType()))
-            {
-                actions.Add(ability.CreateAction(unit));
-            }
+            abiku =  trio;
         }
         else
         {
             Debug.LogError("This should never happen stance not built on abikutrio");
+            return;
+        }
+          
+        moveAbiku = new MoveAbikuAction(abiku);
+        changeAbiku = new ChangeAbikuAction(abiku);
+        
+        actions.Add(moveAbiku);
+        actions.Add(changeAbiku);
+        
+        Egungun egungun = abiku.GetEgungun();
+        foreach (var ability in egungun.GetAbilitiesForStance(GetStanceType()))
+        {
+            actions.Add(ability.CreateAction(unit));
         }
 
+        
+        UnitSpawner.Instance.SpawnStanceMenu(this, abiku);
+    }
+
+    public IEnumerable<BattleAction> GetAbilities()
+    {
+        return actions;
     }
 }

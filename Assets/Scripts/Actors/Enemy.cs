@@ -6,7 +6,7 @@ using UnityEngine;
 public class Enemy : GridActor,  IDamageable
 {
     [Header("state machie")]
-    public StateMachine StateMachine;
+    public StateMachine<State> StateMachine;
 
     public StanceStateScriptableObject[] startingState;
     private List<State> states = new List<State>();
@@ -21,7 +21,7 @@ public class Enemy : GridActor,  IDamageable
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        StateMachine =  new StateMachine();
+        StateMachine = new StateMachine<State>();
         if (startingState.Length == 0)
         {
             Debug.LogError("THERE ARE NO STARTING STATE REEEEEEEEEEEEE");
@@ -63,12 +63,12 @@ public class Enemy : GridActor,  IDamageable
     {
         Debug.Log("i am take turn");
         
-        Debug.Log(StateMachine.CurrentEnemyState);
-        StateMachine.CurrentEnemyState.StartTurn();
+        Debug.Log(StateMachine.CurrentState);
+        StateMachine.CurrentState.StartTurn();
         
         yield return new WaitForSeconds(1f);
         
-        StateMachine.CurrentEnemyState.EndTurn();
+        StateMachine.CurrentState.EndTurn();
         
         Debug.Log("turn finished");
     }

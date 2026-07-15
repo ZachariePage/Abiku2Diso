@@ -41,7 +41,7 @@ public class ChangeAbikuAction : BattleAction, ICostGatedAction
             onComplete?.Invoke();
             yield return null;
         }
-        trio.ChangeAbiku();
+        trio.ChangeStance();
         
         onComplete?.Invoke();
         yield return null;

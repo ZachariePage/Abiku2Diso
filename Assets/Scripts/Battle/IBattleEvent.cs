@@ -19,5 +19,13 @@ public struct UnitKilledEvent : IBattleEvent
 public struct ActionTakenEvent : IBattleEvent
 {
     public GridActor Actor;
+    public ITargettable Target;
     public BattleAction Action;
+}
+
+public struct MoveEvent : IBattleEvent
+{
+    public GridActor Actor;
+    public GridCell from;
+    public GridCell to;
 }

@@ -6,7 +6,7 @@ public class FireState : State
     private AbilityAction action;
     private Enemy enemy;
     private ITargettable currentTarget;
-    public FireState(GridActor unit, StateMachine stateMachine, FireStateSO config) : base(unit, stateMachine)
+    public FireState(GridActor unit, IStateMachine stateMachine, FireStateSO config) : base(unit, stateMachine)
     {
         this.config = config;
         enemy = unit as Enemy;
@@ -21,8 +21,13 @@ public class FireState : State
         currentTarget = FindTarget();
         if (currentTarget != null)
         {
+            Debug.Log(currentTarget);
             action.AddTarget(currentTarget);
             currentTarget.AddHighlight(this, CellHighlightState.Targeted);
+        }
+        else
+        {
+            Debug.Log("No target found");
         }
     }
 
@@ -34,8 +39,16 @@ public class FireState : State
             enemy.turnBeforeExecutingAction--;
             return;
         }
+
+        if (currentTarget != null)
+        {
+            currentTarget.RemoveHighlight(this);
+        }
+        else
+        {
+            Debug.Log("No target found");
+        }
         
-        currentTarget.RemoveHighlight(this);
         enemy.ExecuteAction(action, OnActionFinished);
         enemy.ChangeStateThroughIncrementation();
     }

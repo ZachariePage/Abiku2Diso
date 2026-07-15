@@ -5,7 +5,7 @@ public class AbikuWaterStance : AbikuStance
     private AbikuWaterStanceSO config;
 
 
-    public AbikuWaterStance(GridActor unit, StateMachine stateMachine, AbikuWaterStanceSO config) : base(unit, stateMachine)
+    public AbikuWaterStance(GridActor unit, IStateMachine stateMachine, AbikuWaterStanceSO config) : base(unit, stateMachine)
     {
         this.config = config;
     }

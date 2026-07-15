@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EgungunBattleMenu : MonoBehaviour
+public class StanceBattleMenu : MonoBehaviour
 {
     public GameObject Panel;
     public GameObject buttonPrefab;
@@ -9,7 +9,7 @@ public class EgungunBattleMenu : MonoBehaviour
     private GameObject moveButton;
     private GameObject changeAbikuButton;
     
-    public Egungun egungun;
+    public AbikuStance stance;
     public AbikuTrio owningTrio;
     private List<AbilityButton> buttons = new List<AbilityButton>();
     void Start()
@@ -24,11 +24,25 @@ public class EgungunBattleMenu : MonoBehaviour
 
     private void CreateButtons()
     {
-
+        buttons.Clear();
+        int counter = 0;
+        
+        foreach (BattleAction abilityAction in stance.GetAbilities())
+        {
+            Vector3 position = Panel.transform.GetChild(counter).position;
+            GameObject obj = Instantiate(buttonPrefab, position, Quaternion.identity, Panel.transform);
+            AbilityButton abikuButton =  obj.GetComponent<AbilityButton>();
+            abikuButton.owningTrio = owningTrio;
+            obj.transform.position = Panel.transform.GetChild(counter).position;
+            abikuButton.action = abilityAction;
+            counter++;
+            buttons.Add(abikuButton);
+        }
     }
 
     void OpenUI()
     {
+        if(owningTrio.StanceStateMachine.CurrentState != stance) return;
         Panel.SetActive(true);
     }
 

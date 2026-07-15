@@ -1,9 +1,10 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class UnitSpawner : MonoBehaviour
 {
     public static UnitSpawner Instance { get; private set; }
-    public GameObject abikuMenuPrefab;
+    public GameObject stanceBattleMenu;
     
     private void Awake()
     {
@@ -37,9 +38,14 @@ public class UnitSpawner : MonoBehaviour
         cell.SetActorOnCell(unit);
         
         unit.Initialize();
-        
-        GameObject newCanvas = Instantiate(abikuMenuPrefab, newUnit.transform.position, Quaternion.identity,  newUnit.transform);
-        newCanvas.GetComponent<AbikuBattleMenu>().owningTrio = unit;
+    }
+
+    public void SpawnStanceMenu(AbikuStance stance, AbikuTrio unit)
+    {
+        GameObject newMenu = Instantiate(stanceBattleMenu, unit.GetWorldPosition(), Quaternion.identity);
+        StanceBattleMenu menu = newMenu.GetComponent<StanceBattleMenu>();
+        menu.owningTrio = unit;
+        menu.stance = stance;
     }
     
     public Enemy SpawnEnemy(GameObject prefab, GridCell cell)

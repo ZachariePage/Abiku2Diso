@@ -259,7 +259,7 @@ GameObject:
   - component: {fileID: 3845458655284154913}
   - component: {fileID: 5360088372636804938}
   m_Layer: 5
-  m_Name: EgungunBattleCanvas
+  m_Name: StanceBattleCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -330,7 +330,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &3845458655284154913
 MonoBehaviour:
   m_ObjectHideFlags: 0

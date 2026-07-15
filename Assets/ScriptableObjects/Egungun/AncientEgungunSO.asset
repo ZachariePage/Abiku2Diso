@@ -12,4 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c00460944caa7eb45a728915b3b4e94e, type: 3}
   m_Name: AncientEgungunSO
   m_EditorClassIdentifier: 
-  startingActions: []
+  stanceAbilities:
+  - stance: 1
+    abilities:
+    - {fileID: 11400000, guid: ddb22e354cb4d2141996c8c415609f7f, type: 2}
+  - stance: 2
+    abilities:
+    - {fileID: 11400000, guid: e627850097292114a8b3a4da9ddb7a68, type: 2}
+  - stance: 4
+    abilities:
+    - {fileID: 11400000, guid: e806ad999a33a9f40a760e10c8c7c46f, type: 2}

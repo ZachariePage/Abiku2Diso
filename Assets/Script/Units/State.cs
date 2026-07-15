@@ -3,9 +3,9 @@ using UnityEngine;
 public class State
 {
     protected GridActor unit;
-    protected StateMachine stateMachine;
+    protected IStateMachine stateMachine;
 
-    public State(GridActor unit, StateMachine stateMachine)
+    protected State(GridActor unit, IStateMachine stateMachine)
     {
         this.unit = unit;
         this.stateMachine = stateMachine;

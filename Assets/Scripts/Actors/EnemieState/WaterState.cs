@@ -6,7 +6,7 @@ public class WaterState : State
     private AbilityAction action;
     private Enemy enemy;
     
-    public WaterState(GridActor unit, StateMachine stateMachine, WaterStanceSO config) : base(unit, stateMachine)
+    public WaterState(GridActor unit, IStateMachine stateMachine, WaterStanceSO config) : base(unit, stateMachine)
     {
         this.config = config;
         enemy = unit as Enemy;
