@@ -6,11 +6,11 @@ public struct DamageInfo
     public GridActor Target;
     public AbilityAction abilityUsed;
     public float finalDamage;
-    public ElementSO elementUsed;
-    public ElementSO elementAgainst;
+    public Element elementUsed;
+    public Element elementAgainst;
     public bool encoreTriggered;
 
-    public DamageInfo(GridActor source, GridActor target, AbilityAction abilityUsed, float finalDamage, ElementSO elementUsed, ElementSO elementAgainst, bool encoreTriggered)
+    public DamageInfo(GridActor source, GridActor target, AbilityAction abilityUsed, float finalDamage, Element elementUsed, Element elementAgainst, bool encoreTriggered)
     {
         Source = source;
         Target = target;
@@ -23,5 +23,5 @@ public struct DamageInfo
 }
 public interface IDamageable
 {
-    public DamageInfo TakeDamage(GridActor source, AbilityAction abilityUsed, float damage, ElementSO element);
+    public DamageInfo TakeDamage(GridActor source, AbilityAction abilityUsed, float damage, Element element);
 }

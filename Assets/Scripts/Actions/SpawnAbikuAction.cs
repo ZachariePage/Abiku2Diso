@@ -14,6 +14,16 @@ public class SpawnAbikuAction : BattleAction
     }
 
 
+    public override BattlePhase AllowedPhase()
+    {
+        return BattlePhase.Preparation;
+    }
+
+    public override GridActor GetActorOwner()
+    {
+        return null;
+    }
+
     public override TargetMode TargetMode()
     {
         return global::TargetMode.Single;

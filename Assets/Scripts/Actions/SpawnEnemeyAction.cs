@@ -17,6 +17,16 @@ public class SpawnEnemeyAction : BattleAction
     {
         return global::TargetMode.Single;
     }
+    
+    public override BattlePhase AllowedPhase()
+    {
+        return BattlePhase.Preparation;
+    }
+
+    public override GridActor GetActorOwner()
+    {
+        return null;
+    }
 
     public override IEnumerable<ITargettable> GetValidTargets()
     {

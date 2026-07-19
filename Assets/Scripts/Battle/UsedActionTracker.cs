@@ -17,7 +17,8 @@ public interface ICostGatedAction
 public class UsedActionTracker
 { 
     private readonly HashSet<(object performer, BattleActionType type)> used = new();
-    
+    private readonly List<BattleActionType> usedType = new List<BattleActionType>();
+    private GridActor selectedAbiku = null;
     public bool HasUsed(object performer, BattleActionType type)
     {
         return used.Contains((performer, type));
@@ -33,8 +34,34 @@ public class UsedActionTracker
         used.Remove((performer, type));
     }
 
+    public bool HasUsedType(BattleActionType type)
+    {
+        return usedType.Contains(type);
+    }
+
+    public void MarkUsedType(BattleActionType type)
+    {
+        usedType.Add(type);
+    }
+
+    public void ClearUsedType(BattleActionType type)
+    {
+        usedType.Remove(type);
+    }
+
+    public GridActor GetSelectedActor()
+    {
+        return selectedAbiku;
+    }
+
+    public void SetSelectedActor(GridActor actor)
+    {
+        selectedAbiku = actor;
+    }
     public void ResetTurn()
     {
         used.Clear();
+        usedType.Clear();
+        selectedAbiku = null;
     }
 }

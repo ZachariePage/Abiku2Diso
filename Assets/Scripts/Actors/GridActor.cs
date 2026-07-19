@@ -74,4 +74,9 @@ public class GridActor : MonoBehaviour, ITargettable
     {
         return transform.position;
     }
+
+    public override string ToString()
+    {
+        return $"Actor({gameObject}, at {GetWorldPosition()} of type {GetType()})";
+    }
 }

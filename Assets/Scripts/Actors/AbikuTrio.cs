@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class AbikuTrio : GridActor,  IDamageable
+public class AbikuTrio : GridActor,  IDamageable, IHoldElement
 {
     [SerializeField] private TrioDefinition trioDefinition;
     // [SerializeField] private Abiku _currentAbiku;
@@ -19,12 +19,12 @@ public class AbikuTrio : GridActor,  IDamageable
     private List<AbikuStance> stances = new List<AbikuStance>();
     private int currentStateIndex = 0;
     
-    [Header("GameCues")]
-    public GameCue[] onHitCues;
-    
     //Unity Events
     public event Action onAbilityModify;
+    public event Action<DamageInfo> onDamageTaken;
     
+    //event cues
+    public event Action onDamageTakenCues;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -83,6 +83,11 @@ public class AbikuTrio : GridActor,  IDamageable
     public override void Select()
     {
         base.Select();
+        TurnStartEvent turnEvent = new TurnStartEvent
+        {
+            Actor = this
+        };
+        BattleStats.Instance.Broadcast(turnEvent);
     }
 
     public override void Deselect()
@@ -132,15 +137,13 @@ public class AbikuTrio : GridActor,  IDamageable
     }
     
 
-    public DamageInfo TakeDamage(GridActor source, AbilityAction abilityUsed, float damage, ElementSO element)
+    public DamageInfo TakeDamage(GridActor source, AbilityAction abilityUsed, float damage, Element element)
     {
         Debug.Log("take damage abiku");
-        foreach (var cue in onHitCues)
-        {
-            cue?.Execute(transform.position);
-        }
-        
-        return new DamageInfo(source, this, abilityUsed, damage, element, null, false);
+        DamageInfo info = new DamageInfo(source, this, abilityUsed, damage, element, Element.None, false);
+        onDamageTaken?.Invoke(info);
+        onDamageTakenCues?.Invoke();
+        return info;
     }
 
     public void DEBUGPRINTALLSTANCESABILITIES()
@@ -152,5 +155,10 @@ public class AbikuTrio : GridActor,  IDamageable
                 Debug.Log(ability);
             }
         }
+    }
+
+    public Element GetElement()
+    {
+        return Element.None;
     }
 }

@@ -48,15 +48,15 @@ public class VFXFactory : MonoBehaviour
         }
     }
 
-    public GameObject SpawnVFX(string name, Vector3 position, Quaternion rotation)
+    public GameObject SpawnPooledVFX(string name, Vector3 position, Quaternion rotation)
     {
         if (vfxDict.TryGetValue(name, out VFXEntry entry))
         {
-            GameObject instance = Instantiate(entry.prefab, position, rotation);
-
+            GameObject instance = ObjectPool.Instance.GetObjectWithName(name);
+            
             if (entry.autoDestroy)
             {
-                Destroy(instance, entry.destroyDelay);
+                ObjectPool.ReturnToPoolAfterDelay(instance, entry.destroyDelay);
             }
 
             return instance;
@@ -84,6 +84,7 @@ public class VFXFactory : MonoBehaviour
 
         return instance;
     }
+    
 
     public ParticleSystem SpawnParticleSystem(string name, Vector3 position, Quaternion rotation,  bool autoDestroy = false, float destroyDelay = 2f )
     {

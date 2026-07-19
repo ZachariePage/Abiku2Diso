@@ -23,6 +23,16 @@ public class AbilityAction : BattleAction, ICostGatedAction
         this.element = element;
     }
 
+    public override BattlePhase AllowedPhase()
+    {
+        return BattlePhase.Combat;
+    }
+
+    public override GridActor GetActorOwner()
+    {
+        return actor;
+    }
+
     public override TargetMode TargetMode()
     {
         return global::TargetMode.Multiple;
@@ -68,17 +78,16 @@ public class AbilityAction : BattleAction, ICostGatedAction
             return false;
         }
     }
-    
+
     // THIS SHOULD BE ADDED TO A DAMAGINGABILITY SUBCLASS OF ABILITYACTION ima do it later
     protected List<DamageInfo> DealDamageToTargets(IEnumerable<ITargettable> targets, int damage)
     {
         List<DamageInfo> results = new();
-
         foreach (var target in targets)
         {
             if (target is IDamageable damageable)
             {
-                results.Add(damageable.TakeDamage(actor, this, damage, element));
+                results.Add(damageable.TakeDamage(actor, this, damage, element.GetElementType()));
             }
             else if (target is GridCell cell)
             {
@@ -88,11 +97,10 @@ public class AbilityAction : BattleAction, ICostGatedAction
 
                 if (occupant.TryGetComponent<IDamageable>(out var dam))
                 {
-                    results.Add(dam.TakeDamage(actor, this, damage, element));
+                    results.Add(dam.TakeDamage(actor, this, damage, element.GetElementType()));
                 }
             }
         }
-
         CheckAndTriggerEncore(results);
 
         return results;

@@ -1,9 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using TMPro;
 using UnityEngine;
 
-public class Enemy : GridActor,  IDamageable
+public class Enemy : GridActor,  IDamageable, IHoldElement
 {
     [Header("state machie")]
     public StateMachine<State> StateMachine;
@@ -18,6 +20,19 @@ public class Enemy : GridActor,  IDamageable
     public int turnBeforeExecutingAction = -1;
     
     [SerializeField] private List<AbilityAction> abilityActions =  new List<AbilityAction>();
+    
+    //turn loop
+    private bool _turnFinishedFlag = false;
+    //evengts
+    public event Action<DamageInfo> onDamageTaken;
+    public event Action<DamageInfo> onStartTurn;
+    
+    //event cues
+    public event Action onDamageTakenCues;
+    public event Action onStartTurnCues;
+    
+    //debug
+    public GameCue DEBUGCASTINGTEXTCUE;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -46,6 +61,12 @@ public class Enemy : GridActor,  IDamageable
         
     }
     
+    public IEnumerator StartOfCombat()
+    {
+        StateMachine.ChangeState(states[0]);
+        yield return null;
+    }
+    
     public override void Highlight(CellHighlightState mode)
     {
         base.Highlight(mode);
@@ -62,34 +83,51 @@ public class Enemy : GridActor,  IDamageable
     public IEnumerator TakeTurn()
     {
         Debug.Log("i am take turn");
-        
-        Debug.Log(StateMachine.CurrentState);
+        _turnFinishedFlag = false;
         StateMachine.CurrentState.StartTurn();
+        onStartTurnCues?.Invoke();
         
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         
-        StateMachine.CurrentState.EndTurn();
-        
+        yield return new WaitUntil(() => _turnFinishedFlag);
         Debug.Log("turn finished");
+    }
+
+    public void EndTurn()
+    {
+        _turnFinishedFlag = true;
     }
 
     public void ExecuteAction(AbilityAction action, Action onActionFinished)
     {
+        ActionTakenEvent actionTakenEvent = new ActionTakenEvent
+        {
+            Action = action,
+            Actor = action.GetActorOwner(),
+            Targets = action.GetTargets().ToList(),
+        };
         StartCoroutine(action.Execute(onActionFinished));
     }
 
     public void ChangeStateThroughIncrementation()
     {
+        Debug.Log("change state through incrementation");
         currentStateIndex = (currentStateIndex + 1) % states.Count;
         StateMachine.ChangeState(states[currentStateIndex]);
     }
 
 
-    public DamageInfo TakeDamage(GridActor source, AbilityAction abilityUsed, float damage, ElementSO element)
+    //for now to see if encore is triggered will be here but in the future ill make a damage computation script
+    public DamageInfo TakeDamage(GridActor source, AbilityAction abilityUsed, float damage, Element element)
     {
         health -= damage;
-        Debug.Log(health);
-        return new DamageInfo();
+
+        bool encoreTriggered = ElementSystem.Instance.IsEffectiveAgainst(element, currentElement);
+        
+        DamageInfo info = new DamageInfo(source, this, abilityUsed, damage, element, currentElement, encoreTriggered);
+        onDamageTaken?.Invoke(info);
+        onDamageTakenCues?.Invoke();
+        return info;
     }
     
     //getter setter add
@@ -106,5 +144,19 @@ public class Enemy : GridActor,  IDamageable
     public Element getElement()
     {
         return currentElement;
+    }
+    
+    //debugs
+
+    public void SpawnText(string text)
+    {
+        GameObject obj = DEBUGCASTINGTEXTCUE?.Execute(transform.position);
+        TextMeshProUGUI textMesh = obj.GetComponentInChildren<TextMeshProUGUI>();
+        textMesh.text = text;
+    }
+
+    public Element GetElement()
+    {
+        return  currentElement;
     }
 }

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public interface IBattleEvent { }
@@ -19,13 +20,19 @@ public struct UnitKilledEvent : IBattleEvent
 public struct ActionTakenEvent : IBattleEvent
 {
     public GridActor Actor;
-    public ITargettable Target;
+    public List<ITargettable> Targets;
     public BattleAction Action;
 }
+
 
 public struct MoveEvent : IBattleEvent
 {
     public GridActor Actor;
     public GridCell from;
     public GridCell to;
+}
+
+public struct TurnStartEvent : IBattleEvent
+{
+    public GridActor Actor;
 }

@@ -14,6 +14,16 @@ public class MoveAbikuAction : BattleAction, ICostGatedAction
     }
 
 
+    public override BattlePhase AllowedPhase()
+    {
+        return BattlePhase.Combat;
+    }
+
+    public override GridActor GetActorOwner()
+    {
+        return abiku;
+    }
+
     public override TargetMode TargetMode()
     {
         return global::TargetMode.Single;

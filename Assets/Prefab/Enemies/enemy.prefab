@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6148657332523603360}
   - component: {fileID: -924839788587034882}
   - component: {fileID: -4421223613704775905}
+  - component: {fileID: -3206123425298548255}
   m_Layer: 7
   m_Name: enemy
   m_TagString: Untagged
@@ -152,3 +153,26 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8f253a6308301774fadc726279dbfca4, type: 2}
   turnBeforeExecutingAction: -1
   abilityActions: []
+  DEBUGCASTINGTEXTCUE: {fileID: 11400000, guid: b5dbbd6a6bcf1524c98cf77240e37bff, type: 2}
+--- !u!114 &-3206123425298548255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657769555342276678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b3f61019a788ea42ba88dc18673799f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Retroactions:
+  - target: {fileID: -4421223613704775905}
+    eventName: onDamageTakenCues
+    cues:
+    - {fileID: 11400000, guid: 524799e56acac1f4da811fd42f0b22c2, type: 2}
+  - target: {fileID: -4421223613704775905}
+    eventName: onStartTurnCues
+    cues:
+    - {fileID: 11400000, guid: b5dbbd6a6bcf1524c98cf77240e37bff, type: 2}
+    - {fileID: 11400000, guid: 524799e56acac1f4da811fd42f0b22c2, type: 2}

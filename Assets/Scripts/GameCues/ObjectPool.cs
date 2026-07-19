@@ -65,7 +65,7 @@ public class ObjectPool : MonoBehaviour, ISingleton
         }
     }
 
-    public GameObject CreatePooledObject(GameObject prefab, bool addToPool = true)
+    public GameObject CreatePooledObject(GameObject prefab, bool addToPool = true, int amount = 1)
     {
         GameObject instance = Instantiate(prefab, transform);
         instance.SetActive(false);
@@ -76,7 +76,7 @@ public class ObjectPool : MonoBehaviour, ISingleton
         {
             obj = instance,
             prefabType = prefab,
-            quantity = 1
+            quantity = amount
         };
 
         if (addToPool)

@@ -39,6 +39,7 @@ public class PlayerBattleStats : MonoBehaviour
     public void EncoreTriggered()
     {
         _currentActionPerTurn++;
+        BattleLoop.Instance.EncoreTriggered();
     }
 
     public void DecrementAction()

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2291501927389297039}
   - component: {fileID: -2668685069803064097}
   - component: {fileID: 4095468774231857251}
+  - component: {fileID: -8041642640067194577}
   m_Layer: 7
   m_Name: Gertrude
   m_TagString: Untagged
@@ -150,6 +151,20 @@ MonoBehaviour:
   trioDefinition: {fileID: 11400000, guid: 14c347bb4ca0a194792cc41c6308f3f2, type: 2}
   egungun:
     definition: {fileID: 11400000, guid: 53705aee0459b2f458b8e5a371743044, type: 2}
-  trioActions: []
-  onHitCues:
-  - {fileID: 11400000, guid: 524799e56acac1f4da811fd42f0b22c2, type: 2}
+--- !u!114 &-8041642640067194577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8183166823213532567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b3f61019a788ea42ba88dc18673799f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Retroactions:
+  - target: {fileID: 4095468774231857251}
+    eventName: onDamageTakenCues
+    cues:
+    - {fileID: 11400000, guid: 524799e56acac1f4da811fd42f0b22c2, type: 2}

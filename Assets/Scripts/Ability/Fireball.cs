@@ -5,9 +5,15 @@ using UnityEngine;
 
 public class Fireball : AbilityAction
 {
-    public Fireball(GridActor actor, int range, MovementDirections direction, TargetType targetAllowed, int numberOfTargets, ElementSO element)
+    
+    private List<GameCue> onAbilityThrownCues = new List<GameCue>();
+    public Fireball(GridActor actor, int range, MovementDirections direction, TargetType targetAllowed, int numberOfTargets, ElementSO element, GameCue[] AbilityThrownCues)
         : base(actor, range, direction, targetAllowed, numberOfTargets, element)
     {
+        foreach (var cue in AbilityThrownCues)
+        {
+            onAbilityThrownCues.Add(cue);
+        }
     }
 
     public override TargetMode TargetMode()
@@ -47,10 +53,14 @@ public class Fireball : AbilityAction
 
     public override IEnumerator Execute(Action onComplete)
     {
-        onComplete?.Invoke();
-        
+        foreach (GameCue cue in onAbilityThrownCues)
+        {
+            cue?.Execute(actor.GetWorldPosition());
+        }
+        yield return new WaitForSeconds(2f);
         DealDamageToTargets(selectedTargets, 10);
-        
+        yield return new WaitForSeconds(2f);
+        onComplete?.Invoke();
         yield return null;
     }
 
@@ -74,6 +84,7 @@ public class Fireball : AbilityAction
 
     public override bool AddTarget(ITargettable target)
     {
+        selectedTargets.Clear();
         selectedTargets.Add(target);
         return true;
     }

@@ -14,8 +14,35 @@ public enum Element
 
 public class ElementSystem : MonoBehaviour
 {
-    public bool IsEffectiveAgainst(ElementSO dealing, ElementSO defender)
+    public static ElementSystem Instance;
+    [System.Serializable]
+    private struct Matchup
     {
-        return (dealing.GetEffectiveAgainst() & defender.GetElementType()) != 0;
+        public Element element;
+        public Element effectiveAgainst;
+    }
+
+    [SerializeField] private Matchup[] matchups;
+    private Dictionary<Element, Element> _lookup;
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+        
+        _lookup = new Dictionary<Element, Element>();
+        foreach (var m in matchups)
+        {
+            _lookup[m.element] = m.effectiveAgainst;
+        }
+    }
+
+    public bool IsEffectiveAgainst(Element attacker, Element defender)
+    {
+        return _lookup.TryGetValue(attacker, out var mask) && (mask & defender) != 0;
     }
 }

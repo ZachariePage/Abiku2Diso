@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public enum BattleState
 {
+    PreparationPhase,
     Idle,
     PlayerSelectingTarget,   
     ExecutingAction,         
@@ -11,11 +14,22 @@ public enum BattleState
     BattleOver
 }
 
+[Flags]
+public enum BattlePhase
+{
+    None = 0,
+    Preparation = 1 << 0,
+    Combat = 1 << 1,
+    AITurn = 1 << 2,
+    All = ~0
+}
+
 public class BattleLoop : MonoBehaviour
 {
     public static BattleLoop Instance { get; private set; }
 
     public BattleState CurrentState { get; private set; }
+    public BattlePhase CurrentPhase { get; private set; }
     
     private BattleAction pendingAction;
     private HashSet<ITargettable> validTargets;
@@ -31,6 +45,11 @@ public class BattleLoop : MonoBehaviour
     private bool actionExecuting;
     
     Queue<Enemy> enemyTurnQueue = new Queue<Enemy>();
+    
+    private bool encoreTriggered = false;
+    
+    //events
+    public event Action onCombatStart;
 
     private void Awake()
     {
@@ -42,13 +61,25 @@ public class BattleLoop : MonoBehaviour
         Instance = this;
         
         _tracker = new UsedActionTracker();
+        
+        CurrentState = BattleState.PreparationPhase;
+        CurrentPhase = BattlePhase.Preparation;
     }
 
-
+    public IEnumerator StartCombat()
+    {
+        foreach (var enemy in enemyTurnQueue)
+        {
+            yield return StartCoroutine(enemy.StartOfCombat());
+        }
+        
+        onCombatStart?.Invoke();
+        StartPlayerTurn();
+    }
     public void OnTargetClicked(ITargettable target)
     {
-        if(CurrentState == BattleState.AITurn || CurrentState == BattleState.BattleOver) return;
-        
+        if(IsInputLocked()) return;
+
         if (actionExecuting)
             return;
         
@@ -90,12 +121,24 @@ public class BattleLoop : MonoBehaviour
             ClearSelectedTarget();
         }
     }
+    
+    private bool IsInputLocked()
+    {
+        return CurrentState == BattleState.BattleOver || CurrentState == BattleState.AITurn || actionExecuting;
+    }
 
     private void StartAction()
     {
         actionExecuting = true;
         BattleAction action = pendingAction;
-        
+
+        ActionTakenEvent actionTakenEvent = new ActionTakenEvent
+        {
+            Action = action,
+            Actor = action.GetActorOwner(),
+            Targets = action.GetTargets().ToList(),
+        };
+        BattleStats.Instance.Broadcast(actionTakenEvent);
         StartCoroutine(action.Execute(() => OnActionFinished(action)));
         
         CurrentState = BattleState.ExecutingAction;
@@ -105,8 +148,16 @@ public class BattleLoop : MonoBehaviour
     {
         if (action is ICostGatedAction gated)
         {
-            _tracker.MarkUsed(gated.Performer(), gated.GetActionType());
-            PlayerBattleStats.Instance.DecrementAction();
+            if (!encoreTriggered)
+            {
+                _tracker.MarkUsed(gated.Performer(), gated.GetActionType());
+                _tracker.SetSelectedActor(action.GetActorOwner());
+                PlayerBattleStats.Instance.DecrementAction();
+                encoreTriggered = false;
+            }
+            
+            encoreTriggered = false;
+            
             Debug.Log($"{gated.Performer()} finished using type {gated.GetActionType()}");
         }
         actionExecuting = false;
@@ -115,12 +166,6 @@ public class BattleLoop : MonoBehaviour
         ClearSelectedTarget();
 
         CurrentState = BattleState.Idle;
-        
-        if (PlayerBattleStats.Instance.GetCurrentActionPerTurn() <= 0)
-        {
-            Debug.Log("no more actions");
-            PassTurn();
-        }
     }
     
     public void ClearPendingAction()
@@ -138,6 +183,14 @@ public class BattleLoop : MonoBehaviour
     
     public void SetPendingAction(BattleAction action)
     {
+        if (!action.CanBeUsedNow(CurrentPhase))
+        {
+            Debug.Log($"{action} can't be used during {CurrentPhase}");
+            ClearPendingAction();
+            ClearSelectedTarget();
+            return;
+        }
+        
         if (action is ICostGatedAction gated)
         {
             if (_tracker.HasUsed(gated.Performer(), gated.GetActionType()))
@@ -147,11 +200,10 @@ public class BattleLoop : MonoBehaviour
                 ClearSelectedTarget();
                 return;
             }
-            if (PlayerBattleStats.Instance.GetCurrentActionPerTurn() <= gated.ManaCost())
+            Debug.Log($"{_tracker.GetSelectedActor()}");
+            if (_tracker.GetSelectedActor() != null && _tracker.GetSelectedActor() != action.GetActorOwner())
             {
-                Debug.Log($"no more mana");
-                ClearPendingAction();
-                ClearSelectedTarget();
+                Debug.Log($"{_tracker.GetSelectedActor()} has been selected, only they can act");
                 return;
             }
         }
@@ -201,6 +253,7 @@ public class BattleLoop : MonoBehaviour
     {
         Debug.Log("passing turn");
         CurrentState = BattleState.AITurn;
+        CurrentPhase  = BattlePhase.AITurn;
         ClearPendingAction();
         ClearSelectedTarget();
         
@@ -213,6 +266,11 @@ public class BattleLoop : MonoBehaviour
         Debug.Log("enemies turn are starting");
         foreach (var enemy in enemyTurnQueue)
         {
+            TurnStartEvent turnEvent = new TurnStartEvent
+            {
+                Actor = enemy
+            };
+            BattleStats.Instance.Broadcast(turnEvent);
             yield return StartCoroutine(enemy.TakeTurn());
         }
 
@@ -264,8 +322,20 @@ public class BattleLoop : MonoBehaviour
     {
         Debug.Log("starting player turn");
         CurrentState = BattleState.Idle;
+        CurrentPhase =  BattlePhase.Combat;
         PlayerBattleStats.Instance.ResetTurn();
         
         _tracker.ResetTurn();
+    }
+
+    public void EncoreTriggered()
+    {
+        _tracker.ResetTurn();
+        encoreTriggered = true;
+        Debug.Log("encore triggered");
+    }
+    public void DEBUGSTARTCOMBAT()
+    {
+        StartCoroutine(StartCombat());
     }
 }

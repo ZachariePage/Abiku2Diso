@@ -11,11 +11,13 @@ public class WaterState : State
         this.config = config;
         enemy = unit as Enemy;
         action = config.action.CreateAction(unit);
+        
     }
     
     public override void EnterState()
     {
         base.EnterState();
+        enemy.SetElement(config.element.GetElementType());
     }
 
     public override void StartTurn()

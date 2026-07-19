@@ -11,13 +11,15 @@ public class FireState : State
         this.config = config;
         enemy = unit as Enemy;
         action = config.action.CreateAction(unit);
+        
     }
     
     public override void EnterState()
     {
         base.EnterState();
-        enemy.turnBeforeExecutingAction = 2;
-        
+        Debug.Log(this);
+        enemy.turnBeforeExecutingAction = 1;
+        enemy.SetElement(config.element.GetElementType());
         currentTarget = FindTarget();
         if (currentTarget != null)
         {
@@ -37,6 +39,7 @@ public class FireState : State
         if (enemy.turnBeforeExecutingAction > 0)
         {
             enemy.turnBeforeExecutingAction--;
+            EndTurn();
             return;
         }
 
@@ -49,8 +52,8 @@ public class FireState : State
             Debug.Log("No target found");
         }
         
+        Debug.Log("execute action ");
         enemy.ExecuteAction(action, OnActionFinished);
-        enemy.ChangeStateThroughIncrementation();
     }
     
     ITargettable FindTarget()
@@ -72,12 +75,16 @@ public class FireState : State
 
     private void OnActionFinished()
     {
-
+        Debug.Log("Enemy fireState action finished");
+        enemy.ChangeStateThroughIncrementation();
+        EndTurn();
     }
 
     public override void EndTurn()
     {
+        Debug.Log("internal endturn");
         base.EndTurn();
+        enemy.EndTurn();
     }
 
     public override void ExitState()

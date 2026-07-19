@@ -9,9 +9,11 @@ public class FireballTemplateSO : AbilityTemplateSO
     public int range;
     public int numberOfTargets;
 
+    //cues
+    public GameCue[] onThrownCues;
 
     public override AbilityAction CreateAction(GridActor owner)
     {
-        return new Fireball(owner, range, targetingStrategy.allowedDirections, targetTypeStrategy.allowedTarget, numberOfTargets, element);
+        return new Fireball(owner, range, targetingStrategy.allowedDirections, targetTypeStrategy.allowedTarget, numberOfTargets, element, onThrownCues);
     }
 }

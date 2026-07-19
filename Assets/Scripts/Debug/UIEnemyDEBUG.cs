@@ -6,7 +6,7 @@ public class UIEnemyDEBUG : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        BattleLoop.Instance.onCombatStart += SelfDelete;
     }
 
     // Update is called once per frame
@@ -20,5 +20,10 @@ public class UIEnemyDEBUG : MonoBehaviour
         SpawnEnemeyAction action = new SpawnEnemeyAction(enemyPrefab);
             
         FindAnyObjectByType<BattleLoop>().SetPendingAction(action);
+    }
+
+    public void SelfDelete()
+    {
+        Destroy(gameObject);
     }
 }

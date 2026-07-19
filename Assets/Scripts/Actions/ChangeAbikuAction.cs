@@ -12,6 +12,16 @@ public class ChangeAbikuAction : BattleAction, ICostGatedAction
         this.owner = owner;
     }
 
+    public override BattlePhase AllowedPhase()
+    {
+        return BattlePhase.Combat;
+    }
+
+    public override GridActor GetActorOwner()
+    {
+        return owner;
+    }
+
     public override TargetMode TargetMode()
     {
         return global::TargetMode.Instant;

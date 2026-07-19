@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetingStrategy: {fileID: 11400000, guid: 986f89890974c32479d818e5b1a75b5b, type: 2}
   targetTypeStrategy: {fileID: 11400000, guid: 9084fc426a9ea0e40b23919f6e12ab4c, type: 2}
-  element: {fileID: 11400000, guid: c934ada44d0e2e741963a65f2a841a28, type: 2}
+  element: {fileID: 11400000, guid: 1e1623ebc7accd843898798877e1b378, type: 2}
   range: 2
   numberOfTargets: 1
+  onThrownCues:
+  - {fileID: 11400000, guid: 4c3d8616dd8f18943a5788fed60889d3, type: 2}
