@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d563c4300cd4d94d9f364d8959b7b70, type: 3}
   m_Name: AbikuFireStance
   m_EditorClassIdentifier: 
+  icon: {fileID: 8957324059118975939, guid: aead9bb1148a129409399b3ef37a5055, type: 3}
   element: {fileID: 11400000, guid: c934ada44d0e2e741963a65f2a841a28, type: 2}

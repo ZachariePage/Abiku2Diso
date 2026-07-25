@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a248f1af63770c40a56b40a39d4f6b5, type: 3}
   m_Name: DelayedAttack
   m_EditorClassIdentifier: 
+  DisplayName: 
   targetingStrategy: {fileID: 11400000, guid: 986f89890974c32479d818e5b1a75b5b, type: 2}
+  targetTypeStrategy: {fileID: 11400000, guid: c9b9d5b8872e7da4797620045967399e, type: 2}
   range: 4
   element: {fileID: 11400000, guid: c934ada44d0e2e741963a65f2a841a28, type: 2}

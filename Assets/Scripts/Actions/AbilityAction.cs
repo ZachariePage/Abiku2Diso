@@ -8,12 +8,13 @@ public class AbilityAction : BattleAction, ICostGatedAction
 {
     [SerializeField] protected GridActor actor;
     [SerializeField] protected int range;
-    [SerializeField] protected MovementDirections direction;
-    [SerializeField] protected TargetType targetAllowed;
+    [SerializeField] protected TargetingStrategySO direction;
+    [SerializeField] protected TargetTypeStrategySO targetAllowed;
     [SerializeField] protected int numberOfTargets;
     [SerializeField] protected ElementSO element;
+    ISpellCaster caster;
 
-    public AbilityAction(GridActor actor, int range, MovementDirections direction, TargetType targetAllowed, int numberOfTargets, ElementSO element)
+    public AbilityAction(ISpellCaster caster, GridActor actor, int range, TargetingStrategySO direction, TargetTypeStrategySO targetAllowed, int numberOfTargets, ElementSO element)
     {
         this.actor = actor;
         this.range = range;
@@ -21,6 +22,7 @@ public class AbilityAction : BattleAction, ICostGatedAction
         this.targetAllowed = targetAllowed;
         this.numberOfTargets = numberOfTargets;
         this.element = element;
+        this.caster = caster;
     }
 
     public override BattlePhase AllowedPhase()
@@ -40,9 +42,7 @@ public class AbilityAction : BattleAction, ICostGatedAction
 
     public override IEnumerable<ITargettable> GetValidTargets()
     {
-        List<GridActor> reachable = GridPathfinder.FindAllActorsWithinRange(actor.GetHoldingCell(), range, direction);
-
-        reachable.RemoveAll(actor => actor == null || actor.GetType() != typeof(AbikuTrio));
+        List<GridActor> reachable = GridPathfinder.FindAllActorsWithinRange(actor.GetHoldingCell(), range, direction.allowedDirections);
         
         return reachable;
     }
@@ -127,14 +127,24 @@ public class AbilityAction : BattleAction, ICostGatedAction
         return true;
     }
 
+    public override bool IsOnColdown()
+    {
+        return caster.IsOnColdown();
+    }
+
+    public override void PutOnColdown()
+    {
+        caster.PutAbilityOnColdown();
+    }
+
     protected void TriggerEncore()
     {
         PlayerBattleStats.Instance.EncoreTriggered();
     }
 
-    public int ManaCost()
+    public virtual int ManaCost()
     {
-        return 1;
+        return 0;
     }
 
     public object Performer()
@@ -145,5 +155,17 @@ public class AbilityAction : BattleAction, ICostGatedAction
     public BattleActionType GetActionType()
     {
         return BattleActionType.ability;
+    }
+    
+    public override bool ReadyToUse()
+    {
+        if (!CanBeUsedNow(BattleLoop.Instance.CurrentPhase) || caster.IsOnColdown())
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
     }
 }

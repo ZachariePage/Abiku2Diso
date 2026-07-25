@@ -13,4 +13,5 @@ public class TrioDefinition : ScriptableObject
     public int defence;
     
     public MovementDirections moveDirection;
+    public DirectionType directionType;
 }

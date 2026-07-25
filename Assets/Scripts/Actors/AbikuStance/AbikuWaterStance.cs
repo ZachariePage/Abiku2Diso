@@ -46,4 +46,9 @@ public class AbikuWaterStance : AbikuStance
     {
         return AbikuStanceType.Water;
     }
+
+    public override AbikuStanceScriptableObject GetStanceConfig()
+    {
+        return config;
+    }
 }

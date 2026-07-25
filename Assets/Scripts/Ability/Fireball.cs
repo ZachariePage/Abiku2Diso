@@ -7,8 +7,8 @@ public class Fireball : AbilityAction
 {
     
     private List<GameCue> onAbilityThrownCues = new List<GameCue>();
-    public Fireball(GridActor actor, int range, MovementDirections direction, TargetType targetAllowed, int numberOfTargets, ElementSO element, GameCue[] AbilityThrownCues)
-        : base(actor, range, direction, targetAllowed, numberOfTargets, element)
+    public Fireball(ISpellCaster caster, GridActor actor, int range, TargetingStrategySO direction, TargetTypeStrategySO targetAllowed, int numberOfTargets, ElementSO element, GameCue[] AbilityThrownCues)
+        : base(caster, actor, range, direction, targetAllowed, numberOfTargets, element)
     {
         foreach (var cue in AbilityThrownCues)
         {
@@ -23,7 +23,10 @@ public class Fireball : AbilityAction
 
     public override IEnumerable<ITargettable> GetValidTargets()
     {
-        List<GridCell> reachable = GridPathfinder.FindCellsWithinRange(actor.GetHoldingCell(), range, targetAllowed, direction, true);
+        //List<GridCell> reachable = GridPathfinder.FindCellsWithinRange(actor.GetHoldingCell(), range, targetAllowed, direction, true);
+        //List<GridCell> reachable = GridPathfinder.GetReachableCellsRay(actor.GetHoldingCell(), range, direction.allowedDirections, true);
+        IEnumerable<GridCell> reachable = direction.FindCellsWithinRange(actor.GetHoldingCell(), range, 
+            direction.allowedDirections, direction.directionType, targetAllowed.allowedTarget, true);
         List<ITargettable> validTargets = new List<ITargettable>();
         foreach (GridCell cell in reachable)
         {
@@ -41,8 +44,9 @@ public class Fireball : AbilityAction
     
     public override IEnumerable<GridCell> GetReachableCells()
     {
-        List<GridCell> reachable = GridPathfinder.GetReachableCells(actor.GetHoldingCell(), range, direction, true);
-        
+        //List<GridCell> reachable = GridPathfinder.GetReachableCells(actor.GetHoldingCell(), range, direction, true);
+        IEnumerable<GridCell> reachable = direction.GetReachableCells(actor.GetHoldingCell(), range, 
+            direction.allowedDirections, direction.directionType, true);
         return reachable;
     }
 

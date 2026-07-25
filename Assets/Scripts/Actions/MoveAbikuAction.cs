@@ -7,10 +7,12 @@ using UnityEngine;
 public class MoveAbikuAction : BattleAction, ICostGatedAction
 {
     private AbikuTrio abiku;
+    private ISpellCaster caster;
 
-    public MoveAbikuAction(AbikuTrio abiku)
+    public MoveAbikuAction(ISpellCaster caster, AbikuTrio abiku)
     {
         this.abiku = abiku;
+        this.caster = caster;
     }
 
 
@@ -32,14 +34,44 @@ public class MoveAbikuAction : BattleAction, ICostGatedAction
     public override IEnumerable<ITargettable> GetValidTargets()
     {
         TrioDefinition def = abiku.GetTrioDefinition();
-        List<GridCell> reachable = GridPathfinder.GetReachableCells(abiku.GetHoldingCell(), def.moveRange, def.moveDirection);
+        List<GridCell> reachable;
+
+        switch (def.directionType)
+        {
+            case DirectionType.normal:
+                reachable = GridPathfinder.GetReachableCells(abiku.GetHoldingCell(), def.moveRange, def.moveDirection);
+                break;
+
+            case DirectionType.ray:
+                reachable = GridPathfinder.GetReachableCellsRay(abiku.GetHoldingCell(), def.moveRange, def.moveDirection);
+                break;
+            default:
+                reachable = new List<GridCell>();
+                break;
+        }
+
         return reachable;
     }
 
     public override IEnumerable<GridCell> GetReachableCells()
     {
         TrioDefinition def = abiku.GetTrioDefinition();
-        List<GridCell> reachable = GridPathfinder.GetReachableCells(abiku.GetHoldingCell(), def.moveRange, def.moveDirection, true);
+        List<GridCell> reachable;
+
+        switch (def.directionType)
+        {
+            case DirectionType.normal:
+                reachable = GridPathfinder.GetReachableCells(abiku.GetHoldingCell(), def.moveRange, def.moveDirection, true);
+                break;
+
+            case DirectionType.ray:
+                reachable = GridPathfinder.GetReachableCellsRay(abiku.GetHoldingCell(), def.moveRange, def.moveDirection, true);
+                break;
+            default:
+                reachable = new List<GridCell>();
+                break;
+        }
+
         return reachable;
     }
 
@@ -83,6 +115,16 @@ public class MoveAbikuAction : BattleAction, ICostGatedAction
         return true;
     }
 
+    public override bool IsOnColdown()
+    {
+        return false;
+    }
+
+    public override void PutOnColdown()
+    {
+        caster.PutAbilityOnColdown();
+    }
+
     public int ManaCost()
     {
         return 0;
@@ -96,5 +138,10 @@ public class MoveAbikuAction : BattleAction, ICostGatedAction
     public BattleActionType GetActionType()
     {
         return BattleActionType.move;
+    }
+    
+    public override bool ReadyToUse()
+    {
+        return CanBeUsedNow(BattleLoop.Instance.CurrentPhase);
     }
 }

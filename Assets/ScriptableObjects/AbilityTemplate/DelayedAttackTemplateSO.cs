@@ -4,11 +4,12 @@ using UnityEngine;
 public class DelayedAttackTemplateSO : AbilityTemplateSO
 {
     public TargetingStrategySO targetingStrategy;
+    public TargetTypeStrategySO targetTypeStrategy;
     public int range;
     public ElementSO element;
 
-    public override AbilityAction CreateAction(GridActor owner)
+    public override AbilityAction CreateAction(ISpellCaster caster, GridActor owner)
     {
-        return new DelayedAttack(owner, range, targetingStrategy.allowedDirections,TargetType.EmptyCell, 0, element);
+        return new DelayedAttack(caster, owner, range, targetingStrategy,targetTypeStrategy, 0, element);
     }
 }

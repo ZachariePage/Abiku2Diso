@@ -27,7 +27,7 @@ public class UnitSpawner : MonoBehaviour
         
     }
     
-    public void SpawnTrioAbiku(TrioDefinition def, GridCell cell)
+    public AbikuTrio SpawnTrioAbiku(TrioDefinition def, GridCell cell)
     {
         GameObject newUnit = Instantiate(def.prefab, cell.WorldPosition, Quaternion.identity);
         AbikuTrio unit = newUnit.GetComponent<AbikuTrio>();
@@ -38,11 +38,13 @@ public class UnitSpawner : MonoBehaviour
         cell.SetActorOnCell(unit);
         
         unit.Initialize();
+
+        return unit;
     }
 
     public void SpawnStanceMenu(AbikuStance stance, AbikuTrio unit)
     {
-        GameObject newMenu = Instantiate(stanceBattleMenu, unit.GetWorldPosition(), Quaternion.identity);
+        GameObject newMenu = Instantiate(stanceBattleMenu, unit.GetWorldPosition(),Quaternion.identity ,unit.gameObject.transform);
         StanceBattleMenu menu = newMenu.GetComponent<StanceBattleMenu>();
         menu.owningTrio = unit;
         menu.stance = stance;

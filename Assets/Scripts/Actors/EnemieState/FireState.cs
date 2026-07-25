@@ -10,14 +10,13 @@ public class FireState : State
     {
         this.config = config;
         enemy = unit as Enemy;
-        action = config.action.CreateAction(unit);
+        action = config.action.CreateAction(enemy, unit);
         
     }
     
     public override void EnterState()
     {
         base.EnterState();
-        Debug.Log(this);
         enemy.turnBeforeExecutingAction = 1;
         enemy.SetElement(config.element.GetElementType());
         currentTarget = FindTarget();

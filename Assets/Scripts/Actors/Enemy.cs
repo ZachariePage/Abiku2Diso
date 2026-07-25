@@ -5,7 +5,7 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 
-public class Enemy : GridActor,  IDamageable, IHoldElement
+public class Enemy : GridActor,  IDamageable, IHoldElement, ISpellCaster
 {
     [Header("state machie")]
     public StateMachine<State> StateMachine;
@@ -158,5 +158,30 @@ public class Enemy : GridActor,  IDamageable, IHoldElement
     public Element GetElement()
     {
         return  currentElement;
+    }
+
+    public void PutAbilityOnColdown(BattleAction action)
+    {
+        
+    }
+
+    public void PutAbilityOnColdown()
+    {
+        return;
+    }
+
+    public void RefreshColdown()
+    {
+        return;
+    }
+
+    public bool IsOnColdown()
+    {
+        return false;
+    }
+
+    public bool CanThrowSpell()
+    {
+        return true;
     }
 }

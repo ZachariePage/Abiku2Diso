@@ -27,11 +27,13 @@ public enum TargetType
 [Serializable]
 public abstract class BattleAction
 {
+    protected bool coldown;
     protected List<ITargettable> selectedTargets = new();
 
     public abstract BattlePhase AllowedPhase();
 
     public abstract GridActor GetActorOwner();
+    
     public bool CanBeUsedNow(BattlePhase current) => (AllowedPhase() & current) != 0;
     public abstract TargetMode TargetMode();
     public abstract IEnumerable<ITargettable> GetValidTargets();
@@ -50,4 +52,10 @@ public abstract class BattleAction
     }
     
     public abstract bool AddTarget(ITargettable target);
+
+    public abstract bool IsOnColdown();
+    public abstract void PutOnColdown();
+
+    public abstract bool ReadyToUse();
+
 }

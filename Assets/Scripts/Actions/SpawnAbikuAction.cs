@@ -51,7 +51,8 @@ public class SpawnAbikuAction : BattleAction
     public override IEnumerator Execute(Action onComplete)
     {
         GridCell targetGridCell = selectedTargets[0] as GridCell;
-        UnitSpawner.Instance.SpawnTrioAbiku(_prefabToSpawn.GetTrioDefinition(), targetGridCell);
+        AbikuTrio unit = UnitSpawner.Instance.SpawnTrioAbiku(_prefabToSpawn.GetTrioDefinition(), targetGridCell);
+        BattleLoop.Instance.AddAbikuTrio(unit);
         onComplete?.Invoke();
         yield return null;
     }
@@ -83,5 +84,20 @@ public class SpawnAbikuAction : BattleAction
     {
         selectedTargets.Add(target);
         return true;
+    }
+
+    public override bool IsOnColdown()
+    {
+        return false;
+    }
+
+    public override void PutOnColdown()
+    {
+        
+    }
+
+    public override bool ReadyToUse()
+    {
+        return CanBeUsedNow(BattleLoop.Instance.CurrentPhase);
     }
 }

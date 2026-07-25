@@ -12,8 +12,8 @@ public class FireballTemplateSO : AbilityTemplateSO
     //cues
     public GameCue[] onThrownCues;
 
-    public override AbilityAction CreateAction(GridActor owner)
+    public override AbilityAction CreateAction(ISpellCaster caster, GridActor owner)
     {
-        return new Fireball(owner, range, targetingStrategy.allowedDirections, targetTypeStrategy.allowedTarget, numberOfTargets, element, onThrownCues);
+        return new Fireball(caster, owner, range, targetingStrategy, targetTypeStrategy, numberOfTargets, element, onThrownCues);
     }
 }

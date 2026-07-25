@@ -48,4 +48,9 @@ public class AbikuFireStance : AbikuStance
     {
         return AbikuStanceType.Fire;
     }
+
+    public override AbikuStanceScriptableObject GetStanceConfig()
+    {
+        return config;
+    }
 }

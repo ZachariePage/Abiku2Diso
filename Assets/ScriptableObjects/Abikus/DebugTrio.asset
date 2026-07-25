@@ -20,4 +20,4 @@ MonoBehaviour:
   HP: 10
   moveRange: 5
   defence: 5
-  moveDirection: -1
+  moveDirection: 15

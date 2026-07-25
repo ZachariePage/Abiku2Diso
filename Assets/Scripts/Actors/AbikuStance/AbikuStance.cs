@@ -17,7 +17,7 @@ public class AbikuStanceAbilityGroup
     public AbikuStanceType stance;
     public List<AbilityTemplateSO> abilities = new List<AbilityTemplateSO>();
 }
-public abstract class AbikuStance : State
+public abstract class AbikuStance : State, ISpellCaster
 {
     protected List<BattleAction> actions =  new List<BattleAction>();
     protected abstract AbikuStanceType GetStanceType();
@@ -26,11 +26,14 @@ public abstract class AbikuStance : State
     private MoveAbikuAction moveAbiku;
     private ChangeAbikuAction changeAbiku;
 
+    private UsedActionTracker _coldownTracker;
+    
+    private bool hasPlayedThisTurn = false;
     protected AbikuStance(GridActor unit, IStateMachine stateMachine) : base(unit, stateMachine)
     {
         if (unit is AbikuTrio trio)
         {
-            abiku =  trio;
+            abiku = trio;
         }
         else
         {
@@ -38,8 +41,8 @@ public abstract class AbikuStance : State
             return;
         }
           
-        moveAbiku = new MoveAbikuAction(abiku);
-        changeAbiku = new ChangeAbikuAction(abiku);
+        moveAbiku = new MoveAbikuAction(this, abiku);
+        changeAbiku = new ChangeAbikuAction(this, abiku);
         
         actions.Add(moveAbiku);
         actions.Add(changeAbiku);
@@ -47,9 +50,11 @@ public abstract class AbikuStance : State
         Egungun egungun = abiku.GetEgungun();
         foreach (var ability in egungun.GetAbilitiesForStance(GetStanceType()))
         {
-            actions.Add(ability.CreateAction(unit));
+            actions.Add(ability.CreateAction(this, unit));
         }
-
+        
+        //events 
+        abiku.onMyTurnStart += StartTurn;
         
         UnitSpawner.Instance.SpawnStanceMenu(this, abiku);
     }
@@ -57,5 +62,58 @@ public abstract class AbikuStance : State
     public IEnumerable<BattleAction> GetAbilities()
     {
         return actions;
+    }
+
+    public abstract AbikuStanceScriptableObject GetStanceConfig();
+
+    public void PutAbilityOnColdown()
+    {
+        hasPlayedThisTurn = true;
+    }
+
+    public void RefreshColdown()
+    {
+        hasPlayedThisTurn = false;
+    }
+
+    public bool IsOnColdown()
+    {
+        return hasPlayedThisTurn;
+    }
+
+    public bool CanThrowSpell()
+    {
+        return !abiku.IsOnLastStance();
+    }
+
+    public override void EnterState()
+    {
+        base.EnterState();
+    }
+
+    public override void StartTurn()
+    {
+        RefreshColdown();
+        base.StartTurn();
+    }
+
+    public override void EndTurn()
+    {
+        base.EndTurn();
+    }
+
+    public override void ExitState()
+    {
+        base.ExitState();
+    }
+
+    public override void FrameUpdate()
+    {
+        base.FrameUpdate();
+    }
+
+    public override void PhysicUpdate()
+    {
+        base.PhysicUpdate();
     }
 }

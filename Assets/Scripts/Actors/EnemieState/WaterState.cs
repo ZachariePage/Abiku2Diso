@@ -10,7 +10,7 @@ public class WaterState : State
     {
         this.config = config;
         enemy = unit as Enemy;
-        action = config.action.CreateAction(unit);
+        action = config.action.CreateAction(enemy, unit);
         
     }
     
@@ -50,14 +50,18 @@ public class WaterState : State
         return idealTarget;
     }
 
-    public override void EndTurn()
-    {
-        base.EndTurn();
-    }
-    
     private void OnActionFinished()
     {
+        Debug.Log("Enemy fireState action finished");
+        enemy.ChangeStateThroughIncrementation();
+        EndTurn();
+    }
 
+    public override void EndTurn()
+    {
+        Debug.Log("internal endturn");
+        base.EndTurn();
+        enemy.EndTurn();
     }
 
     public override void ExitState()

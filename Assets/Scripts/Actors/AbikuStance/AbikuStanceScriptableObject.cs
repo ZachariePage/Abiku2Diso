@@ -4,5 +4,6 @@ using UnityEngine;
 
 public abstract class AbikuStanceScriptableObject : StateScriptableObject
 {
+    public Sprite icon;
     public abstract AbikuStance CreateAbikuStanceState(GridActor actor, IStateMachine stateMachine);
 }

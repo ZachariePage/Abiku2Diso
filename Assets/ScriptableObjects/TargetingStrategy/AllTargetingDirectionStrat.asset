@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: AllTargetingDirectionStrat
   m_EditorClassIdentifier: 
   allowedDirections: -1
+  directionType: 0

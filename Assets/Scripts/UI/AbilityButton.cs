@@ -1,3 +1,5 @@
+using System;
+using TMPro;
 using UnityEngine;
 
 public class AbilityButton : MonoBehaviour
@@ -7,6 +9,15 @@ public class AbilityButton : MonoBehaviour
     
     public void OnClick()
     {
+        if (!action.ReadyToUse())
+        {
+            return;
+        }
         BattleLoop.Instance.SetPendingAction(action);
+    }
+
+    public void Init()
+    {
+        GetComponentInChildren<TextMeshProUGUI>().text = action.ToString();
     }
 }

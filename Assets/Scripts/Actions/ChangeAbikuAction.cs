@@ -6,10 +6,12 @@ using UnityEngine;
 public class ChangeAbikuAction : BattleAction, ICostGatedAction
 {
     private AbikuTrio owner;
+    private ISpellCaster caster;
 
-    public ChangeAbikuAction(AbikuTrio owner)
+    public ChangeAbikuAction(ISpellCaster caster, AbikuTrio owner)
     {
         this.owner = owner;
+        this.caster = caster;
     }
 
     public override BattlePhase AllowedPhase()
@@ -51,6 +53,11 @@ public class ChangeAbikuAction : BattleAction, ICostGatedAction
             onComplete?.Invoke();
             yield return null;
         }
+
+        if (caster.IsOnColdown())
+        {
+            BattleLoop.Instance.EncoreTriggered();
+        }
         trio.ChangeStance();
         
         onComplete?.Invoke();
@@ -91,6 +98,16 @@ public class ChangeAbikuAction : BattleAction, ICostGatedAction
         return true;
     }
 
+    public override bool IsOnColdown()
+    {
+        return false;
+    }
+
+    public override void PutOnColdown()
+    {
+        caster.PutAbilityOnColdown();
+    }
+
     public int ManaCost()
     {
         return 0;
@@ -103,6 +120,12 @@ public class ChangeAbikuAction : BattleAction, ICostGatedAction
 
     public BattleActionType GetActionType()
     {
-        return BattleActionType.ability;
+        return BattleActionType.changeStance;
+    }
+    
+    public override bool ReadyToUse()
+    {
+        if (!caster.CanThrowSpell()) return false;
+        return CanBeUsedNow(BattleLoop.Instance.CurrentPhase);
     }
 }

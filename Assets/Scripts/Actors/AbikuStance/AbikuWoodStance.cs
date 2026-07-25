@@ -46,4 +46,9 @@ public class AbikuWoodStance : AbikuStance
     {
         return AbikuStanceType.Wood;
     }
+
+    public override AbikuStanceScriptableObject GetStanceConfig()
+    {
+        return config;
+    }
 }

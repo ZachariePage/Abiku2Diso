@@ -9,8 +9,8 @@ public class DelayedAttack : AbilityAction
     protected GridCell targetedCell;
 
 
-    public DelayedAttack(GridActor actor, int range, MovementDirections direction, TargetType targetAllowed, int numberOfTargets, ElementSO element)
-        : base(actor, range, direction, targetAllowed, numberOfTargets, element)
+    public DelayedAttack(ISpellCaster caster, GridActor actor, int range, TargetingStrategySO direction, TargetTypeStrategySO targetAllowed, int numberOfTargets, ElementSO element)
+        : base(caster,actor, range, direction, targetAllowed, numberOfTargets, element)
     {
     }
 
@@ -21,14 +21,16 @@ public class DelayedAttack : AbilityAction
 
     public override IEnumerable<ITargettable> GetValidTargets()
     {
-        List<GridCell> reachable = GridPathfinder.FindCellsWithinRange(actor.GetHoldingCell(), range, targetAllowed, direction, true);
-        
+        //List<GridCell> reachable = GridPathfinder.FindCellsWithinRange(actor.GetHoldingCell(), range, targetAllowed.allowedTarget, direction.allowedDirections, true);
+        IEnumerable<GridCell> reachable = direction.FindCellsWithinRange(actor.GetHoldingCell(), range,
+            direction.allowedDirections, direction.directionType, targetAllowed.allowedTarget, true);
         return reachable;
     }
     
     public override IEnumerable<GridCell> GetReachableCells()
     {
-        List<GridCell> reachable = GridPathfinder.GetReachableCells(actor.GetHoldingCell(), range, direction, true);
+        IEnumerable<GridCell> reachable = direction.GetReachableCells(actor.GetHoldingCell(), range, 
+            direction.allowedDirections, direction.directionType, true);
         
         return reachable;
     }

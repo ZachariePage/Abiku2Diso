@@ -55,12 +55,12 @@ public class GridActor : MonoBehaviour, ITargettable
         
     }
 
-    public void AddHighlight(object source, CellHighlightState state)
+    public virtual void AddHighlight(object source, CellHighlightState state)
     {
         
     }
 
-    public void RemoveHighlight(object source)
+    public virtual void RemoveHighlight(object source)
     {
         
     }

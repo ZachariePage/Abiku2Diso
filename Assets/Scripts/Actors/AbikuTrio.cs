@@ -18,6 +18,7 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
     
     private List<AbikuStance> stances = new List<AbikuStance>();
     private int currentStateIndex = 0;
+    private int StateIndexOnTurnStart = 0;
     
     //Unity Events
     public event Action onAbilityModify;
@@ -25,6 +26,14 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
     
     //event cues
     public event Action onDamageTakenCues;
+    public event Action onChangeStance;
+
+    public event Action onMyTurnStart;
+    
+    private UsedActionTracker usedActionTracker;
+    
+    //renderer. Properly should put this in another script idk
+    [SerializeField] private SpriteRenderer spriteRenderer;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -41,6 +50,8 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
         }
         
         StanceStateMachine.Init(stances[0]);
+        
+        spriteRenderer =  GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -56,6 +67,12 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
             Debug.LogError("TrioDefinition is null");
             return;
         }
+    }
+
+    public void OnTurnStart()
+    {
+        StateIndexOnTurnStart = currentStateIndex;
+        onMyTurnStart?.Invoke();
     }
     
     public void MoveToCell(GridCell cell)
@@ -76,7 +93,9 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
     public void ChangeStance()
     {
         currentStateIndex++;
+        currentStateIndex = currentStateIndex % stances.Count;
         StanceStateMachine.ChangeState(stances[currentStateIndex]);
+        onChangeStance?.Invoke();
     }
     
     //interface
@@ -98,14 +117,30 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
     public override void Highlight(CellHighlightState mode)
     {
         base.Highlight(mode);
-        GetHoldingCell().AddHighlight(this,CellHighlightState.Targeted);
+        Debug.Log("MEOWINGTONG");
     }
 
     public override void UnHighlight()
     {
         base.UnHighlight();
-        GetHoldingCell().RemoveHighlight(this);
+        
     }
+
+    // for now this but later gotta add the source just like in the gridcell. But gridcell need a refactor cuz its disgusting
+    public override void AddHighlight(object source, CellHighlightState state)
+    {
+        base.AddHighlight(source, state);
+        GetHoldingCell().AddHighlight(this,CellHighlightState.Targeted);
+        spriteRenderer.material.SetFloat("_OutlineThickness", 60f);
+    }
+
+    public override void RemoveHighlight(object source)
+    {
+        base.RemoveHighlight(source);
+        GetHoldingCell().RemoveHighlight(this);
+        spriteRenderer.material.SetFloat("_OutlineThickness", 0f);
+    }
+
     //getter setter
 
     // public List<Abiku> GetAbikuses()
@@ -160,5 +195,11 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
     public Element GetElement()
     {
         return Element.None;
+    }
+
+    public bool IsOnLastStance()
+    {
+        int nextStance = (currentStateIndex + 1) % stances.Count;
+        return nextStance == StateIndexOnTurnStart;
     }
 }

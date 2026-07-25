@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,6 +20,31 @@ public class EgungunDefinition : ScriptableObject
         }
         
     }
+    
+    /*
+     this version allows for fire water bitflag so stance fire and water will collect ability under fire | water
+    private void BuildLookup()
+    {
+        if (lookup != null) return;
+        lookup = new Dictionary<AbikuStanceType, List<AbilityTemplateSO>>();
+
+        foreach (var group in stanceAbilities)
+        {
+            foreach (AbikuStanceType flag in Enum.GetValues(typeof(AbikuStanceType)))
+            {
+                if (flag == AbikuStanceType.None) continue;
+                if ((group.stance & flag) == 0) continue; 
+
+                if (!lookup.TryGetValue(flag, out var list))
+                {
+                    list = new List<AbilityTemplateSO>();
+                    lookup[flag] = list;
+                }
+                list.AddRange(group.abilities);
+            }
+        }
+    }
+    */
 
     public List<AbilityTemplateSO> GetAbilities(AbikuStanceType stance)
     {

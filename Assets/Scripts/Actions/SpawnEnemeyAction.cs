@@ -84,4 +84,19 @@ public class SpawnEnemeyAction : BattleAction
         selectedTargets.Add(target);
         return true;
     }
+
+    public override bool IsOnColdown()
+    {
+        return false;
+    }
+
+    public override void PutOnColdown()
+    {
+        
+    }
+
+    public override bool ReadyToUse()
+    {
+        return CanBeUsedNow(BattleLoop.Instance.CurrentPhase);
+    }
 }

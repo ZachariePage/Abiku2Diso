@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
+
 [Flags]
 public enum MovementDirections
 {
@@ -66,10 +68,148 @@ public static class GridPathfinder
 
         return reachable;
     }
-    
+
+    public static List<GridCell> GetReachableCellsRay(GridCell origin, int maxMove, MovementDirections allowed = MovementDirections.All, bool ignoreOccupancy = false)
+    {
+        var reachable = new HashSet<GridCell>();
+
+        int[] dx = {  0,  0,  1, -1,  1, -1,  1, -1 };
+        int[] dz = {  1, -1,  0,  0,  1,  1, -1, -1 };
+        MovementDirections[] flags =
+        {
+            MovementDirections.Forward,
+            MovementDirections.Backward,
+            MovementDirections.Right,
+            MovementDirections.Left,
+            MovementDirections.ForwardRight,
+            MovementDirections.ForwardLeft,
+            MovementDirections.BackwardRight,
+            MovementDirections.BackwardLeft,
+        };
+
+        for (int dir = 0; dir < flags.Length; dir++)
+        {
+            if ((allowed & flags[dir]) == 0) continue;
+            
+            for (int step = 1; step <= maxMove; step++)
+            {
+                int nx = origin.X + dx[dir] * step;
+                int nz = origin.Z + dz[dir] * step;
+
+                GridCell cell = TacticalGrid.Instance.GetCell(nx, nz);
+
+                if (cell == null) break;
+                if (!cell.IsWalkable) break;
+
+                if (ignoreOccupancy)
+                {
+                    reachable.Add(cell);
+                }
+                else
+                {
+                    if (!cell.IsEmpty())
+                    {
+                        break; 
+                    }
+                    reachable.Add(cell);
+                }
+            }
+        }
+
+        return new List<GridCell>(reachable);
+    }
+    public static List<GridActor> FindAllActorsWithinRangeRay(GridCell origin, int maxRange, MovementDirections allowed = MovementDirections.All, bool ignoreOccupancy = true)
+    {
+        var actors = new List<GridActor>();
+
+        int[] dx = {  0,  0,  1, -1,  1, -1,  1, -1 };
+        int[] dz = {  1, -1,  0,  0,  1,  1, -1, -1 };
+        MovementDirections[] flags =
+        {
+            MovementDirections.Forward,
+            MovementDirections.Backward,
+            MovementDirections.Right,
+            MovementDirections.Left,
+            MovementDirections.ForwardRight,
+            MovementDirections.ForwardLeft,
+            MovementDirections.BackwardRight,
+            MovementDirections.BackwardLeft,
+        };
+
+        for (int dir = 0; dir < flags.Length; dir++)
+        {
+            if ((allowed & flags[dir]) == 0) continue;
+
+            for (int step = 1; step <= maxRange; step++)
+            {
+                int nx = origin.X + dx[dir] * step;
+                int nz = origin.Z + dz[dir] * step;
+
+                GridCell cell = TacticalGrid.Instance.GetCell(nx, nz);
+
+                if (cell == null) break;
+                if (!cell.IsWalkable) break;
+
+                GridActor actor = cell.GetActorOnCell();
+
+                if (actor != null)
+                {
+                    actors.Add(actor);
+
+                    if (!ignoreOccupancy) break;
+                }
+            }
+        }
+
+        return actors;
+    }
+
+    public static List<GridCell> FindCellsWithinRangeRay(GridCell origin, int maxRange, TargetType targetTypes, MovementDirections allowed = MovementDirections.All, bool ignoreOccupancy = true)
+    {
+        var result = new List<GridCell>();
+
+        int[] dx = {  0,  0,  1, -1,  1, -1,  1, -1 };
+        int[] dz = {  1, -1,  0,  0,  1,  1, -1, -1 };
+        MovementDirections[] flags =
+        {
+            MovementDirections.Forward,
+            MovementDirections.Backward,
+            MovementDirections.Right,
+            MovementDirections.Left,
+            MovementDirections.ForwardRight,
+            MovementDirections.ForwardLeft,
+            MovementDirections.BackwardRight,
+            MovementDirections.BackwardLeft,
+        };
+
+        for (int dir = 0; dir < flags.Length; dir++)
+        {
+            if ((allowed & flags[dir]) == 0) continue;
+
+            for (int step = 1; step <= maxRange; step++)
+            {
+                int nx = origin.X + dx[dir] * step;
+                int nz = origin.Z + dz[dir] * step;
+
+                GridCell cell = TacticalGrid.Instance.GetCell(nx, nz);
+
+                if (cell == null) break;
+                if (!cell.IsWalkable) break;
+
+                if (MatchesTargetType(cell, targetTypes))
+                {
+                    result.Add(cell);
+                }
+
+                if (!ignoreOccupancy && !cell.IsEmpty()) break; 
+            }
+        }
+
+        return result;
+    }
     public static List<GridActor> FindAllActorsWithinRange(GridCell origin, int maxRange, MovementDirections allowed = MovementDirections.All, bool ignoreOccupancy = true)
     {
-        var actors  = new List<GridActor>();
+        var actors = new List<GridActor>();
         var visited = new Dictionary<GridCell, int>();
  
         var queue = new Queue<(GridCell cell, int movesLeft)>();
@@ -268,8 +408,7 @@ public static class GridPathfinder
 
         return path.Count <= maxMove;
     }
-
-    // Derives the direction from current to neighbour and checks against the allowed flags
+    
     private static bool IsAllowed(GridCell current, GridCell neighbour, MovementDirections allowed)
     {
         int dx = neighbour.X - current.X;

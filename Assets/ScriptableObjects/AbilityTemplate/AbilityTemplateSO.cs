@@ -2,5 +2,6 @@ using UnityEngine;
 
 public abstract class AbilityTemplateSO : ScriptableObject
 {
-    public abstract AbilityAction CreateAction(GridActor owner);
+    public string DisplayName;
+    public abstract AbilityAction CreateAction(ISpellCaster caster, GridActor owner);
 }

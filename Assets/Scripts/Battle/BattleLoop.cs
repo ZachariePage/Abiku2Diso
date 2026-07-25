@@ -9,7 +9,8 @@ public enum BattleState
     PreparationPhase,
     Idle,
     PlayerSelectingTarget,   
-    ExecutingAction,         
+    ExecutingAction,  
+    TurnOver,
     AITurn,
     BattleOver
 }
@@ -21,6 +22,7 @@ public enum BattlePhase
     Preparation = 1 << 0,
     Combat = 1 << 1,
     AITurn = 1 << 2,
+    TurnOver = 1 << 3,
     All = ~0
 }
 
@@ -44,12 +46,14 @@ public class BattleLoop : MonoBehaviour
     private UsedActionTracker _tracker;
     private bool actionExecuting;
     
-    Queue<Enemy> enemyTurnQueue = new Queue<Enemy>();
+    private Queue<Enemy> enemyTurnQueue = new Queue<Enemy>();
+    private List<AbikuTrio> abikuTrios = new List<AbikuTrio>();
     
     private bool encoreTriggered = false;
     
     //events
     public event Action onCombatStart;
+    public event Action onPlayerTurnStart;
 
     private void Awake()
     {
@@ -79,9 +83,9 @@ public class BattleLoop : MonoBehaviour
     public void OnTargetClicked(ITargettable target)
     {
         if(IsInputLocked()) return;
-
-        if (actionExecuting)
-            return;
+        //
+        // if (actionExecuting)
+        //     return;
         
         if (target == null)
         {
@@ -148,37 +152,24 @@ public class BattleLoop : MonoBehaviour
     {
         if (action is ICostGatedAction gated)
         {
-            if (!encoreTriggered)
+            PlayerBattleStats.Instance.DecrementAction();
+            
+            if (encoreTriggered)
             {
-                _tracker.MarkUsed(gated.Performer(), gated.GetActionType());
-                _tracker.SetSelectedActor(action.GetActorOwner());
-                PlayerBattleStats.Instance.DecrementAction();
-                encoreTriggered = false;
+                CurrentPhase = BattlePhase.Combat;
             }
-            
-            encoreTriggered = false;
-            
-            Debug.Log($"{gated.Performer()} finished using type {gated.GetActionType()}");
+            else
+            {
+                CurrentPhase = BattlePhase.TurnOver;
+            }
         }
+        
+        action.PutOnColdown();
+        encoreTriggered = false;
         actionExecuting = false;
-
+        
         ClearPendingAction();
         ClearSelectedTarget();
-
-        CurrentState = BattleState.Idle;
-    }
-    
-    public void ClearPendingAction()
-    {
-        pendingAction = null;
-        ClearActionHighlights();
-    }
-
-    public void ClearSelectedTarget()
-    {
-        if(selectedTarget == null) return;
-        selectedTarget.Deselect();
-        selectedTarget = null;
     }
     
     public void SetPendingAction(BattleAction action)
@@ -193,21 +184,9 @@ public class BattleLoop : MonoBehaviour
         
         if (action is ICostGatedAction gated)
         {
-            if (_tracker.HasUsed(gated.Performer(), gated.GetActionType()))
-            {
-                Debug.Log($"{gated.Performer()} has used type {gated.GetActionType()} already");
-                ClearPendingAction();
-                ClearSelectedTarget();
-                return;
-            }
-            Debug.Log($"{_tracker.GetSelectedActor()}");
-            if (_tracker.GetSelectedActor() != null && _tracker.GetSelectedActor() != action.GetActorOwner())
-            {
-                Debug.Log($"{_tracker.GetSelectedActor()} has been selected, only they can act");
-                return;
-            }
+            
         }
-        
+        ClearPendingAction();
         pendingAction = action;
         if (action.TargetMode() == TargetMode.Instant)
         {
@@ -246,6 +225,19 @@ public class BattleLoop : MonoBehaviour
         }
 
         actionHighlights.Clear();
+    }
+    
+    public void ClearPendingAction()
+    {
+        pendingAction = null;
+        ClearActionHighlights();
+    }
+
+    public void ClearSelectedTarget()
+    {
+        if(selectedTarget == null) return;
+        selectedTarget.Deselect();
+        selectedTarget = null;
     }
 
     //enemy turn
@@ -318,19 +310,35 @@ public class BattleLoop : MonoBehaviour
         enemyTurnQueue.Enqueue(newEnemy);
     }
 
+    public void AddAbikuTrio(AbikuTrio newAbikuTrio)
+    {
+        if (newAbikuTrio == null)
+        {
+            Debug.LogError("new abiku is null wtf");
+            return;
+        }
+        abikuTrios.Add(newAbikuTrio);
+    }
+
     public void StartPlayerTurn()
     {
         Debug.Log("starting player turn");
         CurrentState = BattleState.Idle;
         CurrentPhase =  BattlePhase.Combat;
         PlayerBattleStats.Instance.ResetTurn();
+
+        foreach (var abiku in abikuTrios)
+        {
+            abiku.OnTurnStart();
+        }
+        
+        onPlayerTurnStart?.Invoke();
         
         _tracker.ResetTurn();
     }
 
     public void EncoreTriggered()
     {
-        _tracker.ResetTurn();
         encoreTriggered = true;
         Debug.Log("encore triggered");
     }

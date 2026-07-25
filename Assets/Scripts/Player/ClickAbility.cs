@@ -57,7 +57,6 @@ public class ClickAbility : MonoBehaviour
         }
         
         GridCell cell = TacticalGrid.Instance.GetCellFromWorldPosition(mouseWorld);
-        Debug.Log(cell);
         if (cell != null)
         {
             BattleLoop.Instance.OnTargetClicked(cell);
