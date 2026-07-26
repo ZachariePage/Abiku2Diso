@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60dd8970c2d202b47a5d8f71fc77b2cc, type: 3}
   m_Name: waterStateSO
   m_EditorClassIdentifier: 
+  icon: {fileID: -1621973277568350867, guid: cba6bfa574e06974eaa854fc13776b42, type: 3}
   action: {fileID: 11400000, guid: a2a70a0d61635c745bc6e2712babfefd, type: 2}
   element: {fileID: 11400000, guid: 1e1623ebc7accd843898798877e1b378, type: 2}

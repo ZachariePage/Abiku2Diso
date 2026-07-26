@@ -3019,7 +3019,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'PassTurn
+  m_text: 'StartCombat
 
 '
   m_isRightToLeft: 0

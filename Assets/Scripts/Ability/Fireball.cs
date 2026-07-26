@@ -3,17 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fireball : AbilityAction
+public class Fireball : DamagingAbility
 {
-    
     private List<GameCue> onAbilityThrownCues = new List<GameCue>();
-    public Fireball(ISpellCaster caster, GridActor actor, int range, TargetingStrategySO direction, TargetTypeStrategySO targetAllowed, int numberOfTargets, ElementSO element, GameCue[] AbilityThrownCues)
+    private DelayedActionEffect delayedEffect;
+    private int delayingTurnTime;
+    public Fireball(ISpellCaster caster, GridActor actor, int range, TargetingStrategySO direction, TargetTypeStrategySO
+        targetAllowed, int numberOfTargets, ElementSO element, int turnDelay, GameCue[] AbilityThrownCues)
         : base(caster, actor, range, direction, targetAllowed, numberOfTargets, element)
     {
         foreach (var cue in AbilityThrownCues)
         {
             onAbilityThrownCues.Add(cue);
         }
+        delayingTurnTime = turnDelay;
     }
 
     public override TargetMode TargetMode()
@@ -57,15 +60,38 @@ public class Fireball : AbilityAction
 
     public override IEnumerator Execute(Action onComplete)
     {
+        selectedTargets[0].AddHighlight(this, CellHighlightState.Targeted);
+        
+        if (delayingTurnTime > 0)
+        {
+            delayedEffect = new DelayedActionEffect(delayingTurnTime);
+            delayedEffect.onEventCompletion += ResolveDamage;
+            actor.AddBattleEndOfTurnEffect(delayedEffect);
+            GetCaster().SetCastingSpell(true, GetCastingSpellColdownType());
+        }
+        else
+        {
+            ResolveDamage();
+        }
+        
+        onComplete?.Invoke();
+        yield break;
+    }
+
+    private void ResolveDamage()
+    {
         foreach (GameCue cue in onAbilityThrownCues)
         {
             cue?.Execute(actor.GetWorldPosition());
         }
-        yield return new WaitForSeconds(2f);
+        
         DealDamageToTargets(selectedTargets, 10);
-        yield return new WaitForSeconds(2f);
-        onComplete?.Invoke();
-        yield return null;
+        
+        GetCaster().SetCastingSpell(false, GetCastingSpellColdownType());
+        GetCaster().OnAbilityThrownEnd();
+        
+        selectedTargets[0].RemoveHighlight(this);
+        delayedEffect = null;
     }
 
     public override CellHighlightState GetHighlightState()

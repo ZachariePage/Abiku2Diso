@@ -2,7 +2,9 @@ using UnityEngine;
 
 public class UIEnemyDEBUG : MonoBehaviour
 {
-    public GameObject enemyPrefab;
+    public GameObject[] enemyPrefabs;
+
+    private int index = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,6 +19,10 @@ public class UIEnemyDEBUG : MonoBehaviour
     
     public void Execute()
     {
+        index = index % enemyPrefabs.Length;
+        GameObject enemyPrefab = enemyPrefabs[index];
+        index++;
+        
         SpawnEnemeyAction action = new SpawnEnemeyAction(enemyPrefab);
             
         FindAnyObjectByType<BattleLoop>().SetPendingAction(action);

@@ -4,18 +4,21 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class Enemy : GridActor,  IDamageable, IHoldElement, ISpellCaster
 {
     [Header("state machie")]
-    public StateMachine<State> StateMachine;
+    public StateMachine<EnemyStance> StateMachine;
 
-    public StanceStateScriptableObject[] startingState;
-    private List<State> states = new List<State>();
+    public EnemyStanceScriptableObject[] startingState;
+    private List<EnemyStance> states = new List<EnemyStance>();
     private int currentStateIndex = 0;
     
     private float health;
     private Element currentElement;
+    
+    private bool currentlyCasting = false;
 
     public int turnBeforeExecutingAction = -1;
     
@@ -26,6 +29,8 @@ public class Enemy : GridActor,  IDamageable, IHoldElement, ISpellCaster
     //evengts
     public event Action<DamageInfo> onDamageTaken;
     public event Action<DamageInfo> onStartTurn;
+
+    public event Action onStanceChange;
     
     //event cues
     public event Action onDamageTakenCues;
@@ -36,18 +41,19 @@ public class Enemy : GridActor,  IDamageable, IHoldElement, ISpellCaster
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        StateMachine = new StateMachine<State>();
+        StateMachine = new StateMachine<EnemyStance>();
         if (startingState.Length == 0)
         {
             Debug.LogError("THERE ARE NO STARTING STATE REEEEEEEEEEEEE");
         }
         foreach (var stateSO in startingState)
         {
-            State state = stateSO.CreateState(this, StateMachine);
+            EnemyStance state = stateSO.CreateEnemyState(this, StateMachine);
             states.Add(state);
         }
         
         StateMachine.Init(states[0]);
+        onStanceChange?.Invoke();
     }
 
     // Update is called once per frame
@@ -64,6 +70,7 @@ public class Enemy : GridActor,  IDamageable, IHoldElement, ISpellCaster
     public IEnumerator StartOfCombat()
     {
         StateMachine.ChangeState(states[0]);
+        
         yield return null;
     }
     
@@ -82,15 +89,20 @@ public class Enemy : GridActor,  IDamageable, IHoldElement, ISpellCaster
     
     public IEnumerator TakeTurn()
     {
-        Debug.Log("i am take turn");
+        StartCoroutine(ActivateStartOfTurnEffect());
+        
+        //here probably check if still alive after effect
         _turnFinishedFlag = false;
+        
         StateMachine.CurrentState.StartTurn();
+        
         onStartTurnCues?.Invoke();
         
         yield return new WaitForSeconds(2f);
         
         yield return new WaitUntil(() => _turnFinishedFlag);
-        Debug.Log("turn finished");
+        
+        StartCoroutine(ActivateEndOfTurnEffect());
     }
 
     public void EndTurn()
@@ -114,6 +126,7 @@ public class Enemy : GridActor,  IDamageable, IHoldElement, ISpellCaster
         Debug.Log("change state through incrementation");
         currentStateIndex = (currentStateIndex + 1) % states.Count;
         StateMachine.ChangeState(states[currentStateIndex]);
+        onStanceChange?.Invoke();
     }
 
 
@@ -183,5 +196,30 @@ public class Enemy : GridActor,  IDamageable, IHoldElement, ISpellCaster
     public bool CanThrowSpell()
     {
         return true;
+    }
+
+    public bool IsCastingSpell()
+    {
+        return currentlyCasting;
+    }
+
+    public void SetCastingSpell(bool value, CastingSpellColdownType type)
+    {
+        switch (type)
+        {
+            case CastingSpellColdownType.enemy:
+                currentlyCasting = value;
+                break;
+            case CastingSpellColdownType.player:
+                break;
+            case CastingSpellColdownType.both:
+                currentlyCasting = value;
+                break;
+        }
+    }
+
+    public void OnAbilityThrownEnd()
+    {
+        ChangeStateThroughIncrementation();
     }
 }

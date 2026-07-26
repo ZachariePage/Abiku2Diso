@@ -7,16 +7,20 @@ public class DelayedAttack : AbilityAction
 {
     private DelayedExplosionEffect attack;
     protected GridCell targetedCell;
+    private int startingTurnDelay;
+    private int safetyTurnDelay;
+    private bool attackFinished = false;
 
-
-    public DelayedAttack(ISpellCaster caster, GridActor actor, int range, TargetingStrategySO direction, TargetTypeStrategySO targetAllowed, int numberOfTargets, ElementSO element)
+    public DelayedAttack(ISpellCaster caster, GridActor actor, int range, TargetingStrategySO direction, TargetTypeStrategySO targetAllowed, int numberOfTargets, ElementSO element, int numberOfTurnDelay)
         : base(caster,actor, range, direction, targetAllowed, numberOfTargets, element)
     {
+        startingTurnDelay = numberOfTurnDelay;
+        safetyTurnDelay = numberOfTurnDelay + 1;
     }
 
     public override TargetMode TargetMode()
     {
-        return global::TargetMode.Multiple;
+        return global::TargetMode.Single;
     }
 
     public override IEnumerable<ITargettable> GetValidTargets()
@@ -42,9 +46,12 @@ public class DelayedAttack : AbilityAction
 
     public override IEnumerator Execute(Action onComplete)
     {
+        attack = new DelayedExplosionEffect(targetedCell, startingTurnDelay, 2, 3, MovementDirections.Cardinals, element);
+        GetCaster().SetCastingSpell(true, GetCastingSpellColdownType());
+        attack.onEventCompletion += InternalCompletion;
+
         onComplete?.Invoke();
-        attack = new DelayedExplosionEffect(targetedCell, 3, 2, 3, MovementDirections.Cardinals, element);
-        yield return null;
+        yield break;
     }
 
     public override CellHighlightState GetHighlightState()
@@ -70,5 +77,20 @@ public class DelayedAttack : AbilityAction
         selectedTargets.Add(target);
         targetedCell = target as GridCell;
         return true;
+    }
+
+    private void InternalCompletion()
+    {
+        GetCaster().SetCastingSpell(false, GetCastingSpellColdownType());
+        GetCaster().OnAbilityThrownEnd();
+        attackFinished = true;
+    }
+    private void ResetAttack()
+    {
+        attack = null;
+        safetyTurnDelay = startingTurnDelay;
+        attackFinished = false;
+        targetedCell = null;
+        selectedTargets.Clear();
     }
 }

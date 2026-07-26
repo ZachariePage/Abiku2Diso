@@ -1,30 +1,30 @@
 using UnityEngine;
 
-public class FireState : State
+public class FireState : EnemyStance
 {
     private FireStateSO config;
     private AbilityAction action;
-    private Enemy enemy;
     private ITargettable currentTarget;
     public FireState(GridActor unit, IStateMachine stateMachine, FireStateSO config) : base(unit, stateMachine)
     {
         this.config = config;
-        enemy = unit as Enemy;
         action = config.action.CreateAction(enemy, unit);
-        
     }
-    
+
+    protected override void PerformAction()
+    {
+        enemy.ExecuteAction(action, OnActionFinished);
+    }
+
     public override void EnterState()
     {
         base.EnterState();
-        enemy.turnBeforeExecutingAction = 1;
         enemy.SetElement(config.element.GetElementType());
         currentTarget = FindTarget();
         if (currentTarget != null)
         {
             Debug.Log(currentTarget);
             action.AddTarget(currentTarget);
-            currentTarget.AddHighlight(this, CellHighlightState.Targeted);
         }
         else
         {
@@ -35,24 +35,6 @@ public class FireState : State
     public override void StartTurn()
     {
         base.StartTurn();
-        if (enemy.turnBeforeExecutingAction > 0)
-        {
-            enemy.turnBeforeExecutingAction--;
-            EndTurn();
-            return;
-        }
-
-        if (currentTarget != null)
-        {
-            currentTarget.RemoveHighlight(this);
-        }
-        else
-        {
-            Debug.Log("No target found");
-        }
-        
-        Debug.Log("execute action ");
-        enemy.ExecuteAction(action, OnActionFinished);
     }
     
     ITargettable FindTarget()
@@ -74,14 +56,11 @@ public class FireState : State
 
     private void OnActionFinished()
     {
-        Debug.Log("Enemy fireState action finished");
-        enemy.ChangeStateThroughIncrementation();
         EndTurn();
     }
 
     public override void EndTurn()
     {
-        Debug.Log("internal endturn");
         base.EndTurn();
         enemy.EndTurn();
     }
@@ -100,5 +79,9 @@ public class FireState : State
     {
         base.PhysicUpdate();
     }
-    
+
+    public override EnemyStanceScriptableObject GetStanceConfig()
+    {
+        return config;
+    }
 }

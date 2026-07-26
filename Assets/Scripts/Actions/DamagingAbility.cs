@@ -1,0 +1,46 @@
+using System.Collections.Generic;
+using UnityEngine;
+
+public abstract class DamagingAbility : AbilityAction
+{
+    protected DamagingAbility(ISpellCaster caster, GridActor actor, int range, TargetingStrategySO direction, TargetTypeStrategySO targetAllowed, int numberOfTargets, ElementSO element) : base(caster, actor, range, direction, targetAllowed, numberOfTargets, element)
+    {
+    }
+
+    protected List<DamageInfo> DealDamageToTargets(IEnumerable<ITargettable> targets, int damage)
+    {
+        List<DamageInfo> results = new();
+        foreach (var target in targets)
+        {
+            Debug.Log(target);
+            if (target is IDamageable damageable)
+            {
+                DamageInfo info = damageable.TakeDamage(actor, null, damage, element.GetElementType());
+                if(info.Target == null) continue;
+                results.Add(info);
+            }
+        }
+        CheckAndTriggerEncore(results);
+
+        return results;
+    }
+    
+    protected void CheckAndTriggerEncore(IEnumerable<DamageInfo> damageInfos)
+    {
+        foreach (DamageInfo damageInfo in damageInfos)
+        {
+            if (damageInfo.Target is AbikuTrio)
+                continue;
+            if (damageInfo.encoreTriggered)
+            {
+                TriggerEncore();
+                return;
+            }
+        }
+    }
+    
+    protected void TriggerEncore()
+    {
+        PlayerBattleStats.Instance.EncoreTriggered();
+    }
+}

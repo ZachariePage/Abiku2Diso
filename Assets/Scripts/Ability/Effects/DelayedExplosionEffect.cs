@@ -1,17 +1,20 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
 
-public class DelayedExplosionEffect : BattleEffect
+public class DelayedExplosionEffect : DamagingBattleEffect
 {
     private readonly List<GridCell> _cells =  new List<GridCell>();
     private GridCell _targetCell;
-    private int _turnsRemaining = 2;
+    private int _turnsRemaining;
     private int _damage;
     private int _range;
     private MovementDirections _direction;
     private ElementSO _element;
+
+    public event Action onEventCompletion;
 
     public DelayedExplosionEffect(GridCell targetCell, int turnsRemaining, int damage, int range, MovementDirections direction, ElementSO element)
     {
@@ -35,8 +38,9 @@ public class DelayedExplosionEffect : BattleEffect
         {
             
         }
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1f); 
         
+        onEventCompletion?.Invoke();
         Cleanup();
         isFinished = true;
         

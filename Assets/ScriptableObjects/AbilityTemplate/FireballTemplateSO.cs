@@ -8,12 +8,13 @@ public class FireballTemplateSO : AbilityTemplateSO
     public ElementSO element;
     public int range;
     public int numberOfTargets;
+    public int turnDelay = 2;
 
     //cues
     public GameCue[] onThrownCues;
 
     public override AbilityAction CreateAction(ISpellCaster caster, GridActor owner)
     {
-        return new Fireball(caster, owner, range, targetingStrategy, targetTypeStrategy, numberOfTargets, element, onThrownCues);
+        return new Fireball(caster, owner, range, targetingStrategy, targetTypeStrategy, numberOfTargets, element,turnDelay, onThrownCues);
     }
 }

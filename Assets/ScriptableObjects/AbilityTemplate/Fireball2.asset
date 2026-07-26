@@ -18,5 +18,6 @@ MonoBehaviour:
   element: {fileID: 11400000, guid: c934ada44d0e2e741963a65f2a841a28, type: 2}
   range: 4
   numberOfTargets: 1
+  turnDelay: 0
   onThrownCues:
   - {fileID: 11400000, guid: 4c3d8616dd8f18943a5788fed60889d3, type: 2}

@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14643715bf6310d4ea45cdb0bc5feb99, type: 3}
   m_Name: FireStateSO
   m_EditorClassIdentifier: 
+  icon: {fileID: 8957324059118975939, guid: aead9bb1148a129409399b3ef37a5055, type: 3}
   action: {fileID: 11400000, guid: 14db6c5818d276b4ba2f8c9b5bc2ee02, type: 2}
   element: {fileID: 11400000, guid: c934ada44d0e2e741963a65f2a841a28, type: 2}

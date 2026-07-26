@@ -79,48 +79,6 @@ public class AbilityAction : BattleAction, ICostGatedAction
         }
     }
 
-    // THIS SHOULD BE ADDED TO A DAMAGINGABILITY SUBCLASS OF ABILITYACTION ima do it later
-    protected List<DamageInfo> DealDamageToTargets(IEnumerable<ITargettable> targets, int damage)
-    {
-        List<DamageInfo> results = new();
-        foreach (var target in targets)
-        {
-            if (target is IDamageable damageable)
-            {
-                results.Add(damageable.TakeDamage(actor, this, damage, element.GetElementType()));
-            }
-            else if (target is GridCell cell)
-            {
-                GridActor occupant = cell.GetActorOnCell();
-                if (occupant == null)
-                    continue;
-
-                if (occupant.TryGetComponent<IDamageable>(out var dam))
-                {
-                    results.Add(dam.TakeDamage(actor, this, damage, element.GetElementType()));
-                }
-            }
-        }
-        CheckAndTriggerEncore(results);
-
-        return results;
-    }
-    
-    protected void CheckAndTriggerEncore(IEnumerable<DamageInfo> damageInfos)
-    {
-        foreach (DamageInfo damageInfo in damageInfos)
-        {
-            if (damageInfo.Target is AbikuTrio)
-                continue;
-
-            if (damageInfo.encoreTriggered)
-            {
-                TriggerEncore();
-                return;
-            }
-        }
-    }
-    // end of comment
     public override bool AddTarget(ITargettable target)
     {
         selectedTargets.Add(target);
@@ -137,9 +95,9 @@ public class AbilityAction : BattleAction, ICostGatedAction
         caster.PutAbilityOnColdown();
     }
 
-    protected void TriggerEncore()
+    public ISpellCaster GetCaster()
     {
-        PlayerBattleStats.Instance.EncoreTriggered();
+        return caster;
     }
 
     public virtual int ManaCost()
@@ -167,5 +125,10 @@ public class AbilityAction : BattleAction, ICostGatedAction
         {
             return true;
         }
+    }
+
+    public virtual CastingSpellColdownType GetCastingSpellColdownType()
+    {
+        return CastingSpellColdownType.enemy;
     }
 }

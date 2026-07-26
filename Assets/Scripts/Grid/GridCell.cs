@@ -9,7 +9,7 @@ public enum CellTerrain
     water,
     mountain,
 }
-public class GridCell : ITargettable
+public class GridCell : ITargettable, IDamageable
 {
     public int X { get; private set; }
     public int Z { get; private set; }
@@ -143,5 +143,18 @@ public class GridCell : ITargettable
     public override string ToString()
     {
         return $"Cell({X}, {Z}) @ {WorldPosition}";
+    }
+
+    public DamageInfo TakeDamage(GridActor source, AbilityAction abilityUsed, float damage, Element element)
+    {
+        DamageInfo result = new DamageInfo();
+        if (actorOnCell != null)
+        {
+            if (actorOnCell is IDamageable damageable)
+            {
+                result = damageable.TakeDamage(source, abilityUsed, damage, element);
+            }
+        }
+        return result;
     }
 }

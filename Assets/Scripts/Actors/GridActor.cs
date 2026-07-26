@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GridActor : MonoBehaviour, ITargettable
@@ -7,6 +9,9 @@ public class GridActor : MonoBehaviour, ITargettable
     
     public event Action onSelection;
     public event Action onDeselection;
+    
+    private readonly List<BattleEffect> activeStartTurnEffects = new();
+    private readonly List<BattleEffect> activeEndTurnEffects = new();
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -78,5 +83,34 @@ public class GridActor : MonoBehaviour, ITargettable
     public override string ToString()
     {
         return $"Actor({gameObject}, at {GetWorldPosition()} of type {GetType()})";
+    }
+    
+    //i could easily turn these two in one but ehhh
+    protected IEnumerator ActivateStartOfTurnEffect()
+    {
+        foreach (var effect in activeStartTurnEffects)
+        {
+            yield return StartCoroutine(effect.OnTurnStart());
+        }
+        
+        activeStartTurnEffects.RemoveAll(eff => eff.IsFinished());
+    }
+    protected IEnumerator ActivateEndOfTurnEffect()
+    {
+        foreach (var effect in activeEndTurnEffects)
+        {
+            yield return StartCoroutine(effect.OnTurnStart());
+        }
+        
+        activeEndTurnEffects.RemoveAll(eff => eff.IsFinished());
+    }
+    
+    public void AddBattleStartOfTurnEffect(BattleEffect effect)
+    {
+        activeStartTurnEffects.Add(effect);
+    }
+    public void AddBattleEndOfTurnEffect(BattleEffect effect)
+    {
+        activeEndTurnEffects.Add(effect);
     }
 }

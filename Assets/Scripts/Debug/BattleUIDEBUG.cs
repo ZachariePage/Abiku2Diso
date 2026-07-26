@@ -8,8 +8,6 @@ public class BattleUIDEBUG : MonoBehaviour
     public AbikuTrio[] abikus;
     public GameObject buttonPrefab;
     public GameObject buttonEnemyPrefab;
-    
-    public GameObject enemyPrefab;
 
     public Transform debugTextPosition;
     public GameCue DEBUGCASTINGTEXTCUE;
@@ -38,10 +36,7 @@ public class BattleUIDEBUG : MonoBehaviour
         Vector3 positionEnemy = new Vector3(transform.position.x + (50 * counter), transform.position.y, transform.position.z);
             
         GameObject objEnemy = Instantiate(buttonEnemyPrefab, positionEnemy, Quaternion.identity, transform);
-        UIEnemyDEBUG abikuButtonEnemy = objEnemy.GetComponent<UIEnemyDEBUG>();
         objEnemy.transform.position = transform.GetChild(counter).position;
-
-        abikuButtonEnemy.enemyPrefab = enemyPrefab;
 
         //feed
         BattleStats.Instance.Subscribe<TurnStartEvent>(onTurnStartEvent);

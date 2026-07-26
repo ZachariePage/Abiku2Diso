@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public enum BattleState
 {
@@ -243,6 +244,11 @@ public class BattleLoop : MonoBehaviour
     //enemy turn
     public void PassTurn()
     {
+        if ((CurrentPhase & (BattlePhase.Combat | BattlePhase.TurnOver)) == 0)
+        {
+            Debug.Log($"Can't pass turn in {CurrentPhase}");
+            return;
+        }
         Debug.Log("passing turn");
         CurrentState = BattleState.AITurn;
         CurrentPhase  = BattlePhase.AITurn;
@@ -255,7 +261,6 @@ public class BattleLoop : MonoBehaviour
 
     private IEnumerator EnemyTurn()
     {
-        Debug.Log("enemies turn are starting");
         foreach (var enemy in enemyTurnQueue)
         {
             TurnStartEvent turnEvent = new TurnStartEvent
@@ -290,23 +295,10 @@ public class BattleLoop : MonoBehaviour
     {
         activeEffects.Add(effect);
     }
-    private void UpdateBattleEffects()
-    {
-        foreach (var effect in activeEffects)
-        {
-            effect.OnTurnStart();
-        }
-
-        activeEffects.RemoveAll(e => e.IsFinished());
-    }
 
     public void AddEnemy(Enemy newEnemy)
     {
-        if (newEnemy == null)
-        {
-            Debug.LogError("new enemy is null wtf");
-            return;
-        }
+        Assert.IsNotNull(newEnemy, "new enemy is null wtf");
         enemyTurnQueue.Enqueue(newEnemy);
     }
 
@@ -314,9 +306,10 @@ public class BattleLoop : MonoBehaviour
     {
         if (newAbikuTrio == null)
         {
-            Debug.LogError("new abiku is null wtf");
+            throw new ArgumentNullException(nameof(newAbikuTrio), "new enemy is null wtf");
             return;
         }
+        
         abikuTrios.Add(newAbikuTrio);
     }
 

@@ -29,6 +29,7 @@ public abstract class AbikuStance : State, ISpellCaster
     private UsedActionTracker _coldownTracker;
     
     private bool hasPlayedThisTurn = false;
+    private bool currentlyCasting = false;
     protected AbikuStance(GridActor unit, IStateMachine stateMachine) : base(unit, stateMachine)
     {
         if (unit is AbikuTrio trio)
@@ -84,6 +85,31 @@ public abstract class AbikuStance : State, ISpellCaster
     public bool CanThrowSpell()
     {
         return !abiku.IsOnLastStance();
+    }
+
+    public bool IsCastingSpell()
+    {
+        return currentlyCasting;
+    }
+
+    public void SetCastingSpell(bool value, CastingSpellColdownType type)
+    {
+        switch (type)
+        {
+            case CastingSpellColdownType.enemy:
+                currentlyCasting = value;
+                break;
+            case CastingSpellColdownType.player:
+                break;
+            case CastingSpellColdownType.both:
+                currentlyCasting = value;
+                break;
+        }
+    }
+
+    public void OnAbilityThrownEnd()
+    {
+        
     }
 
     public override void EnterState()

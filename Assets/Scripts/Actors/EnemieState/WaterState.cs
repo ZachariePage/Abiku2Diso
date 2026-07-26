@@ -1,11 +1,13 @@
 using UnityEngine;
+using UnityEngine.Assertions;
 
-public class WaterState : State
+public class WaterState : EnemyStance
 {
     private WaterStanceSO config;
     private AbilityAction action;
     private Enemy enemy;
     
+    private ITargettable currentTarget;
     public WaterState(GridActor unit, IStateMachine stateMachine, WaterStanceSO config) : base(unit, stateMachine)
     {
         this.config = config;
@@ -13,24 +15,27 @@ public class WaterState : State
         action = config.action.CreateAction(enemy, unit);
         
     }
-    
+
+    protected override void PerformAction()
+    {
+        enemy.ExecuteAction(action, OnActionFinished);
+    }
+
     public override void EnterState()
     {
         base.EnterState();
         enemy.SetElement(config.element.GetElementType());
-    }
-
-    public override void StartTurn()
-    {
-        base.StartTurn();
         
         ITargettable target = FindTarget();
         if (target != null)
         {
             action.AddTarget(target);
         }
-        
-        enemy.ExecuteAction(action, OnActionFinished);
+    }
+
+    public override void StartTurn()
+    {
+        base.StartTurn();
     }
     
     ITargettable FindTarget()
@@ -52,14 +57,11 @@ public class WaterState : State
 
     private void OnActionFinished()
     {
-        Debug.Log("Enemy fireState action finished");
-        enemy.ChangeStateThroughIncrementation();
         EndTurn();
     }
 
     public override void EndTurn()
     {
-        Debug.Log("internal endturn");
         base.EndTurn();
         enemy.EndTurn();
     }
@@ -78,5 +80,9 @@ public class WaterState : State
     {
         base.PhysicUpdate();
     }
-    
+
+    public override EnemyStanceScriptableObject GetStanceConfig()
+    {
+        return config;
+    }
 }
