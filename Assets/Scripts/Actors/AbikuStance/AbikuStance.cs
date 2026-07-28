@@ -115,6 +115,7 @@ public abstract class AbikuStance : State, ISpellCaster
     public override void EnterState()
     {
         base.EnterState();
+        abiku.SetElement(GetStanceConfig().element.GetElementType());
     }
 
     public override void StartTurn()

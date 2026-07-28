@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
@@ -24,6 +25,14 @@ public class AbikuBattleMenu : MonoBehaviour
         Panel.SetActive(false);
         
         CreateButtons();
+    }
+
+    private void OnDestroy()
+    {
+        if(owningTrio == null) return;
+        owningTrio.onSelection -= OpenUI;
+        owningTrio.onDeselection -= CloseUI;
+        owningTrio.onAbilityModify -= RefreshButtons;
     }
 
     private void CreateButtons()

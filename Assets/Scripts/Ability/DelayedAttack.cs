@@ -48,7 +48,7 @@ public class DelayedAttack : AbilityAction
 
     public override IEnumerator Execute(Action onComplete)
     {
-        attack = new DelayedExplosionEffect(targetedCell, startingTurnDelay, 2, 3, MovementDirections.Cardinals, element);
+        attack = new DelayedExplosionEffect(element, targetedCell, startingTurnDelay, 2, 3, MovementDirections.Cardinals);
         GetCaster().SetCastingSpell(true, GetCastingSpellColdownType());
         attack.onEventCompletion += InternalCompletion;
 

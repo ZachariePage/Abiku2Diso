@@ -4,8 +4,6 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "State/Abiku/fireStanceSO")]
 public class AbikuFireStanceSO : AbikuStanceScriptableObject
 {
-    public ElementSO element;
-
     public override State CreateState(GridActor actor, IStateMachine stateMachine)
     {
         return null;

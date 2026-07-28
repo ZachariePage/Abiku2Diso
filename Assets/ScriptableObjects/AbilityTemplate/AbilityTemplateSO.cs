@@ -4,5 +4,6 @@ public abstract class AbilityTemplateSO : ScriptableObject
 {
     public string DisplayName;
     public int manaCost;
+    public HoverableUIData hoverData;
     public abstract AbilityAction CreateAction(ISpellCaster caster, GridActor owner);
 }

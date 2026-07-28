@@ -148,9 +148,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ce99c5d065ddc7408e1a4f9705f8876, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tooltipData:
+    name: 
+    description: 
   trioDefinition: {fileID: 11400000, guid: 5dc39460724082043aa6e6335f9cbe2d, type: 2}
   egungun:
     definition: {fileID: 11400000, guid: a2e6648b558eb604792c9cac211f4a1f, type: 2}
+  spriteRenderer: {fileID: 0}
 --- !u!114 &3349759592751701466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,5 +170,13 @@ MonoBehaviour:
   Retroactions:
   - target: {fileID: -5303000856734051030}
     eventName: onDamageTakenCues
+    cues:
+    - {fileID: 11400000, guid: 524799e56acac1f4da811fd42f0b22c2, type: 2}
+  - target: {fileID: -5303000856734051030}
+    eventName: onEncoreTriggered
+    cues:
+    - {fileID: 11400000, guid: 89e407d8fbc59ab49ba68dfdbccc170e, type: 2}
+  - target: {fileID: -5303000856734051030}
+    eventName: onMyTurnStart
     cues:
     - {fileID: 11400000, guid: 524799e56acac1f4da811fd42f0b22c2, type: 2}

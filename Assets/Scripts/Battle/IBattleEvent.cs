@@ -32,7 +32,23 @@ public struct MoveEvent : IBattleEvent
     public GridCell to;
 }
 
-public struct TurnStartEvent : IBattleEvent
+public struct GridActorTurnStartEvent : IBattleEvent
 {
     public GridActor Actor;
+}
+
+public enum Team
+{
+    allies,
+    enemies,
+    npc
+}
+public struct TurnPassEvent : IBattleEvent
+{
+    public Team team;
+}
+
+public struct TurnStartEvent : IBattleEvent
+{
+    public Team team;
 }

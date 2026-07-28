@@ -67,11 +67,19 @@ public class GridCell : ITargettable, IDamageable
     public void Select()
     {
         Highlight(CellHighlightState.Selected);
+        HoverableUIData data = new HoverableUIData
+        (
+            "Cell",
+            $"Terrain type = {Terrain}"
+            
+        );
+        HoverTooltip.Instance.CreateTooltip(this, data, TooltipType.GridCellInformation, GetWorldPosition());
     }
 
     public void Deselect()
     {
         UnHighlight();
+        HoverTooltip.Instance.RemoveTooltip(this);
     }
 
     public void Highlight(CellHighlightState mode)

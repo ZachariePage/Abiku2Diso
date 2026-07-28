@@ -10,9 +10,7 @@ public class ClickAbility : MonoBehaviour
     public Camera cam;
     [Header("Ray Settings")]
     private float maxDistance = 1000f;
-    
-    private Vector3 aimPoint; 
-    private Vector3 fireDirection; 
+
     [SerializeField] private LayerMask clickableLayer;
     
     
@@ -70,9 +68,6 @@ public class ClickAbility : MonoBehaviour
     void Update()
     {
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-
-        aimPoint = ray.origin + ray.direction * maxDistance;
-        fireDirection = ray.direction;
 
         Debug.DrawRay(ray.origin, ray.direction * maxDistance, Color.red, 0.02f);
     }

@@ -12,11 +12,9 @@ public class DelayedExplosionEffect : DamagingBattleEffect
     private int _damage;
     private int _range;
     private MovementDirections _direction;
-    private ElementSO _element;
 
-    public event Action onEventCompletion;
 
-    public DelayedExplosionEffect(GridCell targetCell, int turnsRemaining, int damage, int range, MovementDirections direction, ElementSO element)
+    public DelayedExplosionEffect(ElementSO element, GridCell targetCell, int turnsRemaining, int damage, int range, MovementDirections direction) : base(element)
     {
         _targetCell = targetCell;
         _turnsRemaining = turnsRemaining;
@@ -29,15 +27,17 @@ public class DelayedExplosionEffect : DamagingBattleEffect
         ChooseCells();
     }
 
+    public event Action onEventCompletion;
+
+    
+
     public override IEnumerator OnTurnStart()
     {
         _turnsRemaining--;
         if (_turnsRemaining > 0) yield break;
         
-        foreach(var cell in _cells)
-        {
-            
-        }
+        DealDamageToTargets(_cells, _damage);
+
         yield return new WaitForSeconds(1f); 
         
         onEventCompletion?.Invoke();

@@ -196,6 +196,7 @@ public class BattleLoop : MonoBehaviour
             return;
         }
 
+        ClearSelectedTarget();
         validTargets = new HashSet<ITargettable>(action.GetValidTargets());
 
         foreach(var target in validTargets)
@@ -247,7 +248,6 @@ public class BattleLoop : MonoBehaviour
             Debug.Log($"Can't pass turn in {CurrentPhase}");
             return;
         }
-        Debug.Log("passing turn");
         CurrentState = BattleState.AITurn;
         CurrentPhase  = BattlePhase.AITurn;
         ClearPendingAction();
@@ -261,7 +261,7 @@ public class BattleLoop : MonoBehaviour
     {
         foreach (var enemy in enemyTurnQueue)
         {
-            TurnStartEvent turnEvent = new TurnStartEvent
+            GridActorTurnStartEvent turnEvent = new GridActorTurnStartEvent
             {
                 Actor = enemy
             };
@@ -313,7 +313,12 @@ public class BattleLoop : MonoBehaviour
 
     public void StartPlayerTurn()
     {
-        Debug.Log("starting player turn");
+        TurnStartEvent turnEvent = new TurnStartEvent
+        {
+            team = Team.allies
+        };
+        BattleStats.Instance.Broadcast(turnEvent);
+        
         CurrentState = BattleState.Idle;
         CurrentPhase =  BattlePhase.Combat;
 
@@ -330,7 +335,16 @@ public class BattleLoop : MonoBehaviour
     public void EncoreTriggered()
     {
         encoreTriggered = true;
-        Debug.Log("encore triggered");
+    }
+
+    public bool IsActionPending()
+    {
+        return pendingAction != null;
+    }
+
+    public IReadOnlyBattleAction GetReadOnlyPendingAction()
+    {
+        return pendingAction;
     }
     public void DEBUGSTARTCOMBAT()
     {

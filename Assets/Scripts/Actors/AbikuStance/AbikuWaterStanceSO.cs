@@ -4,7 +4,6 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "State/Abiku/waterStanceSO")]
 public class AbikuWaterStanceSO : AbikuStanceScriptableObject
 {
-    public ElementSO element;
     public override State CreateState(GridActor actor, IStateMachine stateMachine)
     {
         return null;

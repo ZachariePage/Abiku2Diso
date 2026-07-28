@@ -6,9 +6,6 @@ using UnityEngine.Events;
 public class AbikuTrio : GridActor,  IDamageable, IHoldElement
 {
     [SerializeField] private TrioDefinition trioDefinition;
-    // [SerializeField] private Abiku _currentAbiku;
-    // [SerializeField] private List<Abiku> abikuses = new List<Abiku>();
-    // private int currentAbikuIndex = -1;
     
     [Header("egungun")]
     [SerializeField] private Egungun egungun;
@@ -19,6 +16,7 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
     private List<AbikuStance> stances = new List<AbikuStance>();
     private int currentStateIndex = 0;
     private int StateIndexOnTurnStart = 0;
+    private Element currentElement;
     
     //Unity Events
     public event Action onAbilityModify;
@@ -30,14 +28,17 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
 
     public event Action onMyTurnStart;
     
+    public event Action onEncoreTriggered;
+    
     private UsedActionTracker usedActionTracker;
     
     //renderer. Properly should put this in another script idk
     [SerializeField] private SpriteRenderer spriteRenderer;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         if (egungun == null)
         {
             Debug.LogError("NEW ERROR: egungun is null");
@@ -52,12 +53,14 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
         StanceStateMachine.Init(stances[0]);
         
         spriteRenderer =  GetComponent<SpriteRenderer>();
+
+        tooltipData.name = trioDefinition.DisplayName;
     }
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
-        
+        base.Update();
     }
     
     public override void Initialize()
@@ -102,7 +105,7 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
     public override void Select()
     {
         base.Select();
-        TurnStartEvent turnEvent = new TurnStartEvent
+        GridActorTurnStartEvent turnEvent = new GridActorTurnStartEvent
         {
             Actor = this
         };
@@ -130,35 +133,22 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
     public override void AddHighlight(object source, CellHighlightState state)
     {
         base.AddHighlight(source, state);
-        GetHoldingCell().AddHighlight(this,CellHighlightState.Targeted);
         spriteRenderer.material.SetFloat("_OutlineThickness", 60f);
     }
 
     public override void RemoveHighlight(object source)
     {
         base.RemoveHighlight(source);
-        GetHoldingCell().RemoveHighlight(this);
         spriteRenderer.material.SetFloat("_OutlineThickness", 0f);
     }
-
-    //getter setter
-
-    // public List<Abiku> GetAbikuses()
-    // {
-    //     return abikuses;
-    // }
-    // public Abiku GetCurrentAbiku()
-    // {
-    //     return _currentAbiku;
-    // }
-    //
-    // public void SetCurrentAbiku(Abiku abiku)
-    // {
-    //     _currentAbiku = abiku;
-    // }
     public TrioDefinition GetTrioDefinition()
     {
         return trioDefinition;
+    }
+    
+    public override HoverableUIData GetHoverData()
+    {
+        return trioDefinition.hoverData;
     }
 
     public void SetTrioDefinition(TrioDefinition newDefinition)
@@ -172,13 +162,26 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
     }
     
 
+    //for now to see if encore is triggered will be here but in the future ill make a damage computation script
     public DamageInfo TakeDamage(GridActor source, AbilityAction abilityUsed, float damage, Element element)
     {
         Debug.Log("take damage abiku");
+        bool encoreTriggered = ElementSystem.Instance.IsEffectiveAgainst(currentElement, element);
+        if (encoreTriggered)
+        {
+            TriggerEncore();
+        }
+        
         DamageInfo info = new DamageInfo(source, this, abilityUsed, damage, element, Element.None, false);
         onDamageTaken?.Invoke(info);
         onDamageTakenCues?.Invoke();
         return info;
+    }
+    
+    public void TriggerEncore()
+    {
+        onEncoreTriggered?.Invoke();
+        PlayerBattleStats.Instance.EncoreTriggered();
     }
 
     public void DEBUGPRINTALLSTANCESABILITIES()
@@ -194,7 +197,12 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
 
     public Element GetElement()
     {
-        return Element.None;
+        return currentElement;
+    }
+
+    public void SetElement(Element element)
+    {
+        currentElement = element;
     }
 
     public bool IsOnLastStance()

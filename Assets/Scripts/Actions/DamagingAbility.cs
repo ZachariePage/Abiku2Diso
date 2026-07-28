@@ -14,7 +14,6 @@ public abstract class DamagingAbility : AbilityAction
         List<DamageInfo> results = new();
         foreach (var target in targets)
         {
-            Debug.Log(target);
             if (target is IDamageable damageable)
             {
                 DamageInfo info = damageable.TakeDamage(actor, null, damage, element.GetElementType());
@@ -35,7 +34,15 @@ public abstract class DamagingAbility : AbilityAction
                 continue;
             if (damageInfo.encoreTriggered)
             {
-                TriggerEncore();
+                if (damageInfo.Source is AbikuTrio trio)
+                {
+                    trio.TriggerEncore();
+                }
+                else
+                {
+                    TriggerEncore();
+                }
+                
                 return;
             }
         }

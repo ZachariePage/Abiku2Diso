@@ -4,7 +4,6 @@ using UnityEngine;
 
 public abstract class BattleEffect
 {
-    protected ElementSO element;
     protected bool isFinished;
     public abstract IEnumerator OnTurnStart();
     public abstract bool IsFinished();

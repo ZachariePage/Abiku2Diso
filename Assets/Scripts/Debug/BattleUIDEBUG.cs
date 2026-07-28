@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -39,10 +40,20 @@ public class BattleUIDEBUG : MonoBehaviour
         objEnemy.transform.position = transform.GetChild(counter).position;
 
         //feed
-        BattleStats.Instance.Subscribe<TurnStartEvent>(onTurnStartEvent);
+        BattleStats.Instance.Subscribe<GridActorTurnStartEvent>(onGridActorTurnStartEvent);
         BattleStats.Instance.Subscribe<ActionTakenEvent>(onActionTaken);
+        BattleStats.Instance.Subscribe<TurnStartEvent>(onTurnStart);
+        
         
         debugFeedSlots = new GameObject[maxDebugCues];
+    }
+
+    private void OnDestroy()
+    {
+        if(BattleStats.Instance == null) return;
+        BattleStats.Instance.Unsubscribe<GridActorTurnStartEvent>(onGridActorTurnStartEvent);
+        BattleStats.Instance.Unsubscribe<ActionTakenEvent>(onActionTaken);
+        BattleStats.Instance.Unsubscribe<TurnStartEvent>(onTurnStart);
     }
 
     // Update is called once per frame
@@ -73,7 +84,11 @@ public class BattleUIDEBUG : MonoBehaviour
         StartCoroutine(RemoveCueFromList(obj, slotIndex));
     }
 
-    public void onTurnStartEvent(TurnStartEvent evento)
+    public void onTurnStart(TurnStartEvent evento)
+    {
+        SpawnText($"team {evento.team.ToString()} turn starting");
+    }
+    public void onGridActorTurnStartEvent(GridActorTurnStartEvent evento)
     {
         SpawnText($"Actor {evento.Actor.ToString()} turn starting");
     }

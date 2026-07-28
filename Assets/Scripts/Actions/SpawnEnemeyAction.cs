@@ -99,4 +99,12 @@ public class SpawnEnemeyAction : BattleAction
     {
         return CanBeUsedNow(BattleLoop.Instance.CurrentPhase);
     }
+
+    public override HoverableUIData GetHoverData()
+    {
+        return new  HoverableUIData(
+            "spawn enemy",
+            "meowing"
+        );
+    }
 }

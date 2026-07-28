@@ -13,6 +13,7 @@ public class AbilityAction : BattleAction, ICostGatedAction
     [SerializeField] protected int numberOfTargets;
     [SerializeField] protected ElementSO element;
     [SerializeField] protected int momentumCost;
+    AbilityTemplateSO template;
     ISpellCaster caster;
 
     public AbilityAction(ISpellCaster caster, GridActor actor,AbilityTemplateSO template, int range,
@@ -25,6 +26,7 @@ public class AbilityAction : BattleAction, ICostGatedAction
         this.numberOfTargets = numberOfTargets;
         this.element = element;
         this.caster = caster;
+        this.template = template;
         this.momentumCost = template.manaCost;
     }
 
@@ -128,6 +130,11 @@ public class AbilityAction : BattleAction, ICostGatedAction
         {
             return true;
         }
+    }
+
+    public override HoverableUIData GetHoverData()
+    {
+        return template.hoverData;
     }
 
     public virtual CastingSpellColdownType GetCastingSpellColdownType()

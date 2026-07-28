@@ -14,6 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayName: 
   manaCost: 0
+  hoverData:
+    name: Fireball
+    description: You throw fireball at enemy
   targetingStrategy: {fileID: 11400000, guid: b336277bfcfc3c24c93c8c8f99a9cf8a, type: 2}
   targetTypeStrategy: {fileID: 11400000, guid: 5ab66cf3c95cf694f9661eef388cb9e7, type: 2}
   element: {fileID: 11400000, guid: 1e1623ebc7accd843898798877e1b378, type: 2}

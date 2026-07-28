@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac8e0d31efaf6b84ba201414d60669ec, type: 3}
   m_Name: DebugTrio
   m_EditorClassIdentifier: 
+  DisplayName: 
   prefab: {fileID: 657769555342276678, guid: 3bdd32c0145ddd44f86d11d8bb40e3b6, type: 3}
+  hoverData:
+    name: Gontrand
+    description: A real good lad
   startingStances:
   - {fileID: 11400000, guid: 210dff87776a332428aa99b165e5f245, type: 2}
   - {fileID: 11400000, guid: d50494916c47390429ef3a2f2c41d93b, type: 2}
@@ -21,3 +25,4 @@ MonoBehaviour:
   moveRange: 5
   defence: 5
   moveDirection: 15
+  directionType: 0

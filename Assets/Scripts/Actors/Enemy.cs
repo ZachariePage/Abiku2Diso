@@ -39,8 +39,9 @@ public class Enemy : GridActor,  IDamageable, IHoldElement, ISpellCaster
     //debug
     public GameCue DEBUGCASTINGTEXTCUE;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         StateMachine = new StateMachine<EnemyStance>();
         if (startingState.Length == 0)
         {
@@ -57,9 +58,9 @@ public class Enemy : GridActor,  IDamageable, IHoldElement, ISpellCaster
     }
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
-        
+        base.Update();
     }
 
     public void Init()
@@ -123,7 +124,6 @@ public class Enemy : GridActor,  IDamageable, IHoldElement, ISpellCaster
 
     public void ChangeStateThroughIncrementation()
     {
-        Debug.Log("change state through incrementation");
         currentStateIndex = (currentStateIndex + 1) % states.Count;
         StateMachine.ChangeState(states[currentStateIndex]);
         onStanceChange?.Invoke();
@@ -138,6 +138,7 @@ public class Enemy : GridActor,  IDamageable, IHoldElement, ISpellCaster
         bool encoreTriggered = ElementSystem.Instance.IsEffectiveAgainst(element, currentElement);
         
         DamageInfo info = new DamageInfo(source, this, abilityUsed, damage, element, currentElement, encoreTriggered);
+        
         onDamageTaken?.Invoke(info);
         onDamageTakenCues?.Invoke();
         return info;

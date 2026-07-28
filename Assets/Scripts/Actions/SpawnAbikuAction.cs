@@ -100,4 +100,12 @@ public class SpawnAbikuAction : BattleAction
     {
         return CanBeUsedNow(BattleLoop.Instance.CurrentPhase);
     }
+
+    public override HoverableUIData GetHoverData()
+    {
+        return new  HoverableUIData(
+            "spawn abiku",
+            "meowing"
+        );
+    }
 }

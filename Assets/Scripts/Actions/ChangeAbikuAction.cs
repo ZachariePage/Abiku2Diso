@@ -128,4 +128,12 @@ public class ChangeAbikuAction : BattleAction, ICostGatedAction
         if (!caster.CanThrowSpell()) return false;
         return CanBeUsedNow(BattleLoop.Instance.CurrentPhase);
     }
+
+    public override HoverableUIData GetHoverData()
+    {
+        return new  HoverableUIData(
+            "change abiku",
+            "meowing"
+        );
+    }
 }

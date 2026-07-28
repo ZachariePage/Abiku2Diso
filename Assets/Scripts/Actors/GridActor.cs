@@ -3,23 +3,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GridActor : MonoBehaviour, ITargettable
+public class GridActor : MonoBehaviour, ITargettable, IHoverable
 {
+    [Header("Parent grid actor settings")]
     private GridCell holdingCell;
     
+    [SerializeField] protected HoverableUIData tooltipData;
     public event Action onSelection;
     public event Action onDeselection;
     
     private readonly List<BattleEffect> activeStartTurnEffects = new();
     private readonly List<BattleEffect> activeEndTurnEffects = new();
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    protected virtual void Start()
     {
         
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         
     }
@@ -84,7 +86,17 @@ public class GridActor : MonoBehaviour, ITargettable
     {
         return $"Actor({gameObject}, at {GetWorldPosition()} of type {GetType()})";
     }
-    
+
+    public virtual HoverableUIData GetHoverData()
+    {
+        return tooltipData;
+    }
+
+    public HoverableUIType GetHoverType()
+    {
+        return HoverableUIType.UnitDescription;
+    }
+
     //i could easily turn these two in one but ehhh
     protected IEnumerator ActivateStartOfTurnEffect()
     {

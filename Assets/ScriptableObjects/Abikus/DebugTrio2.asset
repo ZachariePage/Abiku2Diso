@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac8e0d31efaf6b84ba201414d60669ec, type: 3}
   m_Name: DebugTrio2
   m_EditorClassIdentifier: 
+  DisplayName: 
   prefab: {fileID: 8183166823213532567, guid: c505b8fe8d1ea844cbc3e2945f545514, type: 3}
+  hoverData:
+    name: Gertrude
+    description: A real cheeky lad
   startingStances:
   - {fileID: 11400000, guid: 210dff87776a332428aa99b165e5f245, type: 2}
   - {fileID: 11400000, guid: d50494916c47390429ef3a2f2c41d93b, type: 2}
@@ -21,3 +25,4 @@ MonoBehaviour:
   moveRange: 2
   defence: 5
   moveDirection: 15
+  directionType: 0

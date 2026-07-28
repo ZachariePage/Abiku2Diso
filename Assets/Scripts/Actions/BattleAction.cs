@@ -4,6 +4,22 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
+public interface IReadOnlyBattleAction
+{
+    BattlePhase AllowedPhase();
+    GridActor GetActorOwner();
+    bool CanBeUsedNow(BattlePhase current);
+    TargetMode TargetMode();
+    IEnumerable<ITargettable> GetValidTargets();
+    IEnumerable<GridCell> GetReachableCells();
+    CellHighlightState GetHighlightState();
+    bool IsReady();
+    IReadOnlyList<ITargettable> GetTargets();
+    bool IsOnColdown();
+    bool ReadyToUse();
+    HoverableUIData GetHoverData();
+}
+
 public enum TargetMode
 {
     Instant,
@@ -25,7 +41,7 @@ public enum TargetType
     All = EmptyCell | Terrain | Allies | Enemies
 }
 [Serializable]
-public abstract class BattleAction
+public abstract class BattleAction : IReadOnlyBattleAction
 {
     protected bool coldown;
     protected List<ITargettable> selectedTargets = new();
@@ -57,5 +73,7 @@ public abstract class BattleAction
     public abstract void PutOnColdown();
 
     public abstract bool ReadyToUse();
+    
+    public abstract HoverableUIData GetHoverData();
 
 }

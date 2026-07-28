@@ -144,4 +144,12 @@ public class MoveAbikuAction : BattleAction, ICostGatedAction
     {
         return CanBeUsedNow(BattleLoop.Instance.CurrentPhase);
     }
+
+    public override HoverableUIData GetHoverData()
+    {
+        return new  HoverableUIData(
+            "moving",
+            "meowing"
+        );
+    }
 }
