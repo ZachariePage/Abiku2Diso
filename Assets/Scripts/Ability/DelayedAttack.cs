@@ -11,8 +11,10 @@ public class DelayedAttack : AbilityAction
     private int safetyTurnDelay;
     private bool attackFinished = false;
 
-    public DelayedAttack(ISpellCaster caster, GridActor actor, int range, TargetingStrategySO direction, TargetTypeStrategySO targetAllowed, int numberOfTargets, ElementSO element, int numberOfTurnDelay)
-        : base(caster,actor, range, direction, targetAllowed, numberOfTargets, element)
+    public DelayedAttack(ISpellCaster caster, GridActor actor,AbilityTemplateSO template, int range, 
+        TargetingStrategySO direction, TargetTypeStrategySO targetAllowed, int numberOfTargets, 
+        ElementSO element, int numberOfTurnDelay)
+        : base(caster,actor,template, range, direction, targetAllowed, numberOfTargets, element)
     {
         startingTurnDelay = numberOfTurnDelay;
         safetyTurnDelay = numberOfTurnDelay + 1;

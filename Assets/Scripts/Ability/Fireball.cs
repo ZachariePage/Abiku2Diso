@@ -8,9 +8,9 @@ public class Fireball : DamagingAbility
     private List<GameCue> onAbilityThrownCues = new List<GameCue>();
     private DelayedActionEffect delayedEffect;
     private int delayingTurnTime;
-    public Fireball(ISpellCaster caster, GridActor actor, int range, TargetingStrategySO direction, TargetTypeStrategySO
+    public Fireball(ISpellCaster caster, GridActor actor,AbilityTemplateSO template, int range, TargetingStrategySO direction, TargetTypeStrategySO
         targetAllowed, int numberOfTargets, ElementSO element, int turnDelay, GameCue[] AbilityThrownCues)
-        : base(caster, actor, range, direction, targetAllowed, numberOfTargets, element)
+        : base(caster, actor,template, range, direction, targetAllowed, numberOfTargets, element)
     {
         foreach (var cue in AbilityThrownCues)
         {

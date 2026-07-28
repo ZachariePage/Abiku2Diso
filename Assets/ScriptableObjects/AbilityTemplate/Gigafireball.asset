@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 34a73c0b898edac45865a5a040fb2c36, type: 3}
-  m_Name: Fireball1
+  m_Name: Gigafireball
   m_EditorClassIdentifier: 
   DisplayName: 
-  manaCost: 0
-  targetingStrategy: {fileID: 11400000, guid: b336277bfcfc3c24c93c8c8f99a9cf8a, type: 2}
-  targetTypeStrategy: {fileID: 11400000, guid: 5ab66cf3c95cf694f9661eef388cb9e7, type: 2}
-  element: {fileID: 11400000, guid: 1e1623ebc7accd843898798877e1b378, type: 2}
+  manaCost: 1
+  targetingStrategy: {fileID: 11400000, guid: 0c665cb80fa5bc144908814701169cef, type: 2}
+  targetTypeStrategy: {fileID: 11400000, guid: 24b0128309144d2488a26c88430f074c, type: 2}
+  element: {fileID: 11400000, guid: e0484cdc6e965724a84d904177103564, type: 2}
   range: 4
   numberOfTargets: 1
   turnDelay: 0

@@ -15,6 +15,6 @@ public class FireballTemplateSO : AbilityTemplateSO
 
     public override AbilityAction CreateAction(ISpellCaster caster, GridActor owner)
     {
-        return new Fireball(caster, owner, range, targetingStrategy, targetTypeStrategy, numberOfTargets, element,turnDelay, onThrownCues);
+        return new Fireball(caster, owner,this, range, targetingStrategy, targetTypeStrategy, numberOfTargets, element,turnDelay, onThrownCues);
     }
 }

@@ -11,6 +11,6 @@ public class DelayedAttackTemplateSO : AbilityTemplateSO
 
     public override AbilityAction CreateAction(ISpellCaster caster, GridActor owner)
     {
-        return new DelayedAttack(caster, owner, range, targetingStrategy,targetTypeStrategy, 0, element, numberOfTurnBeforeAttack);
+        return new DelayedAttack(caster, owner,this, range, targetingStrategy,targetTypeStrategy, 0, element, numberOfTurnBeforeAttack);
     }
 }

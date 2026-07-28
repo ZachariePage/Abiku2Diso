@@ -153,8 +153,6 @@ public class BattleLoop : MonoBehaviour
     {
         if (action is ICostGatedAction gated)
         {
-            PlayerBattleStats.Instance.DecrementAction();
-            
             if (encoreTriggered)
             {
                 CurrentPhase = BattlePhase.Combat;
@@ -318,7 +316,6 @@ public class BattleLoop : MonoBehaviour
         Debug.Log("starting player turn");
         CurrentState = BattleState.Idle;
         CurrentPhase =  BattlePhase.Combat;
-        PlayerBattleStats.Instance.ResetTurn();
 
         foreach (var abiku in abikuTrios)
         {

@@ -12,9 +12,11 @@ public class AbilityAction : BattleAction, ICostGatedAction
     [SerializeField] protected TargetTypeStrategySO targetAllowed;
     [SerializeField] protected int numberOfTargets;
     [SerializeField] protected ElementSO element;
+    [SerializeField] protected int momentumCost;
     ISpellCaster caster;
 
-    public AbilityAction(ISpellCaster caster, GridActor actor, int range, TargetingStrategySO direction, TargetTypeStrategySO targetAllowed, int numberOfTargets, ElementSO element)
+    public AbilityAction(ISpellCaster caster, GridActor actor,AbilityTemplateSO template, int range,
+        TargetingStrategySO direction, TargetTypeStrategySO targetAllowed, int numberOfTargets, ElementSO element)
     {
         this.actor = actor;
         this.range = range;
@@ -23,6 +25,7 @@ public class AbilityAction : BattleAction, ICostGatedAction
         this.numberOfTargets = numberOfTargets;
         this.element = element;
         this.caster = caster;
+        this.momentumCost = template.manaCost;
     }
 
     public override BattlePhase AllowedPhase()
@@ -102,7 +105,7 @@ public class AbilityAction : BattleAction, ICostGatedAction
 
     public virtual int ManaCost()
     {
-        return 0;
+        return momentumCost;
     }
 
     public object Performer()
@@ -117,7 +120,7 @@ public class AbilityAction : BattleAction, ICostGatedAction
     
     public override bool ReadyToUse()
     {
-        if (!CanBeUsedNow(BattleLoop.Instance.CurrentPhase) || caster.IsOnColdown())
+        if (!CanBeUsedNow(BattleLoop.Instance.CurrentPhase) || caster.IsOnColdown() || ManaCost() > PlayerBattleStats.Instance.GetMomentum())
         {
             return false;
         }

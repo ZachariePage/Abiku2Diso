@@ -3,7 +3,9 @@ using UnityEngine;
 
 public abstract class DamagingAbility : AbilityAction
 {
-    protected DamagingAbility(ISpellCaster caster, GridActor actor, int range, TargetingStrategySO direction, TargetTypeStrategySO targetAllowed, int numberOfTargets, ElementSO element) : base(caster, actor, range, direction, targetAllowed, numberOfTargets, element)
+    protected DamagingAbility(ISpellCaster caster, GridActor actor,AbilityTemplateSO template, int range, TargetingStrategySO direction,
+        TargetTypeStrategySO targetAllowed, int numberOfTargets, ElementSO element)
+        : base(caster, actor,template, range, direction, targetAllowed, numberOfTargets, element)
     {
     }
 
