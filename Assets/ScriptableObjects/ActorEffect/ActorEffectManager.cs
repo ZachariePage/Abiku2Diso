@@ -30,6 +30,7 @@ public class ActorEffectManager : MonoBehaviour
         if (existing == null)
         {
             _activeEffects.Add(newEffect);
+            newEffect.OnApplication(_self);
             return;
         }
 
@@ -50,12 +51,14 @@ public class ActorEffectManager : MonoBehaviour
                 break;
             case EffectStack.newInstance:
                 _activeEffects.Add(newEffect);
+                newEffect.OnApplication(_self);
                 break;
         }
     }
 
     public void RemoveEffect(ActorEffect effect)
     {
+        effect.OnRemoval(_self);
         _activeEffects.Remove(effect);
     }
 
@@ -71,7 +74,7 @@ public class ActorEffectManager : MonoBehaviour
         }
     }
     
-    public void TriggerOnTurnStart() 
+    public void TriggerOnTurnStart(GridActor self) 
     {
         foreach (var e in _activeEffects.Where(e => (e.TriggerMask & EffectTrigger.OnTurnStart)
                                                     != 0).OrderBy(e => e.Priority).ToList())

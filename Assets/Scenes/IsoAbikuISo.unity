@@ -5098,6 +5098,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481e90dc921ab9d4da3c67d458ae7181, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actorEffectsDefinition:
+  - {fileID: 11400000, guid: 2bc36d3d604f57b4db62eb5b152dfb0b, type: 2}
+  - {fileID: 11400000, guid: d823286430cd84547a76771a6ea07ea8, type: 2}
+  - {fileID: 11400000, guid: d2e88609bf516fa488bdfe656e733ce0, type: 2}
 --- !u!1 &1545214311
 GameObject:
   m_ObjectHideFlags: 0

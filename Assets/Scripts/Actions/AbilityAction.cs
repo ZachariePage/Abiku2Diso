@@ -128,9 +128,6 @@ public class AbilityAction : BattleAction, ICostGatedAction
     
     public override bool ReadyToUse()
     {
-        Debug.Log(caster.IsOnColdown());
-        Debug.Log(CanBeUsedNow(BattleLoop.Instance.CurrentPhase));
-        Debug.Log(ManaCost() > PlayerBattleStats.Instance.GetMomentum());
         if (!CanBeUsedNow(BattleLoop.Instance.CurrentPhase) || caster.IsOnColdown() || ManaCost() > PlayerBattleStats.Instance.GetMomentum())
         {
             return false;

@@ -142,7 +142,7 @@ public class MoveAbikuAction : BattleAction, ICostGatedAction
     
     public override bool ReadyToUse()
     {
-        return CanBeUsedNow(BattleLoop.Instance.CurrentPhase);
+        return CanBeUsedNow(BattleLoop.Instance.CurrentPhase) || abiku.HasBonusAction(BattleActionType.move);
     }
 
     public override HoverableUIData GetHoverData()

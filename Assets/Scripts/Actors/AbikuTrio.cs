@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.Events;
@@ -15,12 +16,17 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
     [Header("stance")]
     public StateMachine<AbikuStance> StanceStateMachine;
     
+    private readonly Dictionary<BattleActionType, int> _bonusActions = new();
+    private int _pendingSkillDiscount = 0;
+    
     private List<AbikuStance> stances = new List<AbikuStance>();
     private int currentStateIndex = 0;
     private int StateIndexOnTurnStart = 0;
     private Element currentElement;
     
     private ActorEffectManager effectManager;
+    
+    private bool _stanceLocked;
     
     //stats
     private float health;
@@ -92,6 +98,7 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
 
     public override IEnumerator OnTurnStart()
     {
+        effectManager.TriggerOnTurnStart(this);
         StateIndexOnTurnStart = currentStateIndex;
         onMyTurnStart?.Invoke();
         yield return base.OnTurnStart();
@@ -99,6 +106,7 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
     
     public override IEnumerator OnTurnEnd()
     {
+        ClearBonusActions();
         yield return StartCoroutine(ActivateEndOfTurnEffect());
         onMyTurnEnd?.Invoke();
         effectManager.TriggerOnTurnEnd(this);
@@ -157,6 +165,7 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
     
     public void OnAbilityFinished(AbilityAftermathInfo abilityAftermathInfo)
     {
+        Debug.Log("one");
         effectManager.TriggerOnAbilityFinished(this, abilityAftermathInfo);
     }
 
@@ -284,5 +293,61 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
     public override Team GetMyTeam()
     {
         return Team.allies;
+    }
+    
+    public void GrantBonusAction(BattleActionType type)
+    {
+        _bonusActions.TryGetValue(type, out int count);
+        _bonusActions[type] = count + 1;
+    }
+
+    public bool HasBonusAction(BattleActionType type)
+    {
+        return _bonusActions.TryGetValue(type, out int count) && count > 0;
+    }
+
+    public bool HasAnyBonusAction()
+    {
+        return _bonusActions.Values.Any(c => c > 0);
+    }
+
+    public void ConsumeBonusAction(BattleActionType type)
+    {
+        if (_bonusActions.TryGetValue(type, out int count) && count > 0)
+        {
+            _bonusActions[type] = count - 1;
+        }
+    }
+
+    public void ClearBonusActions() 
+    {
+        _bonusActions.Clear();
+    }
+    
+    public void SetStanceLocked(bool locked)
+    {
+        _stanceLocked = locked;
+    }
+
+    public bool IsStanceLocked()
+    {
+        return _stanceLocked;
+    }
+
+    public void GrantNextSkillDiscount(int amount)
+    {
+        _pendingSkillDiscount += amount;
+    }
+    
+    public int ConsumeSkillDiscount()
+    {
+        int discount = _pendingSkillDiscount;
+        _pendingSkillDiscount = 0;
+        return discount;
+    }
+
+    public int GetSkillDiscount()
+    {
+        return _pendingSkillDiscount;
     }
 }

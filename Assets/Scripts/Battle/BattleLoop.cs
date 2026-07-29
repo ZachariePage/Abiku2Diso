@@ -39,6 +39,9 @@ public class BattleLoop : MonoBehaviour
     
     [SerializeField] private ITargettable selectedTarget;
     private List<ITargettable> selectedTargets = new();
+    
+    private bool normalActionUsedThisTurn = false;
+    
     [SerializeField] private MonoBehaviour selectedTargetDEBUGINSPECTORSHOWKEK;
     private readonly List<BattleEffect> activeEffects = new();
     private readonly List<ITargettable> actionHighlights = new();
@@ -151,23 +154,51 @@ public class BattleLoop : MonoBehaviour
 
     private void OnActionFinished(BattleAction action)
     {
-        if (action is ICostGatedAction gated)
+        if (action is not ICostGatedAction gated)
         {
-            if (encoreTriggered)
-            {
-                CurrentPhase = BattlePhase.Combat;
-            }
-            else
-            {
-                CurrentPhase = BattlePhase.TurnOver;
-            }
+            actionExecuting = false;
+            ClearPendingAction();
+            ClearSelectedTarget();
+            return;
         }
-        
-        action.PutOnColdown();
 
-        encoreTriggered = false;
+        action.PutOnColdown();
+        Debug.Log("two");
+
+        AbikuTrio actor = action.GetActorOwner() as AbikuTrio;
+        BattleActionType actionType = action.GetActionType();
+
+        bool wasBonusAction = normalActionUsedThisTurn && actor.HasBonusAction(actionType);
+
+        if (wasBonusAction)
+        {
+            actor.ConsumeBonusAction(actionType);
+        }
+        else
+        {
+            normalActionUsedThisTurn = true;
+        }
+
+        if (encoreTriggered)
+        {
+            CurrentPhase = BattlePhase.Combat;
+            encoreTriggered = false;
+        }
+        else if (!normalActionUsedThisTurn)
+        {
+            CurrentPhase = BattlePhase.Combat; 
+        }
+        else if (actor.HasAnyBonusAction())
+        {
+            CurrentPhase = BattlePhase.Combat;
+        }
+        else
+        {
+            CurrentPhase = BattlePhase.TurnOver;
+        }
+
+        PlayerBattleStats.Instance.DecreaseMomentum(action.ManaCost());
         actionExecuting = false;
-        
         ClearPendingAction();
         ClearSelectedTarget();
     }

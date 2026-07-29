@@ -1,9 +1,12 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CheatManager : MonoBehaviour
 {
     public static CheatManager Instance { get; private set; }
+    
+    public List<ActorEffectDefinition> actorEffectsDefinition = new List<ActorEffectDefinition>();
 
     private void Awake()
     {
@@ -34,7 +37,16 @@ public class CheatManager : MonoBehaviour
                 }
                 UnitTakeDamage(damage);
                 break;
+            case "actoreffectdefinition":
+                if (args.Length < 1)
+                {
+                    Debug.LogWarning("Usage: actoreffectdefinition <EffectName>");
+                    return;
+                }
 
+                string effectName = args[0];
+                CreateEffect(effectName);
+                break;
             default:
                 Debug.LogWarning($"Unknown command: '{command}'");
                 break;
@@ -65,5 +77,38 @@ public class CheatManager : MonoBehaviour
         }
 
         damageable.TakeDamage(null, null, damage, Element.None);
+    }
+
+    public void CreateEffect(string effectName)
+    {
+        ITargettable target = BattleLoop.Instance.GetSelectedTarget();
+        if (target == null)
+        {
+            Debug.LogWarning("Selected target is null");
+            return;
+        }
+
+        GridActor actor = target.GetActor();
+        if (actor == null)
+        {
+            Debug.LogWarning("Actor is null");
+            return;
+        }
+        
+        ActorEffectDefinition effectDefinition = actorEffectsDefinition.Find(
+            effect => effect.EffectName.Equals(effectName, StringComparison.OrdinalIgnoreCase));
+
+        if (effectDefinition == null)
+        {
+            Debug.LogWarning($"ActorEffectDefinition '{effectName}' not found.");
+            return;
+        }
+
+        ActorEffect effect = effectDefinition.CreateEffect();
+
+        if (actor is AbikuTrio trio)
+        {
+            trio.GetComponent<ActorEffectManager>().AddEffect(effect);
+        }
     }
 }

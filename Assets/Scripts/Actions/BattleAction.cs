@@ -78,4 +78,9 @@ public abstract class BattleAction : IReadOnlyBattleAction
 
     public abstract BattleActionType GetActionType();
 
+    public virtual int ManaCost()
+    {
+        return 0;
+    }
+
 }

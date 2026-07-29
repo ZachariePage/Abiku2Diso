@@ -77,4 +77,8 @@ public class ActorEffect
     public virtual void OnDamageTaken(GridActor self, DamageInfo info) { }
     public virtual void OnDamageDealt(GridActor self, DamageInfo info) { }
     public virtual void OnTurnEnd(GridActor self) { }
+    
+    public virtual void OnRemoval(GridActor self)
+    {
+    }
 }

@@ -1,16 +1,11 @@
 using UnityEngine;
 
-public class PendulumEffectSO : MonoBehaviour
-{
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+[CreateAssetMenu(menuName = "Medaillon/Pendulum")]
+public class PendulumEffectSO : ActorEffectDefinition
+{
+    public override ActorEffect CreateEffect()
     {
-        
+        return new Pendulum(TriggerMask, Priority,StackType);
     }
 }

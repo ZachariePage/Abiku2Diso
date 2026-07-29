@@ -6,8 +6,8 @@ public abstract class ActorEffectDefinition : ScriptableObject
     public string EffectName;
 
     public EffectTrigger TriggerMask;
-    public EffectPriority Priority;
-    public EffectStack StackType;
+    public EffectPriority Priority = EffectPriority.First;
+    public EffectStack StackType = EffectStack.oneMax;
     
     public int StackCount = 1;
 

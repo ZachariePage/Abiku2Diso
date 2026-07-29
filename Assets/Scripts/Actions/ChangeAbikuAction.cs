@@ -125,7 +125,7 @@ public class ChangeAbikuAction : BattleAction, ICostGatedAction
     
     public override bool ReadyToUse()
     {
-        if (!caster.CanThrowSpell()) return false;
+        if (!caster.CanThrowSpell() || owner.IsStanceLocked()) return false;
         return CanBeUsedNow(BattleLoop.Instance.CurrentPhase);
     }
 

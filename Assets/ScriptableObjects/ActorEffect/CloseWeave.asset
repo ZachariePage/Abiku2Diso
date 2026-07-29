@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CloseWeave
   m_EditorClassIdentifier: 
   EffectName: Close weave
-  TriggerMask: 128
+  TriggerMask: 1
   Priority: 100
   StackType: 0
   StackCount: 1

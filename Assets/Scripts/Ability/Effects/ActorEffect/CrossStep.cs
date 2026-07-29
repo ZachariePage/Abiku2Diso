@@ -13,6 +13,11 @@ public class CrossStep : ActorEffect
     public override void OnTurnStart(GridActor self)
     {
         base.OnTurnStart(self);
+        if (self is AbikuTrio trio)
+        {
+            trio.GrantBonusAction(BattleActionType.move);
+        }
+        
         self.GetComponent<ActorEffectManager>().RemoveEffect(this);
     }
 }

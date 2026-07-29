@@ -196,3 +196,4 @@ MonoBehaviour:
   _startingEffectDefinitions:
   - {fileID: 11400000, guid: d823286430cd84547a76771a6ea07ea8, type: 2}
   - {fileID: 11400000, guid: 2bc36d3d604f57b4db62eb5b152dfb0b, type: 2}
+  - {fileID: 11400000, guid: 20ba5091080166744aa89413f9738f75, type: 2}

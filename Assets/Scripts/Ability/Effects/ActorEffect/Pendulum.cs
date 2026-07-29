@@ -1,16 +1,39 @@
 using UnityEngine;
 
-public class Pendulum : MonoBehaviour
+public class Pendulum : ActorEffect
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public Pendulum(EffectTrigger triggerMask, EffectPriority priority, EffectStack stackType = EffectStack.oneMax,
+        int maxStacks = 1)
+        : base(triggerMask, priority, stackType, maxStacks)
     {
-        
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void OnApplication(GridActor self)
     {
-        
+        base.OnApplication(self);
+        if (self is AbikuTrio abiku)
+        {
+            abiku.SetStanceLocked(true);
+        }
+    }
+
+    public override void OnAbilityFinished(GridActor self, AbilityAftermathInfo info)
+    {
+        base.OnAbilityFinished(self, info);
+        if (info.UsedAction.GetActionType() != BattleActionType.ability) return;
+        if (self is not AbikuTrio abiku) return;
+
+        abiku.ChangeStance();
+        Debug.LogWarning("finish pendulum discount");
+        //abiku.GrantNextSkillDiscount(config.DiscountAmount);
+    }
+
+    public override void OnRemoval(GridActor self)
+    {
+        base.OnRemoval(self);
+        if (self is AbikuTrio abiku)
+        {
+            abiku.SetStanceLocked(false);
+        }
     }
 }
