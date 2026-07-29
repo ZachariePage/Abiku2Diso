@@ -6,7 +6,8 @@ public enum BattleActionType
 {
     move,
     changeStance,
-    ability
+    ability,
+    debug
 }
 public interface ICostGatedAction
 {

@@ -12,10 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34a73c0b898edac45865a5a040fb2c36, type: 3}
   m_Name: EnemyFireball
   m_EditorClassIdentifier: 
+  DisplayName: 
+  manaCost: 0
+  hoverData:
+    name: 
+    description: 
   targetingStrategy: {fileID: 11400000, guid: 986f89890974c32479d818e5b1a75b5b, type: 2}
   targetTypeStrategy: {fileID: 11400000, guid: 8179b2740b4838a489cd6732299e42cd, type: 2}
   element: {fileID: 11400000, guid: c934ada44d0e2e741963a65f2a841a28, type: 2}
   range: 4
   numberOfTargets: 1
+  turnDelay: 4
   onThrownCues:
   - {fileID: 11400000, guid: 4c3d8616dd8f18943a5788fed60889d3, type: 2}

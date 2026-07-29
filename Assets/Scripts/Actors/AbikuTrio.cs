@@ -1,6 +1,8 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 using UnityEngine.Events;
 
 public class AbikuTrio : GridActor,  IDamageable, IHoldElement
@@ -18,15 +20,25 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
     private int StateIndexOnTurnStart = 0;
     private Element currentElement;
     
+    private ActorEffectManager effectManager;
+    
+    //stats
+    private float health;
+    private int defense;
+    
     //Unity Events
     public event Action onAbilityModify;
+    public event Action onAbilityFinished;
     public event Action<DamageInfo> onDamageTaken;
+    public event Action<HealingInfo> onHealTaken;
     
     //event cues
     public event Action onDamageTakenCues;
+    public event Action onHealTakenCues;
     public event Action onChangeStance;
 
     public event Action onMyTurnStart;
+    public event Action onMyTurnEnd;
     
     public event Action onEncoreTriggered;
     
@@ -55,6 +67,12 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
         spriteRenderer =  GetComponent<SpriteRenderer>();
 
         tooltipData.name = trioDefinition.DisplayName;
+
+        effectManager = GetComponent<ActorEffectManager>();
+
+        Assert.IsNotNull(egungun, "no egungun wtf");
+        health = egungun.GetHP();
+        defense = egungun.GetDefense();
     }
 
     // Update is called once per frame
@@ -72,13 +90,22 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
         }
     }
 
-    public void OnTurnStart()
+    public override IEnumerator OnTurnStart()
     {
         StateIndexOnTurnStart = currentStateIndex;
         onMyTurnStart?.Invoke();
+        yield return base.OnTurnStart();
     }
     
-    public void MoveToCell(GridCell cell)
+    public override IEnumerator OnTurnEnd()
+    {
+        yield return StartCoroutine(ActivateEndOfTurnEffect());
+        onMyTurnEnd?.Invoke();
+        effectManager.TriggerOnTurnEnd(this);
+        yield return base.OnTurnEnd();
+    }
+    
+    public override void MoveToCell(GridCell cell)
     {
         GetHoldingCell().EmptyCell();
         transform.position = cell.WorldPosition;
@@ -120,13 +147,17 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
     public override void Highlight(CellHighlightState mode)
     {
         base.Highlight(mode);
-        Debug.Log("MEOWINGTONG");
     }
 
     public override void UnHighlight()
     {
         base.UnHighlight();
         
+    }
+    
+    public void OnAbilityFinished(AbilityAftermathInfo abilityAftermathInfo)
+    {
+        effectManager.TriggerOnAbilityFinished(this, abilityAftermathInfo);
     }
 
     // for now this but later gotta add the source just like in the gridcell. But gridcell need a refactor cuz its disgusting
@@ -172,12 +203,51 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
             TriggerEncore();
         }
         
-        DamageInfo info = new DamageInfo(source, this, abilityUsed, damage, element, Element.None, false);
+        DamageMitigationContext ctx = new DamageMitigationContext
+        {
+            Self = this,
+            Source = source,
+            DamageElement = element,
+            IncomingDamage = damage,
+            Defense = defense 
+        };
+        
+        effectManager.TriggerDamageMitigation(ctx);
+        
+        DamageInfo info = new DamageInfo(source, this, abilityUsed, damage, element, currentElement, false);
         onDamageTaken?.Invoke(info);
         onDamageTakenCues?.Invoke();
         return info;
     }
-    
+    public HealingInfo Heal(GridActor source, AbilityAction abilityUsed, float heal, Element element)
+    {
+        Debug.Log("healing abiku");
+        health += heal;
+
+        bool encoreTriggered = ElementSystem.Instance.IsEffectiveAgainst(currentElement, element);
+        if (encoreTriggered)
+        {
+            TriggerEncore();
+        }
+        
+        HealingInfo info = new HealingInfo(source, this, abilityUsed, heal, element, currentElement, encoreTriggered);
+        
+        onHealTaken?.Invoke(info);
+        onDamageTakenCues?.Invoke();
+        return info;
+    }
+
+    public void BuffDefense(int value)
+    {
+        
+    }
+
+    public int ModifyIncomingDamage(int value)
+    {
+        Debug.LogWarning("not implemented");
+        return value;
+    }
+
     public void TriggerEncore()
     {
         onEncoreTriggered?.Invoke();
@@ -209,5 +279,10 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
     {
         int nextStance = (currentStateIndex + 1) % stances.Count;
         return nextStance == StateIndexOnTurnStart;
+    }
+
+    public override Team GetMyTeam()
+    {
+        return Team.allies;
     }
 }

@@ -148,6 +148,11 @@ public class GridCell : ITargettable, IDamageable
         return WorldPosition;
     }
 
+    public GridActor GetActor()
+    {
+        return GetActorOnCell();
+    }
+
     public override string ToString()
     {
         return $"Cell({X}, {Z}) @ {WorldPosition}";
@@ -164,5 +169,42 @@ public class GridCell : ITargettable, IDamageable
             }
         }
         return result;
+    }
+
+    public HealingInfo Heal(GridActor source, AbilityAction abilityUsed, float heal, Element element)
+    {
+        HealingInfo result = new HealingInfo();
+        if (actorOnCell != null)
+        {
+            if (actorOnCell is IDamageable damageable)
+            {
+                result = damageable.Heal(source, abilityUsed, heal, element);
+            }
+        }
+        return result;
+    }
+
+    public void BuffDefense(int value)
+    {
+        if (actorOnCell != null)
+        {
+            if (actorOnCell is IDamageable damageable)
+            {
+                damageable.BuffDefense(value);
+            }
+        }
+    }
+
+    public int ModifyIncomingDamage(int value)
+    {
+        if (actorOnCell != null)
+        {
+            if (actorOnCell is IDamageable damageable)
+            {
+                return damageable.ModifyIncomingDamage(value);
+            }
+        }
+
+        return value;
     }
 }

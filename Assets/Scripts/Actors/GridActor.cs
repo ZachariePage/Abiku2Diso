@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class GridActor : MonoBehaviour, ITargettable, IHoverable
 {
+    protected Team myTeam = Team.npc;
     [Header("Parent grid actor settings")]
     private GridCell holdingCell;
     
@@ -29,6 +30,21 @@ public class GridActor : MonoBehaviour, ITargettable, IHoverable
     public virtual void Initialize()
     {
         
+    }
+    public virtual IEnumerator OnTurnStart()
+    {
+        yield return null;
+    }
+    
+    public virtual IEnumerator OnTurnEnd()
+    {
+        yield return null;
+    }
+    
+    //i should put this in a interface prob
+    public virtual void MoveToCell(GridCell cell)
+    {
+       
     }
     //getter setter
     public GridCell GetHoldingCell()
@@ -82,6 +98,11 @@ public class GridActor : MonoBehaviour, ITargettable, IHoverable
         return transform.position;
     }
 
+    public GridActor GetActor()
+    {
+        return this;
+    }
+
     public override string ToString()
     {
         return $"Actor({gameObject}, at {GetWorldPosition()} of type {GetType()})";
@@ -124,5 +145,10 @@ public class GridActor : MonoBehaviour, ITargettable, IHoverable
     public void AddBattleEndOfTurnEffect(BattleEffect effect)
     {
         activeEndTurnEffects.Add(effect);
+    }
+
+    public virtual Team GetMyTeam()
+    {
+        return myTeam;
     }
 }

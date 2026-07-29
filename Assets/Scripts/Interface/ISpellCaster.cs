@@ -19,6 +19,8 @@ public interface ISpellCaster
     
     public void SetCastingSpell(bool value, CastingSpellColdownType type);
 
-    public void OnAbilityThrownEnd();
+    public void OnAbilityThrown();
+    public void OnAbilityFinished(AbilityAftermathInfo abilityAftermathInfo);
 
+    public GridActor GetActor();
 }

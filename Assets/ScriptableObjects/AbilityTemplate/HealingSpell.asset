@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 198a3627e44e3d741b874e1f282884c2, type: 3}
+  m_Name: HealingSpell
+  m_EditorClassIdentifier: 
+  DisplayName: Healing spell
+  manaCost: 0
+  hoverData:
+    name: Healing spell
+    description: I heal allies
+  targetingStrategy: {fileID: 11400000, guid: b336277bfcfc3c24c93c8c8f99a9cf8a, type: 2}
+  targetTypeStrategy: {fileID: 11400000, guid: 8179b2740b4838a489cd6732299e42cd, type: 2}
+  element: {fileID: 11400000, guid: c934ada44d0e2e741963a65f2a841a28, type: 2}
+  range: 5
+  numberOfTargets: 1
+  turnDelay: 0
+  onThrownCues:
+  - {fileID: 11400000, guid: 89e407d8fbc59ab49ba68dfdbccc170e, type: 2}

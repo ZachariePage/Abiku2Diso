@@ -164,6 +164,7 @@ public class BattleLoop : MonoBehaviour
         }
         
         action.PutOnColdown();
+
         encoreTriggered = false;
         actionExecuting = false;
         
@@ -248,6 +249,12 @@ public class BattleLoop : MonoBehaviour
             Debug.Log($"Can't pass turn in {CurrentPhase}");
             return;
         }
+
+        foreach (AbikuTrio abiku in abikuTrios)
+        {
+            StartCoroutine(abiku.OnTurnEnd());
+        }
+        
         CurrentState = BattleState.AITurn;
         CurrentPhase  = BattlePhase.AITurn;
         ClearPendingAction();
@@ -311,6 +318,11 @@ public class BattleLoop : MonoBehaviour
         abikuTrios.Add(newAbikuTrio);
     }
 
+    public ITargettable GetSelectedTarget()
+    {
+        return selectedTarget;
+    }
+
     public void StartPlayerTurn()
     {
         TurnStartEvent turnEvent = new TurnStartEvent
@@ -324,7 +336,7 @@ public class BattleLoop : MonoBehaviour
 
         foreach (var abiku in abikuTrios)
         {
-            abiku.OnTurnStart();
+            StartCoroutine(abiku.OnTurnStart());
         }
         
         onPlayerTurnStart?.Invoke();

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -924839788587034882}
   - component: {fileID: -5303000856734051030}
   - component: {fileID: 3349759592751701466}
+  - component: {fileID: -7167929459134706757}
   m_Layer: 7
   m_Name: Gontrand
   m_TagString: Untagged
@@ -180,3 +181,16 @@ MonoBehaviour:
     eventName: onMyTurnStart
     cues:
     - {fileID: 11400000, guid: 524799e56acac1f4da811fd42f0b22c2, type: 2}
+--- !u!114 &-7167929459134706757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657769555342276678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7f3cd1ab186d7f40ad67a8ea5a8c29c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _startingEffectDefinitions: []

@@ -97,9 +97,9 @@ public abstract class AbikuStance : State, ISpellCaster
         switch (type)
         {
             case CastingSpellColdownType.enemy:
-                currentlyCasting = value;
                 break;
             case CastingSpellColdownType.player:
+                currentlyCasting = value;
                 break;
             case CastingSpellColdownType.both:
                 currentlyCasting = value;
@@ -107,9 +107,19 @@ public abstract class AbikuStance : State, ISpellCaster
         }
     }
 
-    public void OnAbilityThrownEnd()
+    public void OnAbilityThrown()
     {
         
+    }
+
+    public void OnAbilityFinished(AbilityAftermathInfo abilityAftermathInfo)
+    {
+        abiku.OnAbilityFinished(abilityAftermathInfo);
+    }
+
+    public GridActor GetActor()
+    {
+        return abiku;
     }
 
     public override void EnterState()

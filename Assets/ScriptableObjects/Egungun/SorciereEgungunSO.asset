@@ -17,6 +17,7 @@ MonoBehaviour:
     abilities:
     - {fileID: 11400000, guid: a2a70a0d61635c745bc6e2712babfefd, type: 2}
     - {fileID: 11400000, guid: ddb22e354cb4d2141996c8c415609f7f, type: 2}
+    - {fileID: 11400000, guid: 19eb60db9b51a694b8dff88b7665a049, type: 2}
   - stance: 2
     abilities:
     - {fileID: 11400000, guid: ddb22e354cb4d2141996c8c415609f7f, type: 2}
@@ -24,3 +25,5 @@ MonoBehaviour:
   - stance: 4
     abilities:
     - {fileID: 11400000, guid: ddb22e354cb4d2141996c8c415609f7f, type: 2}
+  HP: 0
+  defense: 1

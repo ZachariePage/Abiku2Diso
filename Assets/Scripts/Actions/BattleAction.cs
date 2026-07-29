@@ -76,4 +76,6 @@ public abstract class BattleAction : IReadOnlyBattleAction
     
     public abstract HoverableUIData GetHoverData();
 
+    public abstract BattleActionType GetActionType();
+
 }

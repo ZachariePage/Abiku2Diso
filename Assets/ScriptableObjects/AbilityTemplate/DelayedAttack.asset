@@ -13,7 +13,12 @@ MonoBehaviour:
   m_Name: DelayedAttack
   m_EditorClassIdentifier: 
   DisplayName: 
+  manaCost: 0
+  hoverData:
+    name: 
+    description: 
   targetingStrategy: {fileID: 11400000, guid: 986f89890974c32479d818e5b1a75b5b, type: 2}
-  targetTypeStrategy: {fileID: 11400000, guid: c9b9d5b8872e7da4797620045967399e, type: 2}
+  targetTypeStrategy: {fileID: 11400000, guid: 9084fc426a9ea0e40b23919f6e12ab4c, type: 2}
+  numberOfTurnBeforeAttack: 2
   range: 4
   element: {fileID: 11400000, guid: c934ada44d0e2e741963a65f2a841a28, type: 2}

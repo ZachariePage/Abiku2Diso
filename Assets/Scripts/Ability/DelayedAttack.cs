@@ -83,8 +83,15 @@ public class DelayedAttack : AbilityAction
 
     private void InternalCompletion()
     {
+        AbilityAftermathInfo info =  new AbilityAftermathInfo
+        {
+            caster = GetCaster(),
+            targets = selectedTargets,
+            UsedAction = this
+        };
+        
         GetCaster().SetCastingSpell(false, GetCastingSpellColdownType());
-        GetCaster().OnAbilityThrownEnd();
+        GetCaster().OnAbilityFinished(info);
         attackFinished = true;
     }
     private void ResetAttack()

@@ -28,12 +28,14 @@ public class Enemy : GridActor,  IDamageable, IHoldElement, ISpellCaster
     private bool _turnFinishedFlag = false;
     //evengts
     public event Action<DamageInfo> onDamageTaken;
+    public event Action<HealingInfo> onHealTaken;
     public event Action<DamageInfo> onStartTurn;
 
     public event Action onStanceChange;
     
     //event cues
     public event Action onDamageTakenCues;
+    public event Action onHealTakenCues;
     public event Action onStartTurnCues;
     
     //debug
@@ -143,7 +145,31 @@ public class Enemy : GridActor,  IDamageable, IHoldElement, ISpellCaster
         onDamageTakenCues?.Invoke();
         return info;
     }
-    
+
+    public HealingInfo Heal(GridActor source, AbilityAction abilityUsed, float heal, Element element)
+    {
+        health += heal;
+
+        bool encoreTriggered = ElementSystem.Instance.IsEffectiveAgainst(element, currentElement);
+        
+        HealingInfo info = new HealingInfo(source, this, abilityUsed, heal, element, currentElement, encoreTriggered);
+        
+        onHealTaken?.Invoke(info);
+        onDamageTakenCues?.Invoke();
+        return info;
+    }
+
+    public void BuffDefense(int value)
+    {
+        
+    }
+
+    public int ModifyIncomingDamage(int value)
+    {
+        Debug.LogWarning("not implemented");
+        return value;
+    }
+
     //getter setter add
     public void AddAbility(AbilityAction abilityAction)
     {
@@ -219,8 +245,23 @@ public class Enemy : GridActor,  IDamageable, IHoldElement, ISpellCaster
         }
     }
 
-    public void OnAbilityThrownEnd()
+    public void OnAbilityThrown()
+    {
+        
+    }
+
+    public void OnAbilityFinished(AbilityAftermathInfo abilityAftermathInfo)
     {
         ChangeStateThroughIncrementation();
+    }
+
+    public GridActor GetActor()
+    {
+        return this;
+    }
+
+    public override Team GetMyTeam()
+    {
+        return Team.enemies;
     }
 }

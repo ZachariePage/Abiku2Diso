@@ -28,4 +28,10 @@ public class InputListener : MonoBehaviour
     {
         onMouseMoveEvent?.Invoke(context);
     }
+    
+    public static event Action<InputAction.CallbackContext> onConsoleCommandPressed;
+    public void onConsoleCommandPressedEvent(InputAction.CallbackContext context)
+    {
+        onConsoleCommandPressed?.Invoke(context);
+    }
 }

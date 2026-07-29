@@ -87,8 +87,15 @@ public class Fireball : DamagingAbility
         
         DealDamageToTargets(selectedTargets, 10);
         
+        AbilityAftermathInfo info =  new AbilityAftermathInfo
+        {
+            caster = GetCaster(),
+            targets = selectedTargets,
+            UsedAction = this
+        };
+        
         GetCaster().SetCastingSpell(false, GetCastingSpellColdownType());
-        GetCaster().OnAbilityThrownEnd();
+        GetCaster().OnAbilityFinished(info);
         
         selectedTargets[0].RemoveHighlight(this);
         delayedEffect = null;

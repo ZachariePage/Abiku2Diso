@@ -9,6 +9,9 @@ public class EgungunDefinition : ScriptableObject
 
     private Dictionary<AbikuStanceType, List<AbilityTemplateSO>> lookup;
 
+    public int HP;
+    public int defense = 0;
+
     //ik we building lookup each time we get abolities
     private void BuildLookup()
     {

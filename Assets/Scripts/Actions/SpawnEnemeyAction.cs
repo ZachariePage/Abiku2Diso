@@ -107,4 +107,9 @@ public class SpawnEnemeyAction : BattleAction
             "meowing"
         );
     }
+
+    public override BattleActionType GetActionType()
+    {
+        return BattleActionType.debug;
+    }
 }

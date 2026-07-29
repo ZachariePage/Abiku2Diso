@@ -118,7 +118,7 @@ public class ChangeAbikuAction : BattleAction, ICostGatedAction
         return owner;
     }
 
-    public BattleActionType GetActionType()
+    public override BattleActionType GetActionType()
     {
         return BattleActionType.changeStance;
     }

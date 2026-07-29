@@ -3,6 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public struct AbilityAftermathInfo
+{
+    public ISpellCaster caster;
+    public List<ITargettable> targets;
+    public AbilityAction UsedAction;
+}
 [Serializable]
 public class AbilityAction : BattleAction, ICostGatedAction
 {
@@ -115,13 +121,16 @@ public class AbilityAction : BattleAction, ICostGatedAction
         return actor;
     }
 
-    public BattleActionType GetActionType()
+    public override BattleActionType GetActionType()
     {
         return BattleActionType.ability;
     }
     
     public override bool ReadyToUse()
     {
+        Debug.Log(caster.IsOnColdown());
+        Debug.Log(CanBeUsedNow(BattleLoop.Instance.CurrentPhase));
+        Debug.Log(ManaCost() > PlayerBattleStats.Instance.GetMomentum());
         if (!CanBeUsedNow(BattleLoop.Instance.CurrentPhase) || caster.IsOnColdown() || ManaCost() > PlayerBattleStats.Instance.GetMomentum())
         {
             return false;

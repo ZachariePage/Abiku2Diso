@@ -24,3 +24,5 @@ MonoBehaviour:
   - stance: 4
     abilities:
     - {fileID: 11400000, guid: e806ad999a33a9f40a760e10c8c7c46f, type: 2}
+  HP: 0
+  defense: 2

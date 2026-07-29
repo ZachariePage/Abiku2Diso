@@ -18,4 +18,6 @@ public interface ITargettable
     TargettableTargetType GetTargetType();
 
     public Vector2 GetWorldPosition();
+    
+    public GridActor GetActor();
 }

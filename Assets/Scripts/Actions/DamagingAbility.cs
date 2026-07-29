@@ -16,7 +16,8 @@ public abstract class DamagingAbility : AbilityAction
         {
             if (target is IDamageable damageable)
             {
-                DamageInfo info = damageable.TakeDamage(actor, null, damage, element.GetElementType());
+                float finalDamage = damageable.ModifyIncomingDamage(damage);
+                DamageInfo info = damageable.TakeDamage(actor, null, finalDamage, element.GetElementType());
                 if(info.Target == null) continue;
                 results.Add(info);
             }

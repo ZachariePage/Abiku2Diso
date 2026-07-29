@@ -135,7 +135,7 @@ public class MoveAbikuAction : BattleAction, ICostGatedAction
         return abiku;
     }
 
-    public BattleActionType GetActionType()
+    public override BattleActionType GetActionType()
     {
         return BattleActionType.move;
     }
