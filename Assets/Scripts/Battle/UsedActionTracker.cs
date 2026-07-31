@@ -93,6 +93,8 @@ public class UsedActionTracker
         if (_encoreTriggered)
         {
             _encoreTriggered = false;
+            _usedActions.Remove(BattleActionType.changeStance);
+            _usedActions.Remove(BattleActionType.move);
             return false;
         }
 
@@ -107,5 +109,11 @@ public class UsedActionTracker
         _usedActions.Clear();
         _bonusActions.Clear();
         _encoreTriggered = false;
+    }
+    
+    public void MarkMoveOrStanceUsedExternally()
+    {
+        _usedActions.Add(BattleActionType.move);
+        _usedActions.Add(BattleActionType.changeStance);
     }
 }

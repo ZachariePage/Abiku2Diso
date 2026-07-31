@@ -127,14 +127,13 @@ public class AbilityAction : BattleAction, ICostGatedAction
     
     public override bool ReadyToUse()
     {
-        if (!CanBeUsedNow(BattleLoop.Instance.CurrentPhase) || caster.IsOnColdown() || ManaCost() > PlayerBattleStats.Instance.GetMomentum())
-        {
-            return false;
-        }
-        else
-        {
-            return true;
-        }
+        var tracker = caster.GetCooldownTracker();
+        bool phaseOk = CanBeUsedNow(BattleLoop.Instance.CurrentPhase);
+        bool slotAvailable = !tracker.AbilityUsed();
+        bool bonusReady = tracker.HasBonusAction(BattleActionType.ability);
+        bool canAfford = ManaCost() <= PlayerBattleStats.Instance.GetMomentum();
+        
+        return phaseOk && (slotAvailable || bonusReady) && canAfford;
     }
 
     public override HoverableUIData GetHoverData()

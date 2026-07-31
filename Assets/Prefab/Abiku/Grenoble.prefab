@@ -193,7 +193,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7f3cd1ab186d7f40ad67a8ea5a8c29c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startingEffectDefinitions:
-  - {fileID: 11400000, guid: d823286430cd84547a76771a6ea07ea8, type: 2}
-  - {fileID: 11400000, guid: 2bc36d3d604f57b4db62eb5b152dfb0b, type: 2}
-  - {fileID: 11400000, guid: 20ba5091080166744aa89413f9738f75, type: 2}
+  _startingEffectDefinitions: []

@@ -56,6 +56,7 @@ public abstract class AbikuStance : State, ISpellCaster
         
         //events 
         abiku.onMyTurnStart += StartTurn;
+        abiku.onMyTurnEnd += EndTurn;
         
         UnitSpawner.Instance.SpawnStanceMenu(this, abiku);
 
@@ -143,6 +144,7 @@ public abstract class AbikuStance : State, ISpellCaster
 
     public override void EndTurn()
     {
+        _coldownTracker.ResetTurn();
         base.EndTurn();
     }
 

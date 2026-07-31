@@ -163,38 +163,25 @@ public class BattleLoop : MonoBehaviour
         }
 
         action.PutOnColdown();
-        Debug.Log("two");
 
-        AbikuTrio actor = action.GetActorOwner() as AbikuTrio;
-        BattleActionType actionType = action.GetActionType();
-
-        bool wasBonusAction = normalActionUsedThisTurn && actor.HasBonusAction(actionType);
-
-        if (wasBonusAction)
-        {
-            actor.ConsumeBonusAction(actionType);
-        }
-        else
-        {
-            normalActionUsedThisTurn = true;
-        }
-
+        ISpellCaster caster = gated.Caster();
+        
+        Debug.Log(encoreTriggered);
         if (encoreTriggered)
         {
-            CurrentPhase = BattlePhase.Combat;
-            encoreTriggered = false;
+            caster.GetCooldownTracker().SetEncoreTriggered(true);
+            encoreTriggered = false; 
         }
-        else if (!normalActionUsedThisTurn)
+        
+        bool turnOver = caster.GetCooldownTracker().RegisterActionAndCheckTurnOver(gated.GetActionType());
+        Debug.Log(turnOver);
+        if (turnOver)
         {
-            CurrentPhase = BattlePhase.Combat; 
-        }
-        else if (actor.HasAnyBonusAction())
-        {
-            CurrentPhase = BattlePhase.Combat;
+            CurrentPhase = BattlePhase.TurnOver;
         }
         else
         {
-            CurrentPhase = BattlePhase.TurnOver;
+            CurrentPhase = BattlePhase.Combat;
         }
 
         PlayerBattleStats.Instance.DecreaseMomentum(action.ManaCost());

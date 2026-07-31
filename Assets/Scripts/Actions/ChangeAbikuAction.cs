@@ -60,6 +60,8 @@ public class ChangeAbikuAction : BattleAction, ICostGatedAction
         }
         trio.ChangeStance();
         
+        trio.StanceStateMachine.CurrentState.GetCooldownTracker().MarkMoveOrStanceUsedExternally();
+        
         onComplete?.Invoke();
         yield return null;
     }
@@ -125,8 +127,16 @@ public class ChangeAbikuAction : BattleAction, ICostGatedAction
     
     public override bool ReadyToUse()
     {
-        if (!caster.CanThrowSpell() || owner.IsStanceLocked()) return false;
-        return CanBeUsedNow(BattleLoop.Instance.CurrentPhase);
+        var tracker = caster.GetCooldownTracker();
+        bool phaseOk = CanBeUsedNow(BattleLoop.Instance.CurrentPhase);
+        bool slotAvailable = !tracker.MoveOrStanceUsed();
+        bool bonusReady = tracker.HasBonusAction(BattleActionType.changeStance);
+
+        if (owner.IsOnLastStance())
+        {
+            return false;
+        }
+        return !owner.IsStanceLocked() && phaseOk && (slotAvailable || bonusReady);
     }
 
     public override HoverableUIData GetHoverData()
