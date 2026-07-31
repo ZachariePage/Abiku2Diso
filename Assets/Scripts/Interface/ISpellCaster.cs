@@ -23,4 +23,5 @@ public interface ISpellCaster
     public void OnAbilityFinished(AbilityAftermathInfo abilityAftermathInfo);
 
     public GridActor GetActor();
+    UsedActionTracker GetCooldownTracker();
 }

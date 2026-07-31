@@ -291,7 +291,6 @@ public class BattleLoop : MonoBehaviour
         ClearPendingAction();
         ClearSelectedTarget();
         
-        _tracker.ResetTurn();
         StartCoroutine(EnemyTurn());
     }
 
@@ -371,8 +370,6 @@ public class BattleLoop : MonoBehaviour
         }
         
         onPlayerTurnStart?.Invoke();
-        
-        _tracker.ResetTurn();
     }
 
     public void EncoreTriggered()

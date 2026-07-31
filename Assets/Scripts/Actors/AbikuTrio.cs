@@ -165,7 +165,6 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
     
     public void OnAbilityFinished(AbilityAftermathInfo abilityAftermathInfo)
     {
-        Debug.Log("one");
         effectManager.TriggerOnAbilityFinished(this, abilityAftermathInfo);
     }
 

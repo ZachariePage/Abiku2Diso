@@ -58,6 +58,8 @@ public abstract class AbikuStance : State, ISpellCaster
         abiku.onMyTurnStart += StartTurn;
         
         UnitSpawner.Instance.SpawnStanceMenu(this, abiku);
+
+        _coldownTracker = new UsedActionTracker();
     }
 
     public IEnumerable<BattleAction> GetAbilities()
@@ -120,6 +122,11 @@ public abstract class AbikuStance : State, ISpellCaster
     public GridActor GetActor()
     {
         return abiku;
+    }
+
+    public UsedActionTracker GetCooldownTracker()
+    {
+        return _coldownTracker;
     }
 
     public override void EnterState()

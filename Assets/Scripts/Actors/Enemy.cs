@@ -18,6 +18,8 @@ public class Enemy : GridActor,  IDamageable, IHoldElement, ISpellCaster
     private float health;
     private Element currentElement;
     
+    private UsedActionTracker _coldownTracker;
+    
     private bool currentlyCasting = false;
 
     public int turnBeforeExecutingAction = -1;
@@ -258,6 +260,11 @@ public class Enemy : GridActor,  IDamageable, IHoldElement, ISpellCaster
     public GridActor GetActor()
     {
         return this;
+    }
+
+    public UsedActionTracker GetCooldownTracker()
+    {
+        return _coldownTracker;
     }
 
     public override Team GetMyTeam()

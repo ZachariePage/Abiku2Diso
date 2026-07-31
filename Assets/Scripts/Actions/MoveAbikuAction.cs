@@ -130,9 +130,9 @@ public class MoveAbikuAction : BattleAction, ICostGatedAction
         return 0;
     }
 
-    public object Performer()
+    public ISpellCaster Caster()
     {
-        return abiku;
+        return caster;
     }
 
     public override BattleActionType GetActionType()

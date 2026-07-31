@@ -113,9 +113,9 @@ public class ChangeAbikuAction : BattleAction, ICostGatedAction
         return 0;
     }
 
-    public object Performer()
+    public ISpellCaster Caster()
     {
-        return owner;
+        return caster;
     }
 
     public override BattleActionType GetActionType()

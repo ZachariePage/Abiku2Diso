@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System.Linq;
 public enum BattleActionType
 {
     move,
@@ -12,94 +12,100 @@ public enum BattleActionType
 public interface ICostGatedAction
 {
     int ManaCost();
-    object Performer();
-    
+    ISpellCaster Caster();
     BattleActionType GetActionType();
 }
+
+
 public class UsedActionTracker
-{ 
-    private List<object> _stanceWhoPlayed = new List<object>();
-    private readonly HashSet<(object performer, BattleActionType type)> used = new();
-    private GridActor selectedAbiku = null;
-    public bool HasUsed(object performer, BattleActionType type)
+{
+    private readonly HashSet<BattleActionType> _usedActions = new();
+    private readonly Dictionary<BattleActionType, int> _bonusActions = new();
+    private bool _encoreTriggered;
+
+    public static bool IsMoveOrStance(BattleActionType type)
     {
-        object actualPerformer = performer;
-        if (actualPerformer is AbikuTrio abiku)
+        return type == BattleActionType.move || type == BattleActionType.changeStance;
+    }
+
+    public bool MoveOrStanceUsed()
+    {
+        return _usedActions.Contains(BattleActionType.move) || _usedActions.Contains(BattleActionType.changeStance);
+    }
+
+
+    public bool AbilityUsed()
+    {
+       return _usedActions.Contains(BattleActionType.ability);
+    }
+
+    public bool HasBonusAction(BattleActionType type)
+    {
+        return _bonusActions.TryGetValue(type, out int c) && c > 0;
+    }
+
+    public bool HasAnyBonusAction()
+    {
+        return _bonusActions.Values.Any(c => c > 0);
+    } 
+
+    public void GrantBonusAction(BattleActionType type)
+    {
+        _bonusActions.TryGetValue(type, out int c);
+        _bonusActions[type] = c + 1;
+    }
+
+    public void ConsumeBonusAction(BattleActionType type)
+    {
+        if (_bonusActions.TryGetValue(type, out int c) && c > 0)
         {
-            actualPerformer = abiku.StanceStateMachine.CurrentState;
+            _bonusActions[type] = c - 1;
         }
-        Debug.Log(actualPerformer);
-        return used.Contains((actualPerformer, type));
     }
 
-    public void MarkUsed(object performer, BattleActionType type)
+    public void SetEncoreTriggered(bool value)
     {
-        object actualPerformer = performer;
-        if (actualPerformer is AbikuTrio abiku)
+        _encoreTriggered = value;
+    }
+    public bool RegisterActionAndCheckTurnOver(BattleActionType type)
+    {
+        bool isMoveOrStance = IsMoveOrStance(type);
+        bool alreadyUsedSlot = false;
+        
+        if (isMoveOrStance)
         {
-            actualPerformer = abiku.StanceStateMachine.CurrentState;
+            alreadyUsedSlot = MoveOrStanceUsed();
         }
-        Debug.Log(actualPerformer);
-        used.Add((actualPerformer, type));
-    }
-
-    public void ClearUsed(object performer, BattleActionType type)
-    {
-        used.Remove((performer, type));
-    }
-
-    public bool StanceHasUsed(object performer)
-    {
-        object actualPerformer = performer;
-        if (actualPerformer is AbikuTrio abiku)
+        else
         {
-            actualPerformer = abiku.StanceStateMachine.CurrentState;
+            alreadyUsedSlot = AbilityUsed();
         }
-        Debug.Log(actualPerformer);
-        return _stanceWhoPlayed.Contains(actualPerformer);
-    }
+        
+        bool wasBonus = alreadyUsedSlot && HasBonusAction(type);
 
-    public void StanceMarkUsed(object performer)
-    {
-        object actualPerformer = performer;
-        if (actualPerformer is AbikuTrio abiku)
+        _usedActions.Add(type);
+
+        if (wasBonus)
         {
-            actualPerformer = abiku.StanceStateMachine.CurrentState;
+            ConsumeBonusAction(type);
         }
-        Debug.Log(actualPerformer);
-        _stanceWhoPlayed.Add(actualPerformer);
-    }
 
-    public void ClearUsedStance(object performer)
-    {
-        object actualPerformer = performer;
-        if (actualPerformer is AbikuTrio abiku)
+        if (_encoreTriggered)
         {
-            actualPerformer = abiku.StanceStateMachine.CurrentState;
+            _encoreTriggered = false;
+            return false;
         }
-        _stanceWhoPlayed.Remove(actualPerformer);
-        ClearUsed(performer,  BattleActionType.move);
-        ClearUsed(performer,  BattleActionType.changeStance);
+
+        if (isMoveOrStance && !wasBonus) return false;
+        if (HasAnyBonusAction()) return false;
+
+        return true; 
     }
 
-    public GridActor GetSelectedActor()
-    {
-        return selectedAbiku;
-    }
-
-    public void SetSelectedActor(GridActor actor)
-    {
-        selectedAbiku = actor;
-    }
-
-    public void ClearSelectedActor()
-    {
-        selectedAbiku = null;
-    }
     public void ResetTurn()
     {
-        used.Clear();
-        _stanceWhoPlayed.Clear();
-        selectedAbiku = null;
+        _usedActions.Clear();
+        _bonusActions.Clear();
+        _encoreTriggered = false;
     }
 }

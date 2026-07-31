@@ -115,10 +115,9 @@ public class AbilityAction : BattleAction, ICostGatedAction
     {
         return momentumCost;
     }
-
-    public object Performer()
+    public ISpellCaster Caster()
     {
-        return actor;
+        return caster;
     }
 
     public override BattleActionType GetActionType()
