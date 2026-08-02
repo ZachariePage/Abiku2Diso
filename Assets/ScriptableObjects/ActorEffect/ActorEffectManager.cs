@@ -7,7 +7,7 @@ public class ActorEffectManager : MonoBehaviour
     private GridActor _self;
     [SerializeField] private List<ActorEffectDefinition> _startingEffectDefinitions;
 
-    [SerializeField] private readonly List<ActorEffect> _activeEffects = new();
+    private readonly List<ActorEffect> _activeEffects = new();
 
     private void Awake()
     {
@@ -72,6 +72,24 @@ public class ActorEffectManager : MonoBehaviour
         {
             _activeEffects.Remove(effect);
         }
+    }
+    
+    public T GetEffect<T>() where T : ActorEffect
+    { 
+        foreach (ActorEffect effect in _activeEffects)
+        {
+            if (effect is T typedEffect)
+            {
+                return typedEffect;
+            }
+        }
+
+        return null;
+    }
+
+    public bool HasEffect<T>() where T : ActorEffect
+    {
+        return GetEffect<T>() != null;
     }
     
     public void TriggerOnTurnStart(GridActor self) 

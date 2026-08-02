@@ -45,8 +45,8 @@ public class HoverAbility : MonoBehaviour
             if (currentTarget != null)
             {
                 currentTarget = null;
-                HoverTooltip.Instance.Hide();
             }
+            HoverTooltip.Instance.Hide();
             return;
         }
         

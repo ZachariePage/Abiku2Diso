@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public class Egungun
+public abstract class Egungun
 {
     [SerializeField] private EgungunDefinition definition;
-    private AbikuTrio owningTrio;
+    protected AbikuTrio owningTrio;
 
     private int HP;
     private int defense;
@@ -19,22 +19,22 @@ public class Egungun
         defense = definition.defense;
     }
     
-    public void StartTurn()
+    public virtual void StartTurn()
     {
         
     }
 
-    public void EndTurn()
+    public virtual void EndTurn()
     {
         
     }
     
-    public void FrameUpdate()
+    public virtual void FrameUpdate()
     {
        
     }
 
-    public void PhysicUpdate()
+    public virtual void PhysicUpdate()
     {
         
     }

@@ -9,20 +9,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c00460944caa7eb45a728915b3b4e94e, type: 3}
-  m_Name: AncientEgungunSO
+  m_Script: {fileID: 11500000, guid: f670a1a7c19735d41a526526b8593968, type: 3}
+  m_Name: WitchHexEgungunSO
   m_EditorClassIdentifier: 
   stanceAbilities:
   - stance: 1
     abilities:
     - {fileID: 11400000, guid: ddb22e354cb4d2141996c8c415609f7f, type: 2}
-    - {fileID: 11400000, guid: 3bc6cc7477f66f2498a4ec2b1bb01453, type: 2}
+    - {fileID: 11400000, guid: 19eb60db9b51a694b8dff88b7665a049, type: 2}
+    - {fileID: 11400000, guid: a90371e1f7896c248b330ef655b9dc1b, type: 2}
   - stance: 2
     abilities:
-    - {fileID: 11400000, guid: e627850097292114a8b3a4da9ddb7a68, type: 2}
+    - {fileID: 11400000, guid: ddb22e354cb4d2141996c8c415609f7f, type: 2}
     - {fileID: 11400000, guid: a2a70a0d61635c745bc6e2712babfefd, type: 2}
+    - {fileID: 11400000, guid: 7198aab7ebd5e434299b4f3f7dbd3fcf, type: 2}
   - stance: 4
     abilities:
-    - {fileID: 11400000, guid: e806ad999a33a9f40a760e10c8c7c46f, type: 2}
+    - {fileID: 11400000, guid: ddb22e354cb4d2141996c8c415609f7f, type: 2}
   HP: 0
-  defense: 2
+  defense: 0

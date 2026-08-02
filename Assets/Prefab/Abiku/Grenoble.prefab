@@ -153,8 +153,7 @@ MonoBehaviour:
     name: 
     description: 
   trioDefinition: {fileID: 11400000, guid: 6e37907ef7163d74cbbd9d8f7494c2c8, type: 2}
-  egungun:
-    definition: {fileID: 11400000, guid: 53705aee0459b2f458b8e5a371743044, type: 2}
+  egungunDefinition: {fileID: 11400000, guid: 6993984362faffa4dbcd1c7709ce79ce, type: 2}
   spriteRenderer: {fileID: 0}
 --- !u!114 &-8041642640067194577
 MonoBehaviour:

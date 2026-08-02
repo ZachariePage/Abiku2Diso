@@ -26,10 +26,9 @@ public class Fireball : DamagingAbility
 
     public override IEnumerable<ITargettable> GetValidTargets()
     {
-        //List<GridCell> reachable = GridPathfinder.FindCellsWithinRange(actor.GetHoldingCell(), range, targetAllowed, direction, true);
-        //List<GridCell> reachable = GridPathfinder.GetReachableCellsRay(actor.GetHoldingCell(), range, direction.allowedDirections, true);
         IEnumerable<GridCell> reachable = direction.FindCellsWithinRange(actor.GetHoldingCell(), range, 
             direction.allowedDirections, direction.directionType, targetAllowed.allowedTarget, true);
+        
         List<ITargettable> validTargets = new List<ITargettable>();
         foreach (GridCell cell in reachable)
         {
@@ -108,7 +107,6 @@ public class Fireball : DamagingAbility
 
     public override bool IsReady()
     {
-        
         if (selectedTargets.Count >= numberOfTargets)
         {
             return true;

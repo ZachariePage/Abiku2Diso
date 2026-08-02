@@ -166,7 +166,6 @@ public class BattleLoop : MonoBehaviour
 
         ISpellCaster caster = gated.Caster();
         
-        Debug.Log(encoreTriggered);
         if (encoreTriggered)
         {
             caster.GetCooldownTracker().SetEncoreTriggered(true);
@@ -174,7 +173,7 @@ public class BattleLoop : MonoBehaviour
         }
         
         bool turnOver = caster.GetCooldownTracker().RegisterActionAndCheckTurnOver(gated.GetActionType());
-        Debug.Log(turnOver);
+
         if (turnOver)
         {
             CurrentPhase = BattlePhase.TurnOver;

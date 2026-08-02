@@ -11,7 +11,8 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
     [SerializeField] private TrioDefinition trioDefinition;
     
     [Header("egungun")]
-    [SerializeField] private Egungun egungun;
+    [SerializeField] private EgungunDefinition egungunDefinition;
+    private Egungun egungun;
     
     [Header("stance")]
     public StateMachine<AbikuStance> StanceStateMachine;
@@ -57,12 +58,13 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
     protected override void Start()
     {
         base.Start();
-        if (egungun == null)
+        if (egungunDefinition == null)
         {
             Debug.LogError("NEW ERROR: egungun is null");
         }
         StanceStateMachine =  new StateMachine<AbikuStance>();
-
+        egungun = egungunDefinition.CreateEgungun(egungunDefinition, this);
+        
         foreach (var stance in trioDefinition.startingStances)
         {
             stances.Add(stance.CreateAbikuStanceState(this, StanceStateMachine));
@@ -76,7 +78,8 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
 
         effectManager = GetComponent<ActorEffectManager>();
 
-        Assert.IsNotNull(egungun, "no egungun wtf");
+        Assert.IsNotNull(egungunDefinition, "no egungun wtf");
+        
         health = egungun.GetHP();
         defense = egungun.GetDefense();
     }
