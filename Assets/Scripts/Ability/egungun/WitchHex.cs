@@ -1,9 +1,10 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class WitchHex : Egungun
 {
     private readonly WitchHexEgungunDefinition _config;
-
+    private Dictionary<GridActor, HexEffect> _currentHexedTarget = new Dictionary<GridActor, HexEffect>();
     public WitchHex(EgungunDefinition definition, AbikuTrio owningTrio, WitchHexEgungunDefinition config)
         : base(definition, owningTrio)
     {
@@ -45,15 +46,16 @@ public class WitchHex : Egungun
 
         if (existing == null)
         {
-            manager.AddEffect(new HexEffect(this, Mathf.Min(amount, cap), cap));
+            existing = new HexEffect(this, Mathf.Min(amount, cap), cap);
+            manager.AddEffect(existing);
         }
         else
         {
             existing.Refresh(this, cap);
             existing.CurrentStacks = Mathf.Min(existing.CurrentStacks + amount, existing.MaxStacks);
         }
-        
-        Debug.Log(manager.GetEffect<HexEffect>().CurrentStacks);
+
+        _currentHexedTarget.TryAdd(target, existing);
     }
     
     public int ConsumeHex(GridActor target, int requestedAmount)
@@ -70,4 +72,26 @@ public class WitchHex : Egungun
         if (hex.CurrentStacks <= 0) manager.RemoveEffect(hex);
         return consumed;
     }
+
+    public void RemoveHex(GridActor target)
+    {
+        _currentHexedTarget.Remove(target);
+    }
+
+    public IEnumerable<GridActor> GetHexedActors()
+    {
+        return _currentHexedTarget.Keys;
+    }
+    
+    public bool IsHexingTarget(GridActor actor)
+    {
+        return _currentHexedTarget.ContainsKey(actor);
+    }
+
+    public HexEffect GetHexedEffect(GridActor actor)
+    {
+        _currentHexedTarget.TryGetValue(actor, out HexEffect effect);
+        return effect;
+    }
+
 }

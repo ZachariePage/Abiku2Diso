@@ -118,9 +118,7 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
     
     public override void MoveToCell(GridCell cell)
     {
-        GetHoldingCell().EmptyCell();
-        transform.position = cell.WorldPosition;
-        SetHoldingCell(cell);
+        base.MoveToCell(cell);
     }
     
     public void ChangeAbiku()
@@ -228,6 +226,8 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
         DamageInfo info = new DamageInfo(source, this, abilityUsed, damage, element, currentElement, false);
         onDamageTaken?.Invoke(info);
         onDamageTakenCues?.Invoke();
+        
+        effectManager.TriggerOnDamageTaken(this,  info);
         return info;
     }
     public HealingInfo Heal(GridActor source, AbilityAction abilityUsed, float heal, Element element)

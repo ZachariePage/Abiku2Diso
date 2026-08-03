@@ -47,6 +47,7 @@ public enum EffectStack
 [Serializable]
 public class ActorEffect
 {
+    public string debugName;
     public EffectTrigger TriggerMask;
     public EffectPriority Priority;
     public EffectStack StackType = EffectStack.oneMax;
@@ -56,6 +57,7 @@ public class ActorEffect
     protected ActorEffect(EffectTrigger triggerMask, EffectPriority priority,
         EffectStack stackType = EffectStack.oneMax, int maxStacks = 1)
     {
+        debugName = GetType().Name;
         TriggerMask = triggerMask;
         Priority = priority;
         StackType = stackType;

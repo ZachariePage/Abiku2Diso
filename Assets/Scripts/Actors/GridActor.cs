@@ -44,7 +44,9 @@ public class GridActor : MonoBehaviour, ITargettable, IHoverable
     //i should put this in a interface prob
     public virtual void MoveToCell(GridCell cell)
     {
-       
+        GetHoldingCell().EmptyCell();
+        transform.position = cell.WorldPosition;
+        SetHoldingCell(cell);
     }
     //getter setter
     public GridCell GetHoldingCell()

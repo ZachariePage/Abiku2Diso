@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -924839788587034882}
   - component: {fileID: -4421223613704775905}
   - component: {fileID: -3206123425298548255}
+  - component: {fileID: -7628673197844004280}
   m_Layer: 7
   m_Name: enemy2
   m_TagString: Untagged
@@ -179,6 +180,19 @@ MonoBehaviour:
     cues:
     - {fileID: 11400000, guid: b5dbbd6a6bcf1524c98cf77240e37bff, type: 2}
     - {fileID: 11400000, guid: 524799e56acac1f4da811fd42f0b22c2, type: 2}
+--- !u!114 &-7628673197844004280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657769555342276678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7f3cd1ab186d7f40ad67a8ea5a8c29c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _startingEffectDefinitions: []
 --- !u!1001 &3132016916659362494
 PrefabInstance:
   m_ObjectHideFlags: 0

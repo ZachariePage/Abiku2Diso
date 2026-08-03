@@ -14,6 +14,8 @@ public class Enemy : GridActor,  IDamageable, IHoldElement, ISpellCaster
     public EnemyStanceScriptableObject[] startingState;
     private List<EnemyStance> states = new List<EnemyStance>();
     private int currentStateIndex = 0;
+
+    public ActorEffectManager effectManager;
     
     private float health;
     private Element currentElement;
@@ -56,6 +58,8 @@ public class Enemy : GridActor,  IDamageable, IHoldElement, ISpellCaster
             EnemyStance state = stateSO.CreateEnemyState(this, StateMachine);
             states.Add(state);
         }
+
+        effectManager = GetComponent<ActorEffectManager>();
         
         StateMachine.Init(states[0]);
         onStanceChange?.Invoke();
@@ -145,6 +149,8 @@ public class Enemy : GridActor,  IDamageable, IHoldElement, ISpellCaster
         
         onDamageTaken?.Invoke(info);
         onDamageTakenCues?.Invoke();
+        
+        effectManager.TriggerOnDamageTaken(this,  info);
         return info;
     }
 

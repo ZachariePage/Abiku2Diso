@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class HexTransfer : AbilityAction
@@ -18,19 +19,26 @@ public class HexTransfer : AbilityAction
 
     public override IEnumerable<ITargettable> GetValidTargets()
     {
+        List<ITargettable> validTargets = new List<ITargettable>();
+        if (actor is not AbikuTrio self ||
+            self.GetEgungun() is not WitchHex witch)
+        {
+            return validTargets;
+        }
+        
         IEnumerable<GridCell> reachable = direction.FindCellsWithinRange(actor.GetHoldingCell(), range, 
             direction.allowedDirections, direction.directionType, targetAllowed.allowedTarget, true);
         
-        List<ITargettable> validTargets = new List<ITargettable>();
         foreach (GridCell cell in reachable)
         {
             GridActor actor = cell.GetActorOnCell();
             if (actor != null)
             {
-                validTargets.Add(actor);
+                if (witch.IsHexingTarget(actor))
+                {
+                    validTargets.Add(actor);
+                }
             }
-            
-            validTargets.Add(cell);
         }
         
         return validTargets;
@@ -58,6 +66,18 @@ public class HexTransfer : AbilityAction
             yield break;
         }
 
+        GridActor firstTarget = selectedTargets[0].GetActor();
+        GridActor secondTarget = selectedTargets[1].GetActor();
+
+        GridCell firstCell = firstTarget.GetHoldingCell();
+        GridCell secondCell = secondTarget.GetHoldingCell();
+        
+        witch.ApplyHex(firstTarget, 1);
+        witch.ApplyHex(secondTarget, 1);
+        
+        firstTarget.MoveToCell(secondCell);
+        secondTarget.MoveToCell(firstCell);
+        
         onComplete?.Invoke();
         yield return null;
     }

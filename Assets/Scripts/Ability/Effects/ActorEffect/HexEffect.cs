@@ -36,5 +36,6 @@ public class HexEffect : ActorEffect
     public override void OnRemoval(GridActor self)
     {
         base.OnRemoval(self);
+        ApplierWitch.RemoveHex(self);
     }
 }

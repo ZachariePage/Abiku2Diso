@@ -7,7 +7,7 @@ public class ActorEffectManager : MonoBehaviour
     private GridActor _self;
     [SerializeField] private List<ActorEffectDefinition> _startingEffectDefinitions;
 
-    private readonly List<ActorEffect> _activeEffects = new();
+    [SerializeReference] private List<ActorEffect> _activeEffects = new();
 
     private void Awake()
     {
