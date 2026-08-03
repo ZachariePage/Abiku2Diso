@@ -5,10 +5,15 @@ using UnityEngine;
 
 public class BrandingHexAction : DamagingAbility
 {
+    int normalAmount;
+    int advantageAmount;
     public BrandingHexAction(ISpellCaster caster, GridActor actor, AbilityTemplateSO template, int range, 
-        TargetingStrategySO direction, TargetTypeStrategySO targetAllowed, int numberOfTargets, ElementSO element, BrandingHexTemplateSO config)
+        TargetingStrategySO direction, TargetTypeStrategySO targetAllowed, int numberOfTargets, ElementSO element,
+        BrandingHexTemplateSO config, int normalAmount, int advantageHexAmount)
         : base(caster, actor, template, range, direction, targetAllowed, numberOfTargets, element)
     {
+        this.normalAmount = normalAmount;
+        this.advantageAmount = advantageHexAmount;
     }
     public override TargetMode TargetMode()
     {
@@ -67,12 +72,13 @@ public class BrandingHexAction : DamagingAbility
             int amount;
             if (advantage)
             {
-                amount = 3;
+                amount = advantageAmount;
             }
             else
             {
-                amount = 2;
+                amount = normalAmount;
             }
+
             witch.ApplyHex(target, amount);
 
             DealDamageToTargets(selectedTargets, 10);

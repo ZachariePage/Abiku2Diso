@@ -12,7 +12,7 @@ public class DefenseBoostEffect : ActorEffect
 
     public override void OnDamageMitigation(DamageMitigationContext ctx)
     {
-        ctx.Defense += defenseBoost;
+        ctx.Defense += CurrentStacks * defenseBoost;
         ctx.Self.GetComponent<ActorEffectManager>().RemoveEffect(this);
     }
 }

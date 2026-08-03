@@ -43,7 +43,7 @@ public class BloodInscription : AbilityAction
             yield break;
         }
         witch.ApplyHex(self, 3);
-        self.GetComponent<ActorEffectManager>().AddEffect(new BloodInscriptionEffect(3));
+        self.GetComponent<ActorEffectManager>().AddEffect(new BloodInscriptionEffect(3), actor);
         
         onComplete?.Invoke();
         yield return null;

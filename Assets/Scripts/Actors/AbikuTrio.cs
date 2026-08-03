@@ -110,8 +110,10 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
     public override IEnumerator OnTurnEnd()
     {
         ClearBonusActions();
+        //battleeffect
         yield return StartCoroutine(ActivateEndOfTurnEffect());
         onMyTurnEnd?.Invoke();
+        //actoreffect
         effectManager.TriggerOnTurnEnd(this);
         yield return base.OnTurnEnd();
     }
@@ -203,7 +205,7 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
     
 
     //for now to see if encore is triggered will be here but in the future ill make a damage computation script
-    public DamageInfo TakeDamage(GridActor source, AbilityAction abilityUsed, float damage, Element element)
+    public DamageInfo TakeDamage(GridActor source, IDamageSource damageSource, float damage, Element element)
     {
         Debug.Log("take damage abiku");
         bool encoreTriggered = ElementSystem.Instance.IsEffectiveAgainst(currentElement, element);
@@ -223,14 +225,14 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
         
         effectManager.TriggerDamageMitigation(ctx);
         
-        DamageInfo info = new DamageInfo(source, this, abilityUsed, damage, element, currentElement, false);
+        DamageInfo info = new DamageInfo(source, this, damageSource, damage, element, currentElement, false);
         onDamageTaken?.Invoke(info);
         onDamageTakenCues?.Invoke();
         
         effectManager.TriggerOnDamageTaken(this,  info);
         return info;
     }
-    public HealingInfo Heal(GridActor source, AbilityAction abilityUsed, float heal, Element element)
+    public HealingInfo Heal(GridActor source, IHealingSource healingSource, float heal, Element element)
     {
         Debug.Log("healing abiku");
         health += heal;
@@ -241,7 +243,7 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
             TriggerEncore();
         }
         
-        HealingInfo info = new HealingInfo(source, this, abilityUsed, heal, element, currentElement, encoreTriggered);
+        HealingInfo info = new HealingInfo(source, this, healingSource, heal, element, currentElement, encoreTriggered);
         
         onHealTaken?.Invoke(info);
         onDamageTakenCues?.Invoke();
@@ -253,10 +255,10 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
         
     }
 
-    public int ModifyIncomingDamage(int value)
+    public DamageProposalContext ModifyOutgoingDamage(DamageProposalContext ctx)
     {
-        Debug.LogWarning("not implemented");
-        return value;
+        effectManager.TriggerOutgoingDamage(ctx);
+        return ctx;
     }
 
     public void TriggerEncore()

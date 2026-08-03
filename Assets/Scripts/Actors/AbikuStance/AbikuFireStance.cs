@@ -4,7 +4,6 @@ using UnityEngine;
 public class AbikuFireStance : AbikuStance
 {
     private AbikuFireStanceSO config;
-    private List<AbilityAction> actions = new List<AbilityAction>();
 
 
     public AbikuFireStance(GridActor unit, IStateMachine stateMachine, AbikuFireStanceSO config) : base(unit, stateMachine)
@@ -46,7 +45,7 @@ public class AbikuFireStance : AbikuStance
 
     protected override AbikuStanceType GetStanceType()
     {
-        return AbikuStanceType.Fire;
+        return AbikuStanceType.Toucher;
     }
 
     public override AbikuStanceScriptableObject GetStanceConfig()

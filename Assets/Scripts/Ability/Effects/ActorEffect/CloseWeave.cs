@@ -28,8 +28,8 @@ public class CloseWeave : ActorEffect
         ActorEffectManager effectManager = self.GetComponent<ActorEffectManager>();
         if (effectManager != null)
         {
-            DefenseBoostEffect newEffect = new DefenseBoostEffect(EffectTrigger.OnDamageMitigation, EffectPriority.First, EffectStack.oneMax, alliesCount);
-            effectManager.AddEffect(newEffect);
+            DefenseBoostEffect newEffect = new DefenseBoostEffect(EffectTrigger.OnDamageMitigation, EffectPriority.First, EffectStack.infinite, alliesCount);
+            effectManager.AddEffect(newEffect, self);
         }
     }
 }

@@ -44,7 +44,7 @@ public class AbikuWaterStance : AbikuStance
 
     protected override AbikuStanceType GetStanceType()
     {
-        return AbikuStanceType.Water;
+        return AbikuStanceType.Vue;
     }
 
     public override AbikuStanceScriptableObject GetStanceConfig()

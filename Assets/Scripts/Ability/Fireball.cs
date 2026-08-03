@@ -77,6 +77,7 @@ public class Fireball : DamagingAbility
         yield break;
     }
 
+    //THIS IS BUG WHEN THERE'S A CASTING TIME
     private void ResolveDamage()
     {
         foreach (GameCue cue in onAbilityThrownCues)

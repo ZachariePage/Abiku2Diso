@@ -2,13 +2,12 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-[Flags]
 public enum AbikuStanceType
 {
     None  = 0,
-    Fire  = 1 << 0,
-    Water = 1 << 1,
-    Wood  = 1 << 2,
+    Toucher  = 1 << 0,
+    Vue = 1 << 1,
+    Ouïe  = 1 << 2,
 }
 
 [Serializable]

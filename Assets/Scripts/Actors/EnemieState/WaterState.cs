@@ -5,7 +5,6 @@ public class WaterState : EnemyStance
 {
     private WaterStanceSO config;
     private AbilityAction action;
-    private Enemy enemy;
     
     private ITargettable currentTarget;
     public WaterState(GridActor unit, IStateMachine stateMachine, WaterStanceSO config) : base(unit, stateMachine)

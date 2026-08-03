@@ -47,7 +47,7 @@ public class WitchHex : Egungun
         if (existing == null)
         {
             existing = new HexEffect(this, Mathf.Min(amount, cap), cap);
-            manager.AddEffect(existing);
+            manager.AddEffect(existing, owningTrio);
         }
         else
         {

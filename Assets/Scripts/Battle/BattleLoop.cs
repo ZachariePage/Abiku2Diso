@@ -39,10 +39,8 @@ public class BattleLoop : MonoBehaviour
     
     [SerializeField] private ITargettable selectedTarget;
     private List<ITargettable> selectedTargets = new();
+    private AbikuTrio currentlySelectedAbikuTrio;
     
-    private bool normalActionUsedThisTurn = false;
-    
-    [SerializeField] private MonoBehaviour selectedTargetDEBUGINSPECTORSHOWKEK;
     private readonly List<BattleEffect> activeEffects = new();
     private readonly List<ITargettable> actionHighlights = new();
 
@@ -87,9 +85,6 @@ public class BattleLoop : MonoBehaviour
     public void OnTargetClicked(ITargettable target)
     {
         if(IsInputLocked()) return;
-        //
-        // if (actionExecuting)
-        //     return;
         
         if (target == null)
         {
@@ -107,7 +102,6 @@ public class BattleLoop : MonoBehaviour
             selectedTarget = target;
             selectedTarget.Select();
             
-            selectedTargetDEBUGINSPECTORSHOWKEK = selectedTarget as MonoBehaviour;
             return;
         }
         
@@ -123,8 +117,7 @@ public class BattleLoop : MonoBehaviour
         if (pendingAction.IsReady())
         {
             StartAction();
-
-            selectedTargetDEBUGINSPECTORSHOWKEK = null;
+            
             ClearPendingAction();
             ClearSelectedTarget();
         }
@@ -162,6 +155,8 @@ public class BattleLoop : MonoBehaviour
             return;
         }
 
+        currentlySelectedAbikuTrio = action.GetActorOwner() as AbikuTrio;
+        
         action.PutOnColdown();
 
         ISpellCaster caster = gated.Caster();
@@ -170,6 +165,7 @@ public class BattleLoop : MonoBehaviour
         {
             caster.GetCooldownTracker().SetEncoreTriggered(true);
             encoreTriggered = false; 
+            currentlySelectedAbikuTrio = null;
         }
         
         bool turnOver = caster.GetCooldownTracker().RegisterActionAndCheckTurnOver(gated.GetActionType());
@@ -198,7 +194,14 @@ public class BattleLoop : MonoBehaviour
             ClearSelectedTarget();
             return;
         }
-        
+
+        if (currentlySelectedAbikuTrio != action.GetActorOwner() && currentlySelectedAbikuTrio != null)
+        {
+            Debug.Log($"{action.GetActorOwner()} isn't {currentlySelectedAbikuTrio}");
+            ClearPendingAction();
+            ClearSelectedTarget();
+            return;
+        }
         if (action is ICostGatedAction gated)
         {
             
@@ -251,6 +254,11 @@ public class BattleLoop : MonoBehaviour
         ClearActionHighlights();
     }
 
+    public void ClearSelectedAbikuTrio()
+    {
+        currentlySelectedAbikuTrio =  null;
+    }
+
     public void ClearSelectedTarget()
     {
         if(selectedTarget == null) return;
@@ -266,7 +274,7 @@ public class BattleLoop : MonoBehaviour
             Debug.Log($"Can't pass turn in {CurrentPhase}");
             return;
         }
-
+        
         foreach (AbikuTrio abiku in abikuTrios)
         {
             StartCoroutine(abiku.OnTurnEnd());
@@ -274,6 +282,8 @@ public class BattleLoop : MonoBehaviour
         
         CurrentState = BattleState.AITurn;
         CurrentPhase  = BattlePhase.AITurn;
+        
+        ClearSelectedAbikuTrio();
         ClearPendingAction();
         ClearSelectedTarget();
         
@@ -328,7 +338,6 @@ public class BattleLoop : MonoBehaviour
         if (newAbikuTrio == null)
         {
             throw new ArgumentNullException(nameof(newAbikuTrio), "new enemy is null wtf");
-            return;
         }
         
         abikuTrios.Add(newAbikuTrio);

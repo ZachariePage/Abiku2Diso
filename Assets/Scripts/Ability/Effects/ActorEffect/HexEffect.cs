@@ -2,23 +2,23 @@ using UnityEngine;
 
 public class HexEffect : ActorEffect
 {
-    public WitchHex ApplierWitch;
+    public WitchHex applierWitch;
 
     public WitchHex GetApplierActor()
     {
-        return ApplierWitch;
+        return applierWitch;
     }
 
-    public HexEffect(WitchHex applierActor, int initialStacks, int maxStacks)
+    public HexEffect(WitchHex applierWitch, int initialStacks, int maxStacks)
         : base(EffectTrigger.OnDamageTaken, EffectPriority.Second, EffectStack.definedAmount, maxStacks)
     {
-        ApplierWitch = applierActor;
+        this.applierWitch = applierWitch;
         CurrentStacks = Mathf.Min(initialStacks, maxStacks);
     }
     
     public void Refresh(WitchHex newApplier, int newMaxCap)
     {
-        ApplierWitch = newApplier;
+        applierWitch = newApplier;
         MaxStacks = Mathf.Max(MaxStacks, newMaxCap);
     }
 
@@ -26,7 +26,7 @@ public class HexEffect : ActorEffect
     {
         base.OnDamageTaken(self, info);
 
-        GridActor applierTrio = ApplierWitch.GetOwningTrio();
+        GridActor applierTrio = applierWitch.GetOwningTrio();
         //if (witch.GetThreadLevel() < 2) return;
         if (self.GetMyTeam() != applierTrio.GetMyTeam()) return; 
 
@@ -36,6 +36,6 @@ public class HexEffect : ActorEffect
     public override void OnRemoval(GridActor self)
     {
         base.OnRemoval(self);
-        ApplierWitch.RemoveHex(self);
+        applierWitch.RemoveHex(self);
     }
 }

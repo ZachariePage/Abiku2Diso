@@ -4,14 +4,16 @@ using UnityEngine;
 [Flags]
 public enum EffectTrigger
 {
+    none = 0,
     OnTurnStart = 1 << 0,
     OnMove = 1 << 1,
     OnAbilityThrown = 1 << 2,
     OnAbilityFinished = 1 << 3,
-    OnDamageMitigation= 1 << 4,
-    OnDamageTaken = 1 << 5,
-    OnDamageDealt = 1 << 6,
-    OnTurnEnd = 1 << 7,
+    OnDamageSend = 1 << 4,
+    OnDamageMitigation= 1 << 5,
+    OnDamageTaken = 1 << 6,
+    OnDamageDealt = 1 << 7,
+    OnTurnEnd = 1 << 8,
 }
 
 public enum EffectPriority
@@ -25,16 +27,6 @@ public enum EffectPriority
 public class RequestAbilityContext
 {
     public AbilityAction requestedAbilityAction;
-}
-public class DamageMitigationContext
-{
-    public GridActor Self;
-    public GridActor Source;
-    public Element DamageElement;
-
-    public float IncomingDamage;
-    public int Defense;
-    public bool Dodged;
 }
 
 public enum EffectStack
@@ -53,9 +45,15 @@ public class ActorEffect
     public EffectStack StackType = EffectStack.oneMax;
     public int MaxStacks = 1;
     public int CurrentStacks = 1;
+    
+    public GridActor managerOwner;
+    public GridActor effectApplier;
 
-    protected ActorEffect(EffectTrigger triggerMask, EffectPriority priority,
-        EffectStack stackType = EffectStack.oneMax, int maxStacks = 1)
+    //I have realised that this is very bad, i realized that basically designer should never be allowed to decide the activation
+    //so constructor don't need effecttrigger and potentially also effect stack, just confuse other prog that might join this project
+    //but anyway i am alone and nobody will ever read this so xDDDDDDDDDDDDDDDDD
+    public ActorEffect(EffectTrigger triggerMask, EffectPriority priority,
+        EffectStack stackType = EffectStack.oneMax, int maxStacks = 999)
     {
         debugName = GetType().Name;
         TriggerMask = triggerMask;
@@ -64,7 +62,7 @@ public class ActorEffect
         MaxStacks = maxStacks;
         CurrentStacks = 1;
     }
-    public virtual object StackKey => GetType();
+    public virtual object EffectKey => GetType();
 
     public virtual void OnApplication(GridActor self)
     {
@@ -74,13 +72,10 @@ public class ActorEffect
     public virtual void OnMove(GridActor self, GridCell from, GridCell to) { }
     public virtual void OnAbilityThrown(GridActor self, BattleAction ability) { }
     public virtual void OnAbilityFinished(GridActor self, AbilityAftermathInfo info) { }
-    
+    public virtual void OnDamageSent(DamageProposalContext ctx) { }
     public virtual void OnDamageMitigation(DamageMitigationContext ctx) { }
     public virtual void OnDamageTaken(GridActor self, DamageInfo info) { }
     public virtual void OnDamageDealt(GridActor self, DamageInfo info) { }
     public virtual void OnTurnEnd(GridActor self) { }
-    
-    public virtual void OnRemoval(GridActor self)
-    {
-    }
+    public virtual void OnRemoval(GridActor self) { }
 }

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealingAbility : HealingAbilityAbstract
+public class HealingAbility : HealingAbilityAbstract, IHealingSource
 {
     private List<GameCue> onAbilityThrownCues = new List<GameCue>();
     private DelayedActionEffect delayedEffect;
@@ -124,4 +124,7 @@ public class HealingAbility : HealingAbilityAbstract
         selectedTargets.Add(target);
         return true;
     }
+
+    public string DisplayName => template.DisplayName;
+    public GridActor SourceActor => GetActorOwner();
 }

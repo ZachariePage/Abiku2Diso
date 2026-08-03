@@ -17,9 +17,12 @@ MonoBehaviour:
   hoverData:
     name: Branding Hexe
     description: I CAST AN HEXE UPON THEE
+  abilityGenre: 0
   targetingStrategy: {fileID: 11400000, guid: b336277bfcfc3c24c93c8c8f99a9cf8a, type: 2}
   targetTypeStrategy: {fileID: 11400000, guid: 9084fc426a9ea0e40b23919f6e12ab4c, type: 2}
   element: {fileID: 11400000, guid: c934ada44d0e2e741963a65f2a841a28, type: 2}
   range: 5
   numberOfTargets: 1
+  normalHexAmount: 2
+  advantageHexAmount: 3
   onThrownCues: []

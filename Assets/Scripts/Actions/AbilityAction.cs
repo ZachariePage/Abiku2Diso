@@ -19,8 +19,8 @@ public class AbilityAction : BattleAction, ICostGatedAction
     [SerializeField] protected int numberOfTargets;
     [SerializeField] protected ElementSO element;
     [SerializeField] protected int momentumCost;
-    AbilityTemplateSO template;
-    ISpellCaster caster;
+    protected AbilityTemplateSO template;
+    protected ISpellCaster caster;
 
     public AbilityAction(ISpellCaster caster, GridActor actor,AbilityTemplateSO template, int range,
         TargetingStrategySO direction, TargetTypeStrategySO targetAllowed, int numberOfTargets, ElementSO element)
@@ -60,7 +60,9 @@ public class AbilityAction : BattleAction, ICostGatedAction
 
     public override IEnumerable<GridCell> GetReachableCells()
     {
-        return null;
+        IEnumerable<GridCell> reachable = direction.GetReachableCells(actor.GetHoldingCell(), range, 
+            direction.allowedDirections, direction.directionType, true);
+        return reachable;
     }
 
     public override bool TryExecute(ITargettable target)
@@ -111,7 +113,7 @@ public class AbilityAction : BattleAction, ICostGatedAction
         return caster;
     }
 
-    public virtual int ManaCost()
+    public override int ManaCost()
     {
         return momentumCost;
     }

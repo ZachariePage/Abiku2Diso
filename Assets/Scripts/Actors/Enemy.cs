@@ -139,13 +139,14 @@ public class Enemy : GridActor,  IDamageable, IHoldElement, ISpellCaster
 
 
     //for now to see if encore is triggered will be here but in the future ill make a damage computation script
-    public DamageInfo TakeDamage(GridActor source, AbilityAction abilityUsed, float damage, Element element)
+    public DamageInfo TakeDamage(GridActor source, IDamageSource damageSource, float damage, Element element)
     {
+        Debug.LogWarning("damage modify effect not implemented");
         health -= damage;
 
         bool encoreTriggered = ElementSystem.Instance.IsEffectiveAgainst(element, currentElement);
         
-        DamageInfo info = new DamageInfo(source, this, abilityUsed, damage, element, currentElement, encoreTriggered);
+        DamageInfo info = new DamageInfo(source, this, damageSource, damage, element, currentElement, encoreTriggered);
         
         onDamageTaken?.Invoke(info);
         onDamageTakenCues?.Invoke();
@@ -154,13 +155,13 @@ public class Enemy : GridActor,  IDamageable, IHoldElement, ISpellCaster
         return info;
     }
 
-    public HealingInfo Heal(GridActor source, AbilityAction abilityUsed, float heal, Element element)
+    public HealingInfo Heal(GridActor source, IHealingSource healingSource, float heal, Element element)
     {
         health += heal;
 
         bool encoreTriggered = ElementSystem.Instance.IsEffectiveAgainst(element, currentElement);
         
-        HealingInfo info = new HealingInfo(source, this, abilityUsed, heal, element, currentElement, encoreTriggered);
+        HealingInfo info = new HealingInfo(source, this, healingSource, heal, element, currentElement, encoreTriggered);
         
         onHealTaken?.Invoke(info);
         onDamageTakenCues?.Invoke();
@@ -172,10 +173,10 @@ public class Enemy : GridActor,  IDamageable, IHoldElement, ISpellCaster
         
     }
 
-    public int ModifyIncomingDamage(int value)
+    public DamageProposalContext ModifyOutgoingDamage(DamageProposalContext ctx)
     {
         Debug.LogWarning("not implemented");
-        return value;
+        return ctx;
     }
 
     //getter setter add
@@ -261,11 +262,6 @@ public class Enemy : GridActor,  IDamageable, IHoldElement, ISpellCaster
     public void OnAbilityFinished(AbilityAftermathInfo abilityAftermathInfo)
     {
         ChangeStateThroughIncrementation();
-    }
-
-    public GridActor GetActor()
-    {
-        return this;
     }
 
     public UsedActionTracker GetCooldownTracker()

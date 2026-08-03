@@ -108,7 +108,7 @@ public class CheatManager : MonoBehaviour
 
         if (actor is AbikuTrio trio)
         {
-            trio.GetComponent<ActorEffectManager>().AddEffect(effect);
+            trio.GetComponent<ActorEffectManager>().AddEffect(effect, actor);
         }
     }
 }

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class DamagingAbility : AbilityAction
+public abstract class DamagingAbility : AbilityAction, IDamageSource
 {
     protected DamagingAbility(ISpellCaster caster, GridActor actor,AbilityTemplateSO template, int range, TargetingStrategySO direction,
         TargetTypeStrategySO targetAllowed, int numberOfTargets, ElementSO element)
@@ -16,7 +16,17 @@ public abstract class DamagingAbility : AbilityAction
         {
             if (target is IDamageable damageable)
             {
-                float finalDamage = damageable.ModifyIncomingDamage(damage);
+                DamageProposalContext ctx = new DamageProposalContext
+                {
+                    Self = target.GetActor(),
+                    Source = actor,
+                    DamageElement = element.GetElementType(),
+                    DamageProposed = damage
+                };
+
+                actor.GetComponent<IDamageable>().ModifyOutgoingDamage(ctx);
+                float finalDamage = ctx.DamageProposed;
+                
                 DamageInfo info = damageable.TakeDamage(actor, null, finalDamage, element.GetElementType());
                 if(info.Target == null) continue;
                 results.Add(info);
@@ -53,4 +63,7 @@ public abstract class DamagingAbility : AbilityAction
     {
         PlayerBattleStats.Instance.EncoreTriggered();
     }
+
+    public string DisplayName => template.DisplayName;
+    public GridActor SourceActor => GetActorOwner();
 }

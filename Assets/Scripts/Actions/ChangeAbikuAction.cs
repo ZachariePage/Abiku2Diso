@@ -110,7 +110,7 @@ public class ChangeAbikuAction : BattleAction, ICostGatedAction
         caster.PutAbilityOnColdown();
     }
 
-    public int ManaCost()
+    public override int ManaCost()
     {
         return 0;
     }

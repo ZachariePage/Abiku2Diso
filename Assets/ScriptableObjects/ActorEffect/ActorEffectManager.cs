@@ -14,22 +14,25 @@ public class ActorEffectManager : MonoBehaviour
         _self = GetComponent<GridActor>();
         foreach (var def in _startingEffectDefinitions)
         {
-            AddEffect(def);
+            AddEffect(def, _self);
         }
     }
 
-    public void AddEffect(ActorEffectDefinition definition)
+    public void AddEffect(ActorEffectDefinition definition, GridActor effectApplier)
     {
         ActorEffect effect = definition.CreateEffect();
-        AddEffect(effect);
+        AddEffect(effect, _self);
     }
 
-    public void AddEffect(ActorEffect newEffect)
+    //will cause a bug if the effect is for exemple oneStack but then we try to apply same effect but as another stack type
+    public void AddEffect(ActorEffect newEffect, GridActor effectApplier)
     {
-        ActorEffect existing = _activeEffects.FirstOrDefault(e => Equals(e.StackKey, newEffect.StackKey));
+        ActorEffect existing = _activeEffects.FirstOrDefault(e => Equals(e.EffectKey, newEffect.EffectKey));
         if (existing == null)
         {
             _activeEffects.Add(newEffect);
+            newEffect.managerOwner = _self;
+            newEffect.effectApplier = effectApplier;
             newEffect.OnApplication(_self);
             return;
         }
@@ -51,6 +54,8 @@ public class ActorEffectManager : MonoBehaviour
                 break;
             case EffectStack.newInstance:
                 _activeEffects.Add(newEffect);
+                newEffect.managerOwner = _self;
+                newEffect.effectApplier = effectApplier;
                 newEffect.OnApplication(_self);
                 break;
         }
@@ -124,7 +129,14 @@ public class ActorEffectManager : MonoBehaviour
             e.OnAbilityFinished(_self, info);
         }
     }
-    
+
+    public void TriggerOutgoingDamage(DamageProposalContext ctx)
+    {
+        foreach (var effect in GetEffectsFor(EffectTrigger.OnDamageSend))
+        {
+            effect.OnDamageSent(ctx);
+        }
+    }
     public void TriggerDamageMitigation(DamageMitigationContext ctx)
     {
         foreach (var effect in GetEffectsFor(EffectTrigger.OnDamageMitigation))

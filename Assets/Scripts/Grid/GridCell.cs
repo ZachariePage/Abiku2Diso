@@ -158,27 +158,27 @@ public class GridCell : ITargettable, IDamageable
         return $"Cell({X}, {Z}) @ {WorldPosition}";
     }
 
-    public DamageInfo TakeDamage(GridActor source, AbilityAction abilityUsed, float damage, Element element)
+    public DamageInfo TakeDamage(GridActor source, IDamageSource damageSource, float damage, Element element)
     {
         DamageInfo result = new DamageInfo();
         if (actorOnCell != null)
         {
             if (actorOnCell is IDamageable damageable)
             {
-                result = damageable.TakeDamage(source, abilityUsed, damage, element);
+                result = damageable.TakeDamage(source, damageSource, damage, element);
             }
         }
         return result;
     }
 
-    public HealingInfo Heal(GridActor source, AbilityAction abilityUsed, float heal, Element element)
+    public HealingInfo Heal(GridActor source, IHealingSource healingSource, float heal, Element element)
     {
         HealingInfo result = new HealingInfo();
         if (actorOnCell != null)
         {
             if (actorOnCell is IDamageable damageable)
             {
-                result = damageable.Heal(source, abilityUsed, heal, element);
+                result = damageable.Heal(source, healingSource, heal, element);
             }
         }
         return result;
@@ -194,17 +194,18 @@ public class GridCell : ITargettable, IDamageable
             }
         }
     }
-
-    public int ModifyIncomingDamage(int value)
+    
+    public DamageProposalContext ModifyOutgoingDamage(DamageProposalContext ctx)
     {
+        Debug.LogError("I have no idea why this would ever be called, unliked the takedamage above, prob should make an interface IDealDamage");
         if (actorOnCell != null)
         {
             if (actorOnCell is IDamageable damageable)
             {
-                return damageable.ModifyIncomingDamage(value);
+                return damageable.ModifyOutgoingDamage(ctx);
             }
         }
 
-        return value;
+        return ctx;
     }
 }

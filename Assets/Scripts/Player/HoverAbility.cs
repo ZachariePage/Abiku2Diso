@@ -10,8 +10,6 @@ public class HoverAbility : MonoBehaviour
     [Header("References")]
     [HideInInspector]
     public Camera cam;
-    [Header("Ray Settings")]
-    private float maxDistance = 1000f;
 
     [SerializeField] private LayerMask clickableLayer;
     

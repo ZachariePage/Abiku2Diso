@@ -44,7 +44,7 @@ public class AbikuWoodStance : AbikuStance
 
     protected override AbikuStanceType GetStanceType()
     {
-        return AbikuStanceType.Wood;
+        return AbikuStanceType.Ouïe;
     }
 
     public override AbikuStanceScriptableObject GetStanceConfig()
