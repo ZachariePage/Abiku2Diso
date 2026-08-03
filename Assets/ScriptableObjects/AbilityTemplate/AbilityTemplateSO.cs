@@ -20,6 +20,6 @@ public abstract class AbilityTemplateSO : ScriptableObject
     public string DisplayName;
     public int manaCost;
     public HoverableUIData hoverData;
-    public AbilityTag abilityGenre;
+    public AbilityTag tags;
     public abstract AbilityAction CreateAction(ISpellCaster caster, GridActor owner);
 }

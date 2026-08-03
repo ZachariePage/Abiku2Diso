@@ -193,3 +193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _startingEffectDefinitions: []
+  _activeEffects: []
+  references:
+    version: 2
+    RefIds: []
