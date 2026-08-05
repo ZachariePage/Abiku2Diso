@@ -214,7 +214,7 @@ public class Enemy : GridActor,  IDamageable, IHoldElement, ISpellCaster
         
     }
 
-    public void PutAbilityOnColdown()
+    public void PutOnColdown()
     {
         return;
     }

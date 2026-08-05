@@ -208,6 +208,7 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
     public DamageInfo TakeDamage(GridActor source, IDamageSource damageSource, float damage, Element element)
     {
         Debug.Log("take damage abiku");
+        Debug.LogWarning("not implemented");
         bool encoreTriggered = ElementSystem.Instance.IsEffectiveAgainst(currentElement, element);
         if (encoreTriggered)
         {
@@ -225,7 +226,7 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
         
         effectManager.TriggerDamageMitigation(ctx);
         
-        DamageInfo info = new DamageInfo(source, this, damageSource, damage, element, currentElement, false);
+        DamageInfo info = new DamageInfo(ctx.Source, this, damageSource, ctx.IncomingDamage, ctx.DamageElement, currentElement, false);
         onDamageTaken?.Invoke(info);
         onDamageTakenCues?.Invoke();
         

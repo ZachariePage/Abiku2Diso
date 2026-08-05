@@ -154,23 +154,34 @@ public class BattleLoop : MonoBehaviour
             ClearSelectedTarget();
             return;
         }
-
-        currentlySelectedAbikuTrio = action.GetActorOwner() as AbikuTrio;
-        
-        action.PutOnColdown();
-
         ISpellCaster caster = gated.Caster();
         
         if (encoreTriggered)
         {
             caster.GetCooldownTracker().SetEncoreTriggered(true);
             encoreTriggered = false; 
-            currentlySelectedAbikuTrio = null;
         }
         
         bool turnOver = caster.GetCooldownTracker().RegisterActionAndCheckTurnOver(gated.GetActionType());
 
         if (turnOver)
+        {
+            caster.PutOnColdown();
+        }
+
+        bool allTurnOver = true;
+
+        foreach (AbikuTrio trio in abikuTrios)
+        {
+            ISpellCaster stance = trio.StanceStateMachine.CurrentState;
+            if (!stance.IsOnColdown())
+            {
+                allTurnOver = false;
+                break;
+            }
+        }
+
+        if (allTurnOver)
         {
             CurrentPhase = BattlePhase.TurnOver;
         }
@@ -178,7 +189,7 @@ public class BattleLoop : MonoBehaviour
         {
             CurrentPhase = BattlePhase.Combat;
         }
-
+        
         PlayerBattleStats.Instance.DecreaseMomentum(action.ManaCost());
         actionExecuting = false;
         ClearPendingAction();

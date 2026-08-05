@@ -27,8 +27,8 @@ public abstract class AbikuStance : State, ISpellCaster
 
     private UsedActionTracker _coldownTracker;
     
-    private bool hasPlayedThisTurn = false;
-    private bool currentlyCasting = false;
+    private bool _currentlyCasting = false;
+    private bool _turnOver = false;
     protected AbikuStance(GridActor unit, IStateMachine stateMachine) : base(unit, stateMachine)
     {
         if (unit is AbikuTrio trio)
@@ -69,19 +69,19 @@ public abstract class AbikuStance : State, ISpellCaster
 
     public abstract AbikuStanceScriptableObject GetStanceConfig();
 
-    public void PutAbilityOnColdown()
+    public void PutOnColdown()
     {
-        hasPlayedThisTurn = true;
+        _turnOver = true;
     }
 
     public void RefreshColdown()
     {
-        hasPlayedThisTurn = false;
+        _turnOver = false;
     }
 
     public bool IsOnColdown()
     {
-        return hasPlayedThisTurn;
+        return _turnOver;
     }
 
     public bool CanThrowSpell()
@@ -91,7 +91,7 @@ public abstract class AbikuStance : State, ISpellCaster
 
     public bool IsCastingSpell()
     {
-        return currentlyCasting;
+        return _currentlyCasting;
     }
 
     public void SetCastingSpell(bool value, CastingSpellColdownType type)
@@ -101,10 +101,10 @@ public abstract class AbikuStance : State, ISpellCaster
             case CastingSpellColdownType.enemy:
                 break;
             case CastingSpellColdownType.player:
-                currentlyCasting = value;
+                _currentlyCasting = value;
                 break;
             case CastingSpellColdownType.both:
-                currentlyCasting = value;
+                _currentlyCasting = value;
                 break;
         }
     }

@@ -122,7 +122,7 @@ public class MoveAbikuAction : BattleAction, ICostGatedAction
 
     public override void PutOnColdown()
     {
-        caster.PutAbilityOnColdown();
+        caster.PutOnColdown();
     }
 
     public override int ManaCost()
@@ -142,7 +142,8 @@ public class MoveAbikuAction : BattleAction, ICostGatedAction
     
     public override bool ReadyToUse()
     {
-        var tracker = caster.GetCooldownTracker();
+        if (caster.IsOnColdown()) return false;
+        UsedActionTracker tracker = caster.GetCooldownTracker();
         bool phaseOk = CanBeUsedNow(BattleLoop.Instance.CurrentPhase);
         bool slotAvailable = !tracker.MoveOrStanceUsed();
         bool bonusReady = tracker.HasBonusAction(BattleActionType.move);

@@ -105,7 +105,7 @@ public class AbilityAction : BattleAction, ICostGatedAction
 
     public override void PutOnColdown()
     {
-        caster.PutAbilityOnColdown();
+        caster.PutOnColdown();
     }
 
     public ISpellCaster GetCaster()
@@ -129,11 +129,16 @@ public class AbilityAction : BattleAction, ICostGatedAction
     
     public override bool ReadyToUse()
     {
-        var tracker = caster.GetCooldownTracker();
+        if (caster.IsOnColdown()) return false;
+        UsedActionTracker tracker = caster.GetCooldownTracker();
         bool phaseOk = CanBeUsedNow(BattleLoop.Instance.CurrentPhase);
         bool slotAvailable = !tracker.AbilityUsed();
         bool bonusReady = tracker.HasBonusAction(BattleActionType.ability);
         bool canAfford = ManaCost() <= PlayerBattleStats.Instance.GetMomentum();
+        
+        // Debug.Log(phaseOk);
+        // Debug.Log(slotAvailable);
+        // Debug.Log(bonusReady);
         
         return phaseOk && (slotAvailable || bonusReady) && canAfford;
     }

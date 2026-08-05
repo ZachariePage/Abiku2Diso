@@ -8,7 +8,7 @@ public enum CastingSpellColdownType
 }
 public interface ISpellCaster
 {
-    public void PutAbilityOnColdown();
+    public void PutOnColdown();
     
     public void RefreshColdown();
     public bool IsOnColdown();

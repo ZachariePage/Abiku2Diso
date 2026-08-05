@@ -100,7 +100,7 @@ public class UsedActionTracker
 
         if (isMoveOrStance && !wasBonus) return false;
         if (HasAnyBonusAction()) return false;
-
+        
         return true; 
     }
 
