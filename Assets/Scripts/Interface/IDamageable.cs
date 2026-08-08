@@ -80,4 +80,8 @@ public interface IDamageable
     public void BuffDefense(int value);
 
     public DamageProposalContext ModifyOutgoingDamage(DamageProposalContext ctx);
+
+    public bool IsWounded();
+    
+    public Health GetHealth();
 }

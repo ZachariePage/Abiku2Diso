@@ -30,7 +30,7 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
     private bool _stanceLocked;
     
     //stats
-    private float health;
+    private Health hpScript;
     private int defense;
     
     //Unity Events
@@ -79,8 +79,9 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
         effectManager = GetComponent<ActorEffectManager>();
 
         Assert.IsNotNull(egungunDefinition, "no egungun wtf");
-        
-        health = egungun.GetHP();
+
+        hpScript = GetComponent<Health>();
+        hpScript.Init(this, egungun.GetHP());
         defense = egungun.GetDefense();
     }
 
@@ -225,6 +226,7 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
         };
         
         effectManager.TriggerDamageMitigation(ctx);
+        hpScript.ModifyHp(-ctx.IncomingDamage);
         
         DamageInfo info = new DamageInfo(ctx.Source, this, damageSource, ctx.IncomingDamage, ctx.DamageElement, currentElement, false);
         onDamageTaken?.Invoke(info);
@@ -236,8 +238,8 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
     public HealingInfo Heal(GridActor source, IHealingSource healingSource, float heal, Element element)
     {
         Debug.Log("healing abiku");
-        health += heal;
-
+        hpScript.ModifyHp(heal);
+        
         bool encoreTriggered = ElementSystem.Instance.IsEffectiveAgainst(currentElement, element);
         if (encoreTriggered)
         {
@@ -260,6 +262,16 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
     {
         effectManager.TriggerOutgoingDamage(ctx);
         return ctx;
+    }
+
+    public bool IsWounded()
+    {
+        return hpScript.IsWounded();
+    }
+
+    public Health GetHealth()
+    {
+        return hpScript;
     }
 
     public void TriggerEncore()
@@ -354,5 +366,13 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
     public int GetSkillDiscount()
     {
         return _pendingSkillDiscount;
+    }
+
+    public void Cheat_refreshcoldown()
+    {
+        foreach (AbikuStance abikuStance in stances)
+        {
+            abikuStance.Cheat_ResetTurn();
+        }
     }
 }

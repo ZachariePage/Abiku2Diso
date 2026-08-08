@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -4421223613704775905}
   - component: {fileID: -3206123425298548255}
   - component: {fileID: -7628673197844004280}
+  - component: {fileID: -8497788829780705285}
   m_Layer: 7
   m_Name: enemy2
   m_TagString: Untagged
@@ -155,6 +156,7 @@ MonoBehaviour:
     description: 
   startingState:
   - {fileID: 11400000, guid: 67a59a25d98dda8439575e5154c6bd56, type: 2}
+  effectManager: {fileID: 0}
   turnBeforeExecutingAction: -1
   abilityActions: []
   DEBUGCASTINGTEXTCUE: {fileID: 11400000, guid: b5dbbd6a6bcf1524c98cf77240e37bff, type: 2}
@@ -193,6 +195,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _startingEffectDefinitions: []
+  _activeEffects: []
+  references:
+    version: 2
+    RefIds: []
+--- !u!114 &-8497788829780705285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657769555342276678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3c44bbac71dc1f41a2c5bf176cc2316, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3132016916659362494
 PrefabInstance:
   m_ObjectHideFlags: 0

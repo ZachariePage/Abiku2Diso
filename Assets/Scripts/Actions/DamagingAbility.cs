@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public abstract class DamagingAbility : AbilityAction, IDamageSource
@@ -9,10 +10,10 @@ public abstract class DamagingAbility : AbilityAction, IDamageSource
     {
     }
 
-    protected List<DamageInfo> DealDamageToTargets(IEnumerable<ITargettable> targets, int damage)
+    protected List<DamageInfo> DealDamageToTargets(IEnumerable<ITargettable> targets, float damage)
     {
         List<DamageInfo> results = new();
-        foreach (var target in targets)
+        foreach (ITargettable target in targets.ToArray())
         {
             if (target is IDamageable damageable)
             {

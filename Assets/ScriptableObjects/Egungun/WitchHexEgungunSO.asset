@@ -23,8 +23,14 @@ MonoBehaviour:
     abilities:
     - {fileID: 11400000, guid: ddb22e354cb4d2141996c8c415609f7f, type: 2}
     - {fileID: 11400000, guid: 33cd06d0ee0af164dba671050ded6c42, type: 2}
+    - {fileID: 11400000, guid: eab5f75d41172f846a2666e82c51d289, type: 2}
+    - {fileID: 11400000, guid: 11e3237bd13708f43af87cf09faa75d4, type: 2}
   - stance: 4
     abilities:
     - {fileID: 11400000, guid: ddb22e354cb4d2141996c8c415609f7f, type: 2}
-  HP: 0
-  defense: 0
+    - {fileID: 11400000, guid: 15ed716706ffde14c9774676697321ec, type: 2}
+    - {fileID: 11400000, guid: 12548ff057330cc4790a7aa938f415d5, type: 2}
+    - {fileID: 11400000, guid: 3d2fd8b759a117c459df15d3b2ab62aa, type: 2}
+    - {fileID: 11400000, guid: 8347fc8b47eaa97478fe749c7630a67d, type: 2}
+  HP: 100
+  defense: 2

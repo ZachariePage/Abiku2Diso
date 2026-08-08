@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using NUnit.Framework;
 using UnityEngine;
 
 public class CheatManager : MonoBehaviour
@@ -46,6 +47,13 @@ public class CheatManager : MonoBehaviour
 
                 string effectName = args[0];
                 CreateEffect(effectName);
+                break;
+            case "resetturn":
+                foreach (AbikuTrio abikuTrio in FindObjectsByType<AbikuTrio>(FindObjectsSortMode.None))
+                {
+                    abikuTrio.Cheat_refreshcoldown();
+                }
+                BattleLoop.Instance.Cheat_SetbattlePhase(BattlePhase.Combat);
                 break;
             default:
                 Debug.LogWarning($"Unknown command: '{command}'");

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e85de04f77c1647b87c0a65534b965, type: 3}
+  m_Name: LivingBombSO
+  m_EditorClassIdentifier: 
+  DisplayName: 
+  manaCost: 0
+  hoverData:
+    name: 
+    description: 
+  tags: 0
+  targetingStrategy: {fileID: 0}
+  targetTypeStrategy: {fileID: 0}
+  element: {fileID: 0}
+  range: 0
+  numberOfTargets: 0
+  damage: 0
+  onThrownCues: []

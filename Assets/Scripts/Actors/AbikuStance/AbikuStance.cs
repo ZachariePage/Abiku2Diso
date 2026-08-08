@@ -161,4 +161,10 @@ public abstract class AbikuStance : State, ISpellCaster
     {
         base.PhysicUpdate();
     }
+
+    public void Cheat_ResetTurn()
+    {
+        RefreshColdown();
+        _coldownTracker.ResetTurn();
+    }
 }

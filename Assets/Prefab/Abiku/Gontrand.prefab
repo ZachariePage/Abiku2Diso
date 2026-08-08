@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -5303000856734051030}
   - component: {fileID: 3349759592751701466}
   - component: {fileID: -7167929459134706757}
+  - component: {fileID: -1980613833069100828}
   m_Layer: 7
   m_Name: Gontrand
   m_TagString: Untagged
@@ -193,3 +194,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _startingEffectDefinitions: []
+  _activeEffects: []
+  references:
+    version: 2
+    RefIds: []
+--- !u!114 &-1980613833069100828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657769555342276678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3c44bbac71dc1f41a2c5bf176cc2316, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

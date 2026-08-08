@@ -16,8 +16,8 @@ public class Enemy : GridActor,  IDamageable, IHoldElement, ISpellCaster
     private int currentStateIndex = 0;
 
     public ActorEffectManager effectManager;
-    
-    private float health;
+
+    private Health hpScript;
     private Element currentElement;
     
     private UsedActionTracker _coldownTracker;
@@ -60,6 +60,10 @@ public class Enemy : GridActor,  IDamageable, IHoldElement, ISpellCaster
         }
 
         effectManager = GetComponent<ActorEffectManager>();
+        
+        hpScript = GetComponent<Health>();
+        //TODO give enemy real hp
+        hpScript.Init(this, 100);
         
         StateMachine.Init(states[0]);
         onStanceChange?.Invoke();
@@ -142,7 +146,7 @@ public class Enemy : GridActor,  IDamageable, IHoldElement, ISpellCaster
     public DamageInfo TakeDamage(GridActor source, IDamageSource damageSource, float damage, Element element)
     {
         Debug.LogWarning("damage modify effect not implemented");
-        health -= damage;
+        hpScript.ModifyHp(-damage);
 
         bool encoreTriggered = ElementSystem.Instance.IsEffectiveAgainst(element, currentElement);
         
@@ -157,7 +161,7 @@ public class Enemy : GridActor,  IDamageable, IHoldElement, ISpellCaster
 
     public HealingInfo Heal(GridActor source, IHealingSource healingSource, float heal, Element element)
     {
-        health += heal;
+        hpScript.ModifyHp(heal);
 
         bool encoreTriggered = ElementSystem.Instance.IsEffectiveAgainst(element, currentElement);
         
@@ -177,6 +181,16 @@ public class Enemy : GridActor,  IDamageable, IHoldElement, ISpellCaster
     {
         Debug.LogWarning("not implemented");
         return ctx;
+    }
+
+    public bool IsWounded()
+    {
+        throw new NotImplementedException();
+    }
+
+    public Health GetHealth()
+    {
+        return hpScript;
     }
 
     //getter setter add

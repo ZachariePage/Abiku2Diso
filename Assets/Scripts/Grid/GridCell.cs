@@ -208,4 +208,29 @@ public class GridCell : ITargettable, IDamageable
 
         return ctx;
     }
+
+    public bool IsWounded()
+    {
+        if (actorOnCell != null)
+        {
+            if (actorOnCell is IDamageable damageable)
+            {
+                return damageable.GetHealth().IsWounded();
+            }
+        }
+        return false;
+    }
+
+    public Health GetHealth()
+    {
+        if (actorOnCell != null)
+        {
+            if (actorOnCell is IDamageable damageable)
+            {
+                return damageable.GetHealth();
+            }
+        }
+        
+        return null;
+    }
 }

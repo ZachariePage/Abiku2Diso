@@ -396,4 +396,9 @@ public class BattleLoop : MonoBehaviour
     {
         StartCoroutine(StartCombat());
     }
+
+    public void Cheat_SetbattlePhase(BattlePhase battlePhase)
+    {
+        CurrentPhase = battlePhase;
+    }
 }
