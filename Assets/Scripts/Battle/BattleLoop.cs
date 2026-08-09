@@ -54,8 +54,9 @@ public class BattleLoop : MonoBehaviour
     private bool encoreTriggered = false;
     
     //events
-    public event Action onCombatStart;
-    public event Action onPlayerTurnStart;
+    public event Action OnCombatStart;
+    public event Action OnPlayerTurnStart;
+    public event Action<IReadOnlyList<IActionOption>> OnChoicePrompt;
 
     private void Awake()
     {
@@ -79,7 +80,7 @@ public class BattleLoop : MonoBehaviour
             yield return StartCoroutine(enemy.StartOfCombat());
         }
         
-        onCombatStart?.Invoke();
+        OnCombatStart?.Invoke();
         StartPlayerTurn();
     }
     public void OnTargetClicked(ITargettable target)
@@ -219,16 +220,68 @@ public class BattleLoop : MonoBehaviour
         }
         ClearPendingAction();
         pendingAction = action;
-        if (action.TargetMode() == TargetMode.Instant)
+        switch (action.TargetMode())
         {
-            action.AddTarget(selectedTarget);
+            case TargetMode.Instant:
+                action.AddTarget(selectedTarget);
+                StartAction();
+                ClearPendingAction();
+                ClearSelectedTarget();
+                return;
+
+            case TargetMode.Choice:
+                selectedTarget.Deselect();
+                PromptChoiceIfNeeded(action);
+                return;
+
+            case TargetMode.Single:
+            case TargetMode.Multiple:
+                BeginTargeting(action);
+                return;
+        }
+    }
+    
+    //inprogress
+    private bool PromptChoiceIfNeeded(BattleAction action)
+    {
+        if (action is IChoiceGatedAction choiceAction && choiceAction.HasPendingChoice())
+        {
+            OnChoicePrompt?.Invoke(choiceAction.GetOptions());
+            return true;
+        }
+        return false;
+    }
+    
+    public void SelectPendingOption(IActionOption option)
+    {
+        if (pendingAction is not IChoiceGatedAction choiceAction) return;
+        if (!choiceAction.SelectOption(option)) return;
+
+        if (choiceAction.StartActionImmediately())
+        {
             StartAction();
             ClearPendingAction();
             ClearSelectedTarget();
-            return;
         }
-
+        else
+        {
+            BeginTargeting(pendingAction);
+        }
+    }
+    
+    private void BeginTargeting(BattleAction action)
+    {
         ClearSelectedTarget();
+        RefreshTargetHighlights(action);
+    }
+    private void RefreshTargetHighlights(BattleAction action)
+    {
+        foreach (var targetToClear in actionHighlights)
+        {
+            targetToClear.RemoveHighlight(this);
+        }
+        actionHighlights.Clear();
+        
         validTargets = new HashSet<ITargettable>(action.GetValidTargets());
 
         foreach(var target in validTargets)
@@ -249,6 +302,7 @@ public class BattleLoop : MonoBehaviour
         }
     }
     
+    //inprogress
     private void ClearActionHighlights()
     {
         foreach(var target in actionHighlights)
@@ -375,7 +429,7 @@ public class BattleLoop : MonoBehaviour
             StartCoroutine(abiku.OnTurnStart());
         }
         
-        onPlayerTurnStart?.Invoke();
+        OnPlayerTurnStart?.Invoke();
     }
 
     public void EncoreTriggered()

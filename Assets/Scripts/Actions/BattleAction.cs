@@ -24,7 +24,8 @@ public enum TargetMode
 {
     Instant,
     Single,
-    Multiple
+    Multiple,
+    Choice
 }
 
 [Flags]

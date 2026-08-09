@@ -8,7 +8,7 @@ public class UIEnemyDEBUG : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        BattleLoop.Instance.onCombatStart += SelfDelete;
+        BattleLoop.Instance.OnCombatStart += SelfDelete;
     }
 
     // Update is called once per frame

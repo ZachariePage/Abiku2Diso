@@ -5,6 +5,7 @@ public class UnitSpawner : MonoBehaviour
 {
     public static UnitSpawner Instance { get; private set; }
     public GameObject stanceBattleMenu;
+    public GameObject choicePromptMenu;
     
     private void Awake()
     {
@@ -39,6 +40,7 @@ public class UnitSpawner : MonoBehaviour
         
         unit.Initialize();
 
+        SpawnChoicePromptMenu(unit);
         return unit;
     }
 
@@ -48,6 +50,11 @@ public class UnitSpawner : MonoBehaviour
         StanceBattleMenu menu = newMenu.GetComponent<StanceBattleMenu>();
         menu.owningTrio = unit;
         menu.stance = stance;
+    }
+
+    public void SpawnChoicePromptMenu(AbikuTrio unit)
+    {
+        GameObject newMenu = Instantiate(choicePromptMenu, unit.GetWorldPosition(),Quaternion.identity ,unit.gameObject.transform);
     }
     
     public Enemy SpawnEnemy(GameObject prefab, GridCell cell)

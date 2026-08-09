@@ -120,7 +120,7 @@ public class Fireball : DamagingAbility
 
     public override bool AddTarget(ITargettable target)
     {
-        selectedTargets.Clear();
+        //selectedTargets.Clear();
         selectedTargets.Add(target);
         return true;
     }

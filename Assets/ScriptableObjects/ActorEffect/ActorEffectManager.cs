@@ -99,7 +99,7 @@ public class ActorEffectManager : MonoBehaviour
     
     public void TriggerOnTurnStart(GridActor self) 
     {
-        foreach (var e in _activeEffects.Where(e => (e.TriggerMask & EffectTrigger.OnTurnStart)
+        foreach (var e in _activeEffects.Where(e => (e.TriggerMask & EffectTrigger.OnTurnStart) 
                                                     != 0).OrderBy(e => e.Priority).ToList())
         {
             e.OnTurnStart(_self);

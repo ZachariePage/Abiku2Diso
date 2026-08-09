@@ -5029,6 +5029,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stanceBattleMenu: {fileID: 4913930244400395967, guid: e92a58e1b9115e848829c3e5d11477f8, type: 3}
+  choicePromptMenu: {fileID: 6658535239932461052, guid: d10358320472ed6458f2661138fd11cb, type: 3}
 --- !u!114 &1514382026
 MonoBehaviour:
   m_ObjectHideFlags: 0
