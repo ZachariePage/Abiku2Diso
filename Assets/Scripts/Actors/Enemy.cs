@@ -172,11 +172,6 @@ public class Enemy : GridActor,  IDamageable, IHoldElement, ISpellCaster
         return info;
     }
 
-    public void BuffDefense(int value)
-    {
-        
-    }
-
     public DamageProposalContext ModifyOutgoingDamage(DamageProposalContext ctx)
     {
         Debug.LogWarning("not implemented");

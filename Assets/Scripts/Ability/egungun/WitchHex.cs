@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class WitchHex : Egungun
 {
-    private readonly WitchHexEgungunDefinition _config;
+    private WitchHexEgungunDefinition _config;
     private Dictionary<GridActor, HexEffect> _currentHexedTarget = new Dictionary<GridActor, HexEffect>();
     public WitchHex(EgungunDefinition definition, AbikuTrio owningTrio, WitchHexEgungunDefinition config)
         : base(definition, owningTrio)

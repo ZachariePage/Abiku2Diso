@@ -16,6 +16,8 @@ public interface ITargettable
     void RemoveHighlight(object source);
     
     TargettableTargetType GetTargetType();
+    
+    public GridCell GetTargetCell();
 
     public Vector2 GetWorldPosition();
     

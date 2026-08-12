@@ -154,7 +154,7 @@ MonoBehaviour:
     name: 
     description: 
   trioDefinition: {fileID: 11400000, guid: 5dc39460724082043aa6e6335f9cbe2d, type: 2}
-  egungunDefinition: {fileID: 11400000, guid: 6993984362faffa4dbcd1c7709ce79ce, type: 2}
+  egungunDefinition: {fileID: 11400000, guid: 0afd6854aa572ef4cb58b3baaf0126cf, type: 2}
   spriteRenderer: {fileID: 0}
 --- !u!114 &3349759592751701466
 MonoBehaviour:
@@ -210,3 +210,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3c44bbac71dc1f41a2c5bf176cc2316, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
+  StartingHealth: 0

@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9b65afeaa0f00e46b9f3b43107e0249, type: 3}
+  m_Name: ShieldBreakerEgungunSO
+  m_EditorClassIdentifier: 
+  stanceAbilities:
+  - stance: 1
+    abilities:
+    - {fileID: 11400000, guid: 574c568d7cea80d439f959e9747880fb, type: 2}
+  - stance: 2
+    abilities: []
+  - stance: 4
+    abilities: []
+  HP: 100
+  defense: 0
+  lightBoulderPrefab: {fileID: 6619316244681527930, guid: 2b89e6e43e339414b8955cb4fcab1850, type: 3}
+  heavyBoulderPrefab: {fileID: 6619316244681527930, guid: 9b24029f20d154a49b3baccfadf14ee3, type: 3}
+  maxHeavyBoulders: 5
+  maxLightBoulders: 5

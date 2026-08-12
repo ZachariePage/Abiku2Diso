@@ -27,7 +27,13 @@ public class UnitSpawner : MonoBehaviour
     {
         
     }
-    
+
+    public GridActor SpawnActor(GameObject go, GridCell cell)
+    {
+        GameObject newUnit = Instantiate(go, cell.WorldPosition, Quaternion.identity);
+        GridActor actor = newUnit.GetComponent<GridActor>();
+        return actor;
+    }
     public AbikuTrio SpawnTrioAbiku(TrioDefinition def, GridCell cell)
     {
         GameObject newUnit = Instantiate(def.prefab, cell.WorldPosition, Quaternion.identity);

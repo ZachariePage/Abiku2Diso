@@ -41,8 +41,8 @@ public class BattleLoop : MonoBehaviour
     private List<ITargettable> selectedTargets = new();
     private AbikuTrio currentlySelectedAbikuTrio;
     
-    private readonly List<BattleEffect> activeEffects = new();
-    private readonly List<ITargettable> actionHighlights = new();
+    private List<BattleEffect> activeEffects = new();
+    private List<ITargettable> actionHighlights = new();
 
     [SerializeField]
     private UsedActionTracker _tracker;
@@ -231,7 +231,7 @@ public class BattleLoop : MonoBehaviour
 
             case TargetMode.Choice:
                 selectedTarget.Deselect();
-                PromptChoiceIfNeeded(action);
+                PromptChoice(action);
                 return;
 
             case TargetMode.Single:
@@ -242,9 +242,9 @@ public class BattleLoop : MonoBehaviour
     }
     
     //inprogress
-    private bool PromptChoiceIfNeeded(BattleAction action)
+    private bool PromptChoice(BattleAction action)
     {
-        if (action is IChoiceGatedAction choiceAction && choiceAction.HasPendingChoice())
+        if (action is IChoiceGatedAction choiceAction)
         {
             OnChoicePrompt?.Invoke(choiceAction.GetOptions());
             return true;

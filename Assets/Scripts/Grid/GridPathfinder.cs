@@ -356,6 +356,49 @@ public static class GridPathfinder
         return false;
     }
 
+    public static GridCell FindNearestEmptyCell(GridCell origin, MovementDirections allowed = MovementDirections.All, bool ignoreOccupancy = false, int maxRange = int.MaxValue)
+    {
+        if (origin == null) return null;
+
+        var visited = new HashSet<GridCell> { origin };
+        var queue = new Queue<(GridCell cell, int dist)>();
+        queue.Enqueue((origin, 0));
+
+        while (queue.Count > 0)
+        {
+            var (current, dist) = queue.Dequeue();
+
+            if (current != origin && current.IsWalkable && current.IsEmpty())
+            {
+                return current;
+            }
+
+            if (dist >= maxRange) continue;
+
+            for (int i = 0; i < current.Neighbours.Count; i++)
+            {
+                GridCell neighbour = current.Neighbours[i];
+
+                if (visited.Contains(neighbour)) continue;
+                if (!IsAllowed(current, neighbour, allowed)) continue;
+
+                bool canTraverse = ignoreOccupancy ? neighbour.IsWalkable : IsPassable(neighbour);
+                if (!canTraverse) continue;
+
+                visited.Add(neighbour);
+                queue.Enqueue((neighbour, dist + 1));
+            }
+        }
+
+        return null;
+    }
+    
+
+    private static int GridDistance(GridCell a, GridCell b)
+    {
+        return Mathf.Max(Mathf.Abs(a.X - b.X), Mathf.Abs(a.Z - b.Z));
+    }
+
     public static List<GridCell> FindPath(GridCell origin, GridCell destination, MovementDirections allowed = MovementDirections.All)
     {
         if (origin == destination) return new List<GridCell>();

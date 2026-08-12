@@ -13,7 +13,7 @@ public interface IActionOption<out T> : IActionOption
     T GetValue();
 }
 
-public readonly struct ActionOption<T> : IActionOption<T>
+public struct ActionOption<T> : IActionOption<T>
 {
     public T GetValue()
     {
@@ -24,7 +24,7 @@ public readonly struct ActionOption<T> : IActionOption<T>
     public string Label { get; }
     public Sprite Icon { get; }
     
-    public readonly T Value;
+    public T Value;
     
     public ActionOption(string id, string label, T value, Sprite icon = null)
     {
@@ -40,6 +40,5 @@ public interface IChoiceGatedAction
     IReadOnlyList<IActionOption> GetOptions();
     bool SelectOption(IActionOption option);
     bool HasPendingChoice();
-
     bool StartActionImmediately();
 }

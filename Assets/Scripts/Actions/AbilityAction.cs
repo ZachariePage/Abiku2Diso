@@ -129,6 +129,7 @@ public class AbilityAction : BattleAction, ICostGatedAction
     
     public override bool ReadyToUse()
     {
+        if (caster is AbikuStance stance && stance.Cheat_GetInfiniteAbility()) return true;
         if (caster.IsOnColdown()) return false;
         UsedActionTracker tracker = caster.GetCooldownTracker();
         bool phaseOk = CanBeUsedNow(BattleLoop.Instance.CurrentPhase);

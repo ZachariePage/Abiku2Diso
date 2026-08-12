@@ -23,11 +23,6 @@ public class ChoicePromptPanel : MonoBehaviour
 
     private void Show(IReadOnlyList<IActionOption> options)
     {
-        if (options.Count > slots.Count)
-        {
-            Debug.LogWarning($"ChoicePromptPanel has {slots.Count} slots but {options.Count} options were given. Extra options will not be shown.");
-        }
-
         for (int i = 0; i < slots.Count; i++)
         {
             if (i < options.Count)

@@ -77,8 +77,6 @@ public interface IDamageable
     public DamageInfo TakeDamage(GridActor source, IDamageSource damageSource, float damage, Element element);
     public HealingInfo Heal(GridActor source, IHealingSource healingSource, float heal, Element element);
 
-    public void BuffDefense(int value);
-
     public DamageProposalContext ModifyOutgoingDamage(DamageProposalContext ctx);
 
     public bool IsWounded();

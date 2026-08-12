@@ -19,8 +19,9 @@ public interface ICostGatedAction
 
 public class UsedActionTracker
 {
-    private readonly HashSet<BattleActionType> _usedActions = new();
-    private readonly Dictionary<BattleActionType, int> _bonusActions = new();
+    public bool cheat_infinite = false;
+    private HashSet<BattleActionType> _usedActions = new();
+    private Dictionary<BattleActionType, int> _bonusActions = new();
     private bool _encoreTriggered;
 
     public static bool IsMoveOrStance(BattleActionType type)
@@ -41,18 +42,18 @@ public class UsedActionTracker
 
     public bool HasBonusAction(BattleActionType type)
     {
-        return _bonusActions.TryGetValue(type, out int c) && c > 0;
+        return _bonusActions.TryGetValue(type, out int number) && number > 0;
     }
 
     public bool HasAnyBonusAction()
     {
-        return _bonusActions.Values.Any(c => c > 0);
+        return _bonusActions.Values.Any(number => number > 0);
     } 
 
     public void GrantBonusAction(BattleActionType type)
     {
-        _bonusActions.TryGetValue(type, out int c);
-        _bonusActions[type] = c + 1;
+        _bonusActions.TryGetValue(type, out int number);
+        _bonusActions[type] = number + 1;
     }
 
     public void ConsumeBonusAction(BattleActionType type)
@@ -100,7 +101,7 @@ public class UsedActionTracker
 
         if (isMoveOrStance && !wasBonus) return false;
         if (HasAnyBonusAction()) return false;
-        
+        if (cheat_infinite) return false;
         return true; 
     }
 

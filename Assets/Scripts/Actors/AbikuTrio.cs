@@ -17,7 +17,7 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
     [Header("stance")]
     public StateMachine<AbikuStance> StanceStateMachine;
     
-    private readonly Dictionary<BattleActionType, int> _bonusActions = new();
+    private Dictionary<BattleActionType, int> _bonusActions = new();
     private int _pendingSkillDiscount = 0;
     
     private List<AbikuStance> stances = new List<AbikuStance>();
@@ -253,11 +253,6 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
         return info;
     }
 
-    public void BuffDefense(int value)
-    {
-        
-    }
-
     public DamageProposalContext ModifyOutgoingDamage(DamageProposalContext ctx)
     {
         effectManager.TriggerOutgoingDamage(ctx);
@@ -373,6 +368,14 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
         foreach (AbikuStance abikuStance in stances)
         {
             abikuStance.Cheat_ResetTurn();
+        }
+    }
+    
+    public void Cheat_infiniteAbility()
+    {
+        foreach (AbikuStance abikuStance in stances)
+        {
+            abikuStance.Cheat_InfiniteAbilityUse();
         }
     }
 }

@@ -24,6 +24,11 @@ public struct ActionTakenEvent : IBattleEvent
     public BattleAction Action;
 }
 
+public struct CheatUsedEvent : IBattleEvent
+{
+    public string CheatString;
+}
+
 
 public struct MoveEvent : IBattleEvent
 {

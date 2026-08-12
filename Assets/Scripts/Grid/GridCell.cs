@@ -143,6 +143,11 @@ public class GridCell : ITargettable, IDamageable
         return TargettableTargetType.data;
     }
 
+    public GridCell GetTargetCell()
+    {
+        return this;
+    }
+
     public Vector2 GetWorldPosition()
     {
         return WorldPosition;
@@ -183,17 +188,7 @@ public class GridCell : ITargettable, IDamageable
         }
         return result;
     }
-
-    public void BuffDefense(int value)
-    {
-        if (actorOnCell != null)
-        {
-            if (actorOnCell is IDamageable damageable)
-            {
-                damageable.BuffDefense(value);
-            }
-        }
-    }
+    
     
     public DamageProposalContext ModifyOutgoingDamage(DamageProposalContext ctx)
     {

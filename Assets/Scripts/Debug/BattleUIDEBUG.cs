@@ -43,6 +43,7 @@ public class BattleUIDEBUG : MonoBehaviour
         BattleStats.Instance.Subscribe<GridActorTurnStartEvent>(onGridActorTurnStartEvent);
         BattleStats.Instance.Subscribe<ActionTakenEvent>(onActionTaken);
         BattleStats.Instance.Subscribe<TurnStartEvent>(onTurnStart);
+        BattleStats.Instance.Subscribe<CheatUsedEvent>(onCheat);
         
         
         debugFeedSlots = new GameObject[maxDebugCues];
@@ -54,6 +55,7 @@ public class BattleUIDEBUG : MonoBehaviour
         BattleStats.Instance.Unsubscribe<GridActorTurnStartEvent>(onGridActorTurnStartEvent);
         BattleStats.Instance.Unsubscribe<ActionTakenEvent>(onActionTaken);
         BattleStats.Instance.Unsubscribe<TurnStartEvent>(onTurnStart);
+        BattleStats.Instance.Unsubscribe<CheatUsedEvent>(onCheat);
     }
 
     // Update is called once per frame
@@ -62,12 +64,12 @@ public class BattleUIDEBUG : MonoBehaviour
         
     }
     
-    public void SpawnText(string text)
+    public TextMeshProUGUI SpawnText(string text)
     {
         int slotIndex = System.Array.IndexOf(debugFeedSlots, null);
         if (slotIndex == -1)
         {
-            return;
+            return null;
         }
 
         GameObject obj = DEBUGCASTINGTEXTCUE?.Execute(debugTextPosition.position);
@@ -82,6 +84,7 @@ public class BattleUIDEBUG : MonoBehaviour
         obj.transform.position = new Vector3(obj.transform.position.x, newY, obj.transform.position.z);
 
         StartCoroutine(RemoveCueFromList(obj, slotIndex));
+        return textMesh;
     }
 
     public void onTurnStart(TurnStartEvent evento)
@@ -103,6 +106,13 @@ public class BattleUIDEBUG : MonoBehaviour
         
         string newText = $"Actor {evento.Actor} took action {evento.Action} on target {targetList}";
         SpawnText(newText);
+    }
+    
+    public void onCheat(CheatUsedEvent evento)
+    {
+        string newText = $"Cheat : {evento.CheatString} was used";
+        TextMeshProUGUI text = SpawnText(newText);
+        text.color = Color.red;
     }
 
     public IEnumerator RemoveCueFromList(GameObject obj, int slotIndex)

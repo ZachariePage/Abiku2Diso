@@ -29,6 +29,7 @@ public abstract class AbikuStance : State, ISpellCaster
     
     private bool _currentlyCasting = false;
     private bool _turnOver = false;
+    private bool cheat_infiniteAbility;
     protected AbikuStance(GridActor unit, IStateMachine stateMachine) : base(unit, stateMachine)
     {
         if (unit is AbikuTrio trio)
@@ -166,5 +167,16 @@ public abstract class AbikuStance : State, ISpellCaster
     {
         RefreshColdown();
         _coldownTracker.ResetTurn();
+    }
+
+    public void Cheat_InfiniteAbilityUse()
+    {
+        cheat_infiniteAbility = !cheat_infiniteAbility;
+        _coldownTracker.cheat_infinite = !_coldownTracker.cheat_infinite;
+    }
+
+    public bool Cheat_GetInfiniteAbility()
+    {
+        return cheat_infiniteAbility;
     }
 }

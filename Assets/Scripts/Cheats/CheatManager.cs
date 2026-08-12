@@ -26,7 +26,8 @@ public class CheatManager : MonoBehaviour
         string[] parts = rawInput.Split(' ', StringSplitOptions.RemoveEmptyEntries);
         string command = parts[0].ToLowerInvariant();
         string[] args = parts.Length > 1 ? parts[1..] : Array.Empty<string>();
-
+        
+        bool success = true;
         switch (command)
         {
             case "damage":
@@ -55,9 +56,25 @@ public class CheatManager : MonoBehaviour
                 }
                 BattleLoop.Instance.Cheat_SetbattlePhase(BattlePhase.Combat);
                 break;
+            case "infinite":
+                foreach (AbikuTrio abikuTrio in FindObjectsByType<AbikuTrio>(FindObjectsSortMode.None))
+                {
+                    abikuTrio.Cheat_infiniteAbility();
+                }
+                break;
             default:
+                success = false;
                 Debug.LogWarning($"Unknown command: '{command}'");
                 break;
+        }
+
+        if (success)
+        {
+            CheatUsedEvent actionTakenEvent = new CheatUsedEvent
+            {
+                CheatString = command
+            };
+            BattleStats.Instance.Broadcast(actionTakenEvent);
         }
     }
 

@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class DelayedExplosionEffect : DamagingBattleEffect
 {
-    private readonly List<GridCell> _cells =  new List<GridCell>();
+    private List<GridCell> _cells =  new List<GridCell>();
     private GridCell _targetCell;
     private int _turnsRemaining;
     private int _damage;

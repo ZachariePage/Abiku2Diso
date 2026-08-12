@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -144,6 +145,12 @@ public class ObjectPool : MonoBehaviour, ISingleton
         {
             rb.linearVelocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
+        }
+        
+        TextMeshProUGUI ui = objectToReturn.GetComponent<TextMeshProUGUI>();
+        if (ui)
+        {
+            ui.color = Color.white;
         }
 
         objectToReturn.SetActive(false);

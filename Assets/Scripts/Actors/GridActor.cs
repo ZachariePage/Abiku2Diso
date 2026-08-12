@@ -13,8 +13,8 @@ public class GridActor : MonoBehaviour, ITargettable, IHoverable
     public event Action onSelection;
     public event Action onDeselection;
     
-    private readonly List<BattleEffect> activeStartTurnEffects = new();
-    private readonly List<BattleEffect> activeEndTurnEffects = new();
+    private List<BattleEffect> activeStartTurnEffects = new();
+    private List<BattleEffect> activeEndTurnEffects = new();
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected virtual void Start()
     {
@@ -93,6 +93,11 @@ public class GridActor : MonoBehaviour, ITargettable, IHoverable
     public virtual TargettableTargetType GetTargetType()
     {
         return TargettableTargetType.monobehaviour;
+    }
+
+    public GridCell GetTargetCell()
+    {
+        return holdingCell;
     }
 
     public Vector2 GetWorldPosition()
