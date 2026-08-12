@@ -6,6 +6,9 @@ public class PlayerBattleStats : MonoBehaviour
     public static PlayerBattleStats Instance { get; private set; }
     private int momentum = 0;
     
+    private int _encoreCharges;
+    [SerializeField] private int maxEncoreCharges = 3;
+    
     public event Action onMomentumChanged;
 
     private void Awake()
@@ -57,4 +60,25 @@ public class PlayerBattleStats : MonoBehaviour
         onMomentumChanged?.Invoke();
     }
 
+    public int GetEncoreCharges()
+    {
+        return _encoreCharges;
+    }
+
+    public bool HasRemainingEncore()
+    {
+        return _encoreCharges > 0;
+    }
+
+    public void GrantEncoreCharge()
+    {
+        _encoreCharges = Mathf.Min(_encoreCharges + 1, maxEncoreCharges);
+    }
+
+    public bool ConsumeEncoreCharge()
+    {
+        if (_encoreCharges <= 0) return false;
+        _encoreCharges--;
+        return true;
+    }
 }

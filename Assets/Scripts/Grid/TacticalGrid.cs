@@ -107,7 +107,7 @@ public class TacticalGrid : MonoBehaviour
             Debug.LogWarning($"[TacticalGrid] No cell at ({x},{z}).");
             return null;
         }
-
+        
         return cell;
     }
 

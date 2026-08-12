@@ -27,6 +27,10 @@ public class StandingWall : AbilityAction
         List<ITargettable> validTargets = new List<ITargettable>();
         foreach (GridCell cell in reachable)
         {
+            if (cell.GetActorOnCell() != null)
+            {
+                validTargets.Add(cell.GetActorOnCell());
+            }
             validTargets.Add(cell);
         }
         
@@ -54,10 +58,10 @@ public class StandingWall : AbilityAction
             onComplete?.Invoke();
             yield break;
         }
-
+        
         if (selectedTargets[0].GetTargetCell().GetActorOnCell() != null)
         {
-            Debug.Log("meow");
+            
         }
         //shieldBreaker.BoulderManager.Summon(config.typeToSpawn, selectedTargets[0].GetTargetCell());
         

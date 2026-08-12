@@ -60,7 +60,7 @@ public class ChangeAbikuAction : BattleAction, ICostGatedAction
         // }
         trio.ChangeStance();
         
-        trio.StanceStateMachine.CurrentState.GetCooldownTracker().MarkMoveOrStanceUsedExternally();
+        //trio.StanceStateMachine.CurrentState.GetCooldownTracker().MarkMoveOrStanceUsedExternally();
         
         onComplete?.Invoke();
         yield return null;

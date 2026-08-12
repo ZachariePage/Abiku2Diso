@@ -15,7 +15,7 @@ public class CrossStep : ActorEffect
         base.OnTurnStart(self);
         if (self is AbikuTrio abiku)
         {
-            abiku.StanceStateMachine.CurrentState.GetCooldownTracker().GrantBonusAction(BattleActionType.move);
+            
         }
         self.GetComponent<ActorEffectManager>().RemoveEffect(this);
     }
