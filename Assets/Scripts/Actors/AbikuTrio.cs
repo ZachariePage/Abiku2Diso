@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.Events;
 
-public class AbikuTrio : GridActor,  IDamageable, IHoldElement
+public class AbikuTrio : GridActor,  IDamageable, IHoldElement, ISpellCaster
 {
     [SerializeField] private TrioDefinition trioDefinition;
     
@@ -83,6 +83,8 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
         hpScript = GetComponent<Health>();
         hpScript.Init(this, egungun.GetHP());
         defense = egungun.GetDefense();
+        
+        usedActionTracker =  new UsedActionTracker();
     }
 
     // Update is called once per frame
@@ -166,7 +168,48 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
         base.UnHighlight();
         
     }
-    
+
+    public void PutOnColdown()
+    {
+        
+    }
+
+    public void RefreshColdown()
+    {
+        Debug.Log("refresh coldown");
+    }
+
+    public bool IsOnColdown()
+    {
+        return !usedActionTracker.HasMoveLeft();
+    }
+
+    public bool CanThrowSpell()
+    {
+        Debug.Log("canThrowSpell");
+        return false;
+    }
+
+    public bool IsCastingSpell()
+    {
+        Debug.Log("isCastingSpell");
+        return false;
+    }
+
+    public void SetCastingSpell(bool value, CastingSpellColdownType type)
+    {
+
+    }
+
+    public void OnAbilityThrown()
+    {
+        Debug.Log("onAbilityThrown");
+    }   
+
+    public UsedActionTracker GetCooldownTracker()
+    {
+        return usedActionTracker;
+    }
     public void OnAbilityFinished(AbilityAftermathInfo abilityAftermathInfo)
     {
         effectManager.TriggerOnAbilityFinished(this, abilityAftermathInfo);
@@ -213,7 +256,7 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
         bool encoreTriggered = ElementSystem.Instance.IsEffectiveAgainst(currentElement, element);
         if (encoreTriggered)
         {
-            TriggerEncore();
+            //TriggerEncore(this); no longer use i think
         }
         
         DamageMitigationContext ctx = new DamageMitigationContext
@@ -243,7 +286,7 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
         bool encoreTriggered = ElementSystem.Instance.IsEffectiveAgainst(currentElement, element);
         if (encoreTriggered)
         {
-            TriggerEncore();
+            TriggerEncore(this);
         }
         
         HealingInfo info = new HealingInfo(source, this, healingSource, heal, element, currentElement, encoreTriggered);
@@ -269,10 +312,10 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement
         return hpScript;
     }
 
-    public void TriggerEncore()
+    public void TriggerEncore(GridActor usedActor)
     {
         onEncoreTriggered?.Invoke();
-        PlayerBattleStats.Instance.EncoreTriggered();
+        PlayerBattleStats.Instance.EncoreTriggered(usedActor);
     }
 
     public void DEBUGPRINTALLSTANCESABILITIES()

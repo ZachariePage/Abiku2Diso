@@ -174,15 +174,15 @@ public class BattleLoop : MonoBehaviour
 
         foreach (AbikuTrio trio in abikuTrios)
         {
-            ISpellCaster stance = trio.StanceStateMachine.CurrentState;
-            if (!stance.IsOnColdown())
+            ISpellCaster cas = trio;
+            if (!cas.IsOnColdown())
             {
                 allTurnOver = false;
                 break;
             }
         }
 
-        if (allTurnOver)
+        if (allTurnOver && !PlayerBattleStats.Instance.HasRemainingEncore())
         {
             CurrentPhase = BattlePhase.TurnOver;
         }

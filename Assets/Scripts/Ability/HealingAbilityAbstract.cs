@@ -36,11 +36,11 @@ public class HealingAbilityAbstract : AbilityAction
             {
                 if (info.Source is AbikuTrio trio)
                 {
-                    trio.TriggerEncore();
+                    trio.TriggerEncore(info.Source);
                 }
                 else
                 {
-                    TriggerEncore();
+                    TriggerEncore(info.Target);
                 }
                 
                 return;
@@ -48,8 +48,8 @@ public class HealingAbilityAbstract : AbilityAction
         }
     }
     
-    protected void TriggerEncore()
+    protected void TriggerEncore(GridActor actor)
     {
-        PlayerBattleStats.Instance.EncoreTriggered();
+        PlayerBattleStats.Instance.EncoreTriggered(actor);
     }
 }

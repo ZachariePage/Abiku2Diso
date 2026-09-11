@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerBattleStats : MonoBehaviour
@@ -6,10 +7,13 @@ public class PlayerBattleStats : MonoBehaviour
     public static PlayerBattleStats Instance { get; private set; }
     private int momentum = 0;
     
+    private HashSet<GridActor> actorsHitByEncore = new HashSet<GridActor>();
+    
     private int _encoreCharges;
     [SerializeField] private int maxEncoreCharges = 3;
     
     public event Action onMomentumChanged;
+    public event Action onEncoreChanged;
 
     private void Awake()
     {
@@ -33,9 +37,12 @@ public class PlayerBattleStats : MonoBehaviour
 
     }
 
-    public void EncoreTriggered()
+    public void EncoreTriggered(GridActor actor)
     {
+        if(actorsHitByEncore.Contains(actor)) return;
+        actorsHitByEncore.Add(actor);
         BattleLoop.Instance.EncoreTriggered();
+        GrantEncoreCharge();
         IncreaseMomentum();
     }
 
@@ -73,12 +80,20 @@ public class PlayerBattleStats : MonoBehaviour
     public void GrantEncoreCharge()
     {
         _encoreCharges = Mathf.Min(_encoreCharges + 1, maxEncoreCharges);
+        onEncoreChanged?.Invoke();
     }
 
     public bool ConsumeEncoreCharge()
     {
         if (_encoreCharges <= 0) return false;
         _encoreCharges--;
+        onEncoreChanged?.Invoke();
         return true;
+    }
+
+    public void RefreshEncore()
+    {
+        _encoreCharges = 0;
+        onEncoreChanged?.Invoke();
     }
 }

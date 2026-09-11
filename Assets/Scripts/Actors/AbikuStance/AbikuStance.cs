@@ -16,7 +16,7 @@ public class AbikuStanceAbilityGroup
     public AbikuStanceType stance;
     public List<AbilityTemplateSO> abilities = new List<AbilityTemplateSO>();
 }
-public abstract class AbikuStance : State, ISpellCaster
+public abstract class AbikuStance : State
 {
     protected List<BattleAction> actions =  new List<BattleAction>();
     protected abstract AbikuStanceType GetStanceType();
@@ -42,8 +42,8 @@ public abstract class AbikuStance : State, ISpellCaster
             return;
         }
           
-        moveAbiku = new MoveAbikuAction(this, abiku);
-        changeAbiku = new ChangeAbikuAction(this, abiku);
+        moveAbiku = new MoveAbikuAction(abiku, abiku);
+        changeAbiku = new ChangeAbikuAction(abiku, abiku);
         
         actions.Add(moveAbiku);
         actions.Add(changeAbiku);
@@ -51,7 +51,7 @@ public abstract class AbikuStance : State, ISpellCaster
         Egungun egungun = abiku.GetEgungun();
         foreach (var ability in egungun.GetAbilitiesForStance(GetStanceType()))
         {
-            actions.Add(ability.CreateAction(this, unit));
+            actions.Add(ability.CreateAction(abiku, unit));
         }
         
         //events 
@@ -69,66 +69,7 @@ public abstract class AbikuStance : State, ISpellCaster
     }
 
     public abstract AbikuStanceScriptableObject GetStanceConfig();
-
-    public void PutOnColdown()
-    {
-        _turnOver = true;
-    }
-
-    public void RefreshColdown()
-    {
-        _turnOver = false;
-    }
-
-    public bool IsOnColdown()
-    {
-        return _turnOver;
-    }
-
-    public bool CanThrowSpell()
-    {
-        return !abiku.IsOnLastStance();
-    }
-
-    public bool IsCastingSpell()
-    {
-        return _currentlyCasting;
-    }
-
-    public void SetCastingSpell(bool value, CastingSpellColdownType type)
-    {
-        switch (type)
-        {
-            case CastingSpellColdownType.enemy:
-                break;
-            case CastingSpellColdownType.player:
-                _currentlyCasting = value;
-                break;
-            case CastingSpellColdownType.both:
-                _currentlyCasting = value;
-                break;
-        }
-    }
-
-    public void OnAbilityThrown()
-    {
-        
-    }
-
-    public void OnAbilityFinished(AbilityAftermathInfo abilityAftermathInfo)
-    {
-        abiku.OnAbilityFinished(abilityAftermathInfo);
-    }
-
-    public GridActor GetActor()
-    {
-        return abiku;
-    }
-
-    public UsedActionTracker GetCooldownTracker()
-    {
-        return _coldownTracker;
-    }
+    
 
     public override void EnterState()
     {
@@ -138,7 +79,6 @@ public abstract class AbikuStance : State, ISpellCaster
 
     public override void StartTurn()
     {
-        RefreshColdown();
         base.StartTurn();
     }
 
@@ -165,7 +105,6 @@ public abstract class AbikuStance : State, ISpellCaster
 
     public void Cheat_ResetTurn()
     {
-        RefreshColdown();
         _coldownTracker.ResetTurn();
     }
 

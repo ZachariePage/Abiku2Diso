@@ -129,19 +129,13 @@ public class AbilityAction : BattleAction, ICostGatedAction
     
     public override bool ReadyToUse()
     {
-        if (caster is AbikuStance stance && stance.Cheat_GetInfiniteAbility()) return true;
         if (caster.IsOnColdown()) return false;
         UsedActionTracker tracker = caster.GetCooldownTracker();
         bool phaseOk = CanBeUsedNow(BattleLoop.Instance.CurrentPhase);
-        bool slotAvailable = !tracker.AbilityUsed();
-        bool bonusReady = tracker.HasBonusAction(BattleActionType.ability);
+        bool slotAvailable = tracker.CanUseAbility();
         bool canAfford = ManaCost() <= PlayerBattleStats.Instance.GetMomentum();
         
-        // Debug.Log(phaseOk);
-        // Debug.Log(slotAvailable);
-        // Debug.Log(bonusReady);
-        
-        return phaseOk && (slotAvailable || bonusReady) && canAfford;
+        return phaseOk && (slotAvailable) && canAfford;
     }
 
     public override HoverableUIData GetHoverData()

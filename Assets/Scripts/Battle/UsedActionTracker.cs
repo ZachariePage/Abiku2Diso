@@ -34,75 +34,61 @@ public class UsedActionTracker
         return _usedActions.Contains(BattleActionType.move) || _usedActions.Contains(BattleActionType.changeStance);
     }
 
+    public bool CanUseMoveOrStance()
+    {
+        if(PlayerBattleStats.Instance.HasRemainingEncore()) return true;
+        return !(_usedActions.Contains(BattleActionType.move) || _usedActions.Contains(BattleActionType.changeStance));
+    }
+
 
     public bool AbilityUsed()
     {
        return _usedActions.Contains(BattleActionType.ability);
     }
 
-    public bool HasBonusAction(BattleActionType type)
+    public bool CanUseAbility()
     {
-        return _bonusActions.TryGetValue(type, out int number) && number > 0;
+        if(PlayerBattleStats.Instance.HasRemainingEncore()) return true;
+        return !_usedActions.Contains(BattleActionType.ability);
     }
-
-    public bool HasAnyBonusAction()
-    {
-        return _bonusActions.Values.Any(number => number > 0);
-    } 
-
-    public void GrantBonusAction(BattleActionType type)
-    {
-        _bonusActions.TryGetValue(type, out int number);
-        _bonusActions[type] = number + 1;
-    }
-
-    public void ConsumeBonusAction(BattleActionType type)
-    {
-        if (_bonusActions.TryGetValue(type, out int c) && c > 0)
-        {
-            _bonusActions[type] = c - 1;
-        }
-    }
+    
 
     public void SetEncoreTriggered(bool value)
     {
         _encoreTriggered = value;
     }
+
+    public bool HasMoveLeft()
+    {
+        if(PlayerBattleStats.Instance.HasRemainingEncore()) return true;
+        bool abilityUsed = AbilityUsed();
+        bool moveOrStance = MoveOrStanceUsed();
+        
+        return !abilityUsed || (!moveOrStance);
+    }
     public bool RegisterActionAndCheckTurnOver(BattleActionType type)
     {
-        bool isMoveOrStance = IsMoveOrStance(type);
-        bool alreadyUsedSlot = false;
-        
-        if (isMoveOrStance)
+        bool encoreWasUsed = false;
+        switch (type)
         {
-            alreadyUsedSlot = MoveOrStanceUsed();
+            case BattleActionType.move:
+            case BattleActionType.changeStance:
+                encoreWasUsed = MoveOrStanceUsed();
+                break;
+            case BattleActionType.ability:
+                encoreWasUsed = AbilityUsed();
+                break;
         }
-        else
-        {
-            alreadyUsedSlot = AbilityUsed();
-        }
-        
-        bool wasBonus = alreadyUsedSlot && HasBonusAction(type);
 
+        if (encoreWasUsed)
+        {
+            PlayerBattleStats.Instance.ConsumeEncoreCharge();
+        }
+        
         _usedActions.Add(type);
-
-        if (wasBonus)
-        {
-            ConsumeBonusAction(type);
-        }
-
-        if (_encoreTriggered)
-        {
-            _encoreTriggered = false;
-            _usedActions.Remove(BattleActionType.changeStance);
-            _usedActions.Remove(BattleActionType.move);
-            return false;
-        }
-
-        if (isMoveOrStance && !wasBonus) return false;
-        if (HasAnyBonusAction()) return false;
+        
         if (cheat_infinite) return false;
-        return true; 
+        return HasMoveLeft(); 
     }
 
     public void ResetTurn()
@@ -110,11 +96,5 @@ public class UsedActionTracker
         _usedActions.Clear();
         _bonusActions.Clear();
         _encoreTriggered = false;
-    }
-    
-    public void MarkMoveOrStanceUsedExternally()
-    {
-        _usedActions.Add(BattleActionType.move);
-        _usedActions.Add(BattleActionType.changeStance);
     }
 }

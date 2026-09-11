@@ -146,10 +146,9 @@ public class MoveAbikuAction : BattleAction, ICostGatedAction
         if (caster.IsOnColdown()) return false;
         UsedActionTracker tracker = caster.GetCooldownTracker();
         bool phaseOk = CanBeUsedNow(BattleLoop.Instance.CurrentPhase);
-        bool slotAvailable = !tracker.MoveOrStanceUsed();
-        bool bonusReady = tracker.HasBonusAction(BattleActionType.move);
+        bool slotAvailable = tracker.CanUseMoveOrStance();
 
-        return phaseOk && (slotAvailable || bonusReady);
+        return phaseOk && (slotAvailable);
     }
 
     public override HoverableUIData GetHoverData()

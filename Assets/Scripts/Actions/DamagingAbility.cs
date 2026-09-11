@@ -48,11 +48,11 @@ public abstract class DamagingAbility : AbilityAction, IDamageSource
             {
                 if (damageInfo.Source is AbikuTrio trio)
                 {
-                    trio.TriggerEncore();
+                    trio.TriggerEncore(damageInfo.Target);
                 }
                 else
                 {
-                    TriggerEncore();
+                    TriggerEncore(damageInfo.Target);
                 }
                 
                 return;
@@ -60,9 +60,9 @@ public abstract class DamagingAbility : AbilityAction, IDamageSource
         }
     }
     
-    protected void TriggerEncore()
+    protected void TriggerEncore(GridActor actor)
     {
-        PlayerBattleStats.Instance.EncoreTriggered();
+        PlayerBattleStats.Instance.EncoreTriggered(actor);
     }
 
     public string DisplayName => template.DisplayName;

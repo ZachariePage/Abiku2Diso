@@ -14,7 +14,7 @@ public enum EffectTrigger
     OnDamageTaken = 1 << 6,
     OnDamageDealt = 1 << 7,
     OnTurnEnd = 1 << 8,
-}
+}   
 
 public enum EffectPriority
 {

@@ -38,14 +38,14 @@ public abstract class DamagingBattleEffect : BattleEffect
 
             if (damageInfo.encoreTriggered)
             {
-                TriggerEncore();
+                TriggerEncore(damageInfo.Target);
                 return;
             }
         }
     }
     
-    protected void TriggerEncore()
+    protected void TriggerEncore(GridActor actor)
     {
-        PlayerBattleStats.Instance.EncoreTriggered();
+        PlayerBattleStats.Instance.EncoreTriggered(actor);
     }
 }
