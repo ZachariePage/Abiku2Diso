@@ -13,6 +13,7 @@ public class AbilityButton : MonoBehaviour, IHoverable
     {
         if (!action.ReadyToUse())
         {
+            Debug.Log("not readyu");
             return;
         }
         BattleLoop.Instance.SetPendingAction(action);

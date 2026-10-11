@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Spawn Enemy
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -285,4 +285,3 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: 657769555342276678, guid: 523f7b31c6f4c8845a0a371389df72ac, type: 3}
   - {fileID: 657769555342276678, guid: fe78319f7046a4b498be35c37ac68866, type: 3}
-  index: 0

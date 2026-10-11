@@ -81,8 +81,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: eed242d10eb847b48af59a8652f4f39b, type: 3}
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 6921eb3eace37da4f9d240af5a938d74, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -131,7 +131,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.8488889, y: 0.8888889}
+    oldSize: {x: 0.6066667, y: 1.2033334}
     newSize: {x: 25, y: 25}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -156,6 +156,7 @@ MonoBehaviour:
     description: 
   startingState:
   - {fileID: 11400000, guid: 67a59a25d98dda8439575e5154c6bd56, type: 2}
+  - {fileID: 11400000, guid: 8f253a6308301774fadc726279dbfca4, type: 2}
   effectManager: {fileID: 0}
   turnBeforeExecutingAction: -1
   abilityActions: []
@@ -211,6 +212,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3c44bbac71dc1f41a2c5bf176cc2316, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
+  StartingHealth: 0
 --- !u!1001 &5177501120831185482
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -46,7 +46,6 @@ public class RetroactionPlayer : MonoBehaviour
         EventInfo eventInfo = GetEvent(hook);
         if (eventInfo == null)
         {
-            Debug.LogWarning($"[RetroactionPlayer] no event '{hook.eventName}' found on {hook.target.GetType().Name}", this);
             return;
         }
 
@@ -73,10 +72,6 @@ public class RetroactionPlayer : MonoBehaviour
         }
         else
         {
-            string message = "[RetroactionPlayer] Unsupported event signature for '" + hook.eventName + "' "
-                             + "(" + invokeParams.Length + " params). Add a case for it in RetroactionPlayer.Bind().";
-
-            Debug.LogWarning(message, this);
             return;
         }
 
@@ -89,7 +84,7 @@ public class RetroactionPlayer : MonoBehaviour
         if (hook.target == null || hook.boundHandler == null)
             return;
 
-        var eventInfo = GetEvent(hook);
+        EventInfo eventInfo = GetEvent(hook);
         eventInfo?.RemoveEventHandler(hook.target, hook.boundHandler);
         hook.boundHandler = null;
     }
@@ -103,7 +98,7 @@ public class RetroactionPlayer : MonoBehaviour
     {
         if (hook.cues == null) return;
 
-        foreach (var cue in hook.cues)
+        foreach (GameCue cue in hook.cues)
         {
             cue?.Execute(position);
         }
@@ -112,7 +107,7 @@ public class RetroactionPlayer : MonoBehaviour
 #if UNITY_EDITOR
     private void OnValidate()
     {
-        foreach (var hook in Retroactions)
+        foreach (RetroactionHookConfig hook in Retroactions)
         {
             if (hook.target == null || string.IsNullOrEmpty(hook.eventName))
                 continue;

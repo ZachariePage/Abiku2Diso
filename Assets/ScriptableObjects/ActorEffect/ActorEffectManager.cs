@@ -99,47 +99,47 @@ public class ActorEffectManager : MonoBehaviour
     
     public void TriggerOnTurnStart(GridActor self) 
     {
-        foreach (var e in _activeEffects.Where(e => (e.TriggerMask & EffectTrigger.OnTurnStart) 
-                                                    != 0).OrderBy(e => e.Priority).ToList())
+        foreach (ActorEffect effect in _activeEffects.Where(e => (e.TriggerMask & EffectTrigger.OnTurnStart) 
+                                                                 != 0).OrderBy(e => e.Priority).ToList())
         {
-            e.OnTurnStart(_self);
+            effect.OnTurnStart(_self);
         }
     }
     public void TriggerOnMove(GridActor self, GridCell from, GridCell to) 
     {
-        foreach (var e in _activeEffects.Where(e => (e.TriggerMask & EffectTrigger.OnMove)
-                                                    != 0).OrderBy(e => e.Priority).ToList())
+        foreach (ActorEffect effect in _activeEffects.Where(e => (e.TriggerMask & EffectTrigger.OnMove)
+                                                                 != 0).OrderBy(e => e.Priority).ToList())
         {
-            e.OnMove(_self, from, to);
+            effect.OnMove(_self, from, to);
         }
     }
     public void TriggerOnAbilityThrown(GridActor self, BattleAction ability) 
     {
-        foreach (var e in _activeEffects.Where(e => (e.TriggerMask & EffectTrigger.OnAbilityThrown)
-                                                    != 0).OrderBy(e => e.Priority).ToList())
+        foreach (ActorEffect effect in _activeEffects.Where(e => (e.TriggerMask & EffectTrigger.OnAbilityThrown)
+                                                                 != 0).OrderBy(e => e.Priority).ToList())
         {
-            e.OnAbilityThrown(_self, ability);
+            effect.OnAbilityThrown(_self, ability);
         }
     }
     public void TriggerOnAbilityFinished(GridActor self, AbilityAftermathInfo info) 
     {
-        foreach (var e in _activeEffects.Where(e => (e.TriggerMask & EffectTrigger.OnAbilityFinished)
+        foreach (ActorEffect effect in _activeEffects.Where(e => (e.TriggerMask & EffectTrigger.OnAbilityFinished)
                                                     != 0).OrderBy(e => e.Priority).ToList())
         {
-            e.OnAbilityFinished(_self, info);
+            effect.OnAbilityFinished(_self, info);
         }
     }
 
     public void TriggerOutgoingDamage(DamageProposalContext ctx)
     {
-        foreach (var effect in GetEffectsFor(EffectTrigger.OnDamageSend))
+        foreach (ActorEffect effect in GetEffectsFor(EffectTrigger.OnDamageSend))
         {
             effect.OnDamageSent(ctx);
         }
     }
     public void TriggerDamageMitigation(DamageMitigationContext ctx)
     {
-        foreach (var effect in GetEffectsFor(EffectTrigger.OnDamageMitigation))
+        foreach (ActorEffect effect in GetEffectsFor(EffectTrigger.OnDamageMitigation))
         {
             effect.OnDamageMitigation(ctx);
         }
@@ -147,26 +147,26 @@ public class ActorEffectManager : MonoBehaviour
     
     public void TriggerOnDamageTaken(GridActor self, DamageInfo info) 
     {
-        foreach (var e in _activeEffects.Where(e => (e.TriggerMask & EffectTrigger.OnDamageTaken)
-                                                    != 0).OrderBy(e => e.Priority).ToList())
+        foreach (ActorEffect effect in _activeEffects.Where(e => (e.TriggerMask & EffectTrigger.OnDamageTaken)
+                                                                 != 0).OrderBy(e => e.Priority).ToList())
         {
-            e.OnDamageTaken(_self, info);
+            effect.OnDamageTaken(_self, info);
         }
     }
     public void TriggerOnDamageDealt(GridActor self, DamageInfo info) 
     {
-        foreach (var e in _activeEffects.Where(e => (e.TriggerMask & EffectTrigger.OnDamageDealt)
-                                                    != 0).OrderBy(e => e.Priority).ToList())
+        foreach (ActorEffect effect in _activeEffects.Where(e => (e.TriggerMask & EffectTrigger.OnDamageDealt) 
+                                                                 != 0).OrderBy(e => e.Priority).ToList())
         {
-            e.OnDamageDealt(_self, info);
+            effect.OnDamageDealt(_self, info);
         }
     }
     public void TriggerOnTurnEnd(GridActor self) 
     {
-        foreach (var e in _activeEffects.Where(e => (e.TriggerMask & EffectTrigger.OnTurnEnd)
-                                                    != 0).OrderBy(e => e.Priority).ToList())
+        foreach (ActorEffect effect in _activeEffects.Where(e => (e.TriggerMask & EffectTrigger.OnTurnEnd)
+                                                                 != 0).OrderBy(e => e.Priority).ToList())
         {
-            e.OnTurnEnd(_self);
+            effect.OnTurnEnd(_self);
         }
     }
     

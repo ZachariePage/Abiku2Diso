@@ -118,6 +118,7 @@ public class AbikuTrio : GridActor,  IDamageable, IHoldElement, ISpellCaster
         onMyTurnEnd?.Invoke();
         //actoreffect
         effectManager.TriggerOnTurnEnd(this);
+        usedActionTracker.ResetTurn();
         yield return base.OnTurnEnd();
     }
     
